@@ -4,13 +4,13 @@ compute_engine_instance:
   platform: freebsd
   cpu: 2
   memory: 4G
-  disk: 20
+  disk: 60
 
 # Build the Airyx system core
 airyx_task:
   environment:
-    SURGE_LOGIN: foo
-    SURGE_TOKEN: bar
+    SURGE_LOGIN: ENCRYPTED[72018498d434cc122cd9008c28924696f18e3b7e5431a4a808cb1d362bb9ad79849426b3ecc39e05580fb8560e81283e]
+    SURGE_TOKEN: ENCRYPTED[b8c152a2c22ada1210122d08f0cb811b94d5c51380e13002debdd4f558be2b28e89af956b0980db4854ef0e4de850fcb]
   script:
     - pkg update && pkg install -y npm 
     - npm install -g surge
