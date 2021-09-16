@@ -1,0 +1,22 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "airyx.org website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/airyxos/website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/airyxos/website/issues"
+  },
+  "homepage": "https://github.com/airyxos/website#readme",
+  "devDependencies": {
+    "surge": "^0.23.0"
+  }
+}

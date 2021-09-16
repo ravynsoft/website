@@ -1,0 +1,19 @@
+compute_engine_instance:
+  image_project: freebsd-org-cloud-dev
+  image: family/freebsd-12-2
+  platform: freebsd
+  cpu: 2
+  memory: 4G
+  disk: 20
+
+# Build the Airyx system core
+airyx_task:
+  environment:
+    SURGE_LOGIN: foo
+    SURGE_TOKEN: bar
+  script:
+    - pkg update
+    - pkg install -y npm 
+    - npm install -g surge
+    - surge --project . --domain airyx.org
+  only_if: $CIRRUS_BRANCH == 'main'
