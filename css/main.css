@@ -1,0 +1,165 @@
+@font-face {
+  font-family:"Quicksand";
+  src: url("../fonts/Quicksand-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family:"Raleway";
+  src: url("../fonts/Raleway-Regular.ttf") format("truetype");
+}
+
+.header {
+	color: #101030;
+    font-family: 'Quicksand', sans-serif;
+}
+
+div.header {
+    padding: 4px;
+    background-color: #99ccff;
+	background-image: url('../images/sky.jpg');
+	display: block;
+	height: 160px;
+	width: 100%;
+}
+
+img#logo {
+	position: relative;
+    border: 0px;
+    top: 0px;
+	padding-top: 5px;
+	padding-left: 25px;
+    float: left; 
+	width: 300px;
+    height: 130px;
+}
+
+div.logotext {
+	position: relative;
+    top: 128px;
+	left: -285px;
+	float: left;
+}
+
+div.socials {
+	position: relative;
+	top: 20px;
+	margin-right: 120px;
+	float: right;
+}
+
+.socials {
+	color: #101030;
+	text-decoration: none;
+	font-size: 24px;
+}
+
+h1.logo {
+    padding: 0px;
+    font-size: 16px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+div.body {
+	font-family: 'Raleway', sans-serif;
+    color: black;
+    background-color: white;
+	font-size: 100%;
+}
+
+div.sidebar {
+	position: relative;
+	float: right;
+	margin-left: 4px;
+	margin-right: 0px;
+	margin-top: 4px;
+	width: 240px;
+}
+
+div.nav {
+	font-family: 'Quicksand', sans-serif;
+	border-radius: 4px;
+	border:#101030 solid 2px;
+}
+
+div.navheader {
+	font-family: 'Quicksand', sans-serif;
+	background-color: #101030;
+	color: white;
+	text-align: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+div.navbody {
+	font-family: 'Quicksand', sans-serif;
+	color: #101030;
+	text-align: left;
+	width: 240px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+a.nav {
+	color: #101030;
+	text-decoration: none;
+	padding-left: 3px;
+	font-family: 'Quicksand', sans-serif;
+}
+
+h1.body {
+	font-family: 'Quicksand', sans-serif;
+	color: #101030;
+	font-size: 125%;
+}
+
+div.footer {
+    color: #101030;
+    background-color: white;
+    position: relative;
+    margin-bottom: 32px;
+    margin-left: 8px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+ul.body {
+	list-style-image: none;
+	list-style-type: none;
+}
+
+li {
+	padding-top: 3px;
+	padding-bottom: 2px;
+}
+
+.blist { color: DodgerBlue; }
+
+.code {
+	font-family: 'Monaco', 'Consolas', 'DejaVu Sans Mono', monospace;
+	font-size: 85%;
+	background-color: #e0e0e0;
+	border: 2px solid #e0e0e0;
+	border-radius: 5px;
+	padding-left: 3px;
+	padding-right: 3px;
+}
+
+.small {
+	font-size: 75%;
+}
+
+a a:link { color: DodgerBlue; }
+a:visited { color: #101030; }
+a:hover { color: #401040; }
+
+img.screenshot {
+	width: 720px;
+    height: 480px;
+    border: none;
+}
+
+img.tinyicon {
+	width: 16px;
+	height: 16px;
+	border: none;
+}

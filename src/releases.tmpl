@@ -1,0 +1,98 @@
+    <h1><a href="https://github.com/mszoek/airyx/releases/tag/0.3.0pre">0.3.0pre (Tanuki)</a></h1>
+    <p><strong><em>This is an early Developer Preview release.</em></strong></p>
+    <p><b>Tanuki</b> is the next iteration of Airyx. Major changes include:
+    <ul>
+        <li>A faster LiveCD boot that uses unionfs and does not require a ramdisk</li>
+        <li>A new Airyx package repo which gets everything out of /usr/local. Nearly 1000 packages
+            have been built with consistent paths like /System/Library/Fonts, /usr/lib and /etc.</li>
+        <li>A LaunchServices framework</li>
+        <li>Updated helloSystem <span class="code">Filer</span> integrated with LaunchServices and
+        built as a real .app bundle in /System/Library/CoreServices/Filer.app. It has also been enhanced
+        to properly extract icons and display names from .app bundles and AppDirs.</li>
+        <li>A new desktop environment based on KWin and parts of KDE Plasma (work in progress))</li>
+        <li>A "system" menu i.e. the persistent icon at the left of the global menu which provides global
+        services like "About" and "System preferences"</li>
+        <li>A real <span class="code">Terminal.app</span> (still QTerminal)</li>
+        <li>Many bugs fixed.</li>
+        <li>Many new bugs :)</li>
+    </ul></p>
+    <h2>Current Status (2021-09-03) - 0.3.0pre2</h2>
+    <p>0.3.0pre gives a glimpse of the upcoming 'Tanuki' release which replaces the 'Atomic'
+    proof-of-concept release. Although this is not ready for even developer use yet, enough people
+    are looking at Airyx that I felt it was important to show the project direction.</p> 
+    </p>The new LiveCD boot and package repo are implemented. Packages can only be installed from the
+    Airyx repo at the moment, which does not have much beyond the essential system packages. It is possible
+    to add the FreeBSD repo, but this may result in unwanted duplicate packages being installed in /usr/local
+    and could break the system. The long-term plan is to package most software as bundles and AppDirs, and
+    possibly to port Homebrew as an alternative package system.</p>
+    <p>A mostly complete LaunchServices framework is available, providing the <span class="code">LS</span>
+    and <span class="code">UTType</span> APIs.</p>
+    <p>Filer has been repackaged into <span class="code">/System/Library/CoreServices/Filer.app</span>
+    and modified to work with
+    LaunchServices. It is not very useful yet since the LS database is minimal and there are no apps
+    installed to open files. As it discovers .app bundles or AppDirs (i.e. you browse to their parent folder),
+    the apps are added to the LaunchServices database.</p>
+    <p>There is a <a href="images/airyx_0.3pre_splash.png">cute new splash screen</a> after login :)</p>
+    <p>The desktop environment has been rebased onto a "minimal" KDE Plasma 5. KWin provides window management
+    and plasmashell provides the top menu bar. This gives us the power of KDE's
+    KF5 frameworks (not to be confused with Framework bundles) and services for implementing a powerful, smooth,
+    and integrated desktop experience. You can run a command by invoking KRunner with Alt-Shift-F2 or Option-Shift-F2.
+    Try running <span class="code">konsole</span>.</p>
+    <p>An 'Airyx' menu (<img src="images/tree.svg" class="tinyicon"/> icon) has
+    been added and the enabled items all work. Notably, choosing <em>>System Preferences</em>
+    will invoke the KDE System Preferences panel until a more Mac-like panel can be implemented. Please try the
+    <em>About This Computer</em> and report any issues with identifying your hardware.</p>
+    <p>'Exposé' also works - move your mouse to the top left corner.</p>
+    <p>GUI elements and menu bar layout are now closer to a Catalina or Big Sur look</p>
+    <p>Some system wallpapers have been added in <span class="code">/System/Library/Desktop Pictures</span></p>
+    <p>Rust has been patched to support frameworks (untested)</p>
+    <p>XDG directories are now in <span class="code">~/Library/FreeDesktop</span></p>
+    <p>Updated to Python 3.8 + many other package updates</p>
+
+    <h2>Bugs Fixed since 0.2.2</h2>
+    <ul>
+    <li><a href="https://github.com/mszoek/airyx/issues/102">#102</a> Partial fix for the "Black Screen of Contention"</li>
+    <li><a href="https://github.com/mszoek/airyx/issues/93">#93</a> No menu showing when desktop is selected</li>
+    <li><a href="https://github.com/mszoek/airyx/issues/103">#103</a> 0.3.0pre1 Splash screens show 0.3.0pre</li>
+    <li><a href="https://github.com/mszoek/airyx/issues/52">#52</a> Shared object "libAppKit.so" not found, required by "CocoaDemo"</li>
+    <li><a href="https://github.com/mszoek/airyx/issues/50">#50</a> Up arrow key misinterpreted as a shortcut for Screenshot</li>
+    <li><a href="https://github.com/mszoek/airyx/issues/47">#47</a> Failing to boot in Vmware Fusion 12</li>
+    </ul>
+
+    <h2>Limitations and Known Issues</h2>
+    <ul>
+    <li>See open Issues at <a href="https://github.com/mszoek/airyx/issues">GitHub</a>.</li>
+    <li>There is no Dock or launcher panel</li>
+    <li>Filer behavior is ... quirky</li>
+    <li>Some icons are missing</li>
+    <li>There are no real apps installed or available in the pkg repo. Notably there is no web browser yet.
+    It is possible to build stuff from /usr/ports for now.</li>
+    <li>The <span class="code">open</span> command is missing</li>
+    <li>There is still contention between Plasmashell and Filer over who owns the desktop - but much improved from 0.3.0pre1</li>
+    <li>'File open' dialogs may use KDE widgets or Filer (inconsistent)</li>
+    <li>Cocoa apps do not update Recent Items yet</li>
+    </ul>
+
+    <h2>To do before 0.3.0 release</h2>
+    <ul>
+    <li>Package a terminal and web browser into /Applications - if not real .apps then at least wrappers</li>
+    <li>Write <span class="code">open</span></li>
+    <li>Populate the LS database at startup with apps in well-known locations - including parsing XDG's mime.list and other sources
+    of filetype-to-app bindings</li>
+    <li>Add some sort of Dock, either helloSystem's Dock or Latte Dock</li>
+    </ul>
+
+    <p>I hope to have this major update in a more usable state for daily development sometime in September, time permitting.</p>
+
+    <h1><a href="https://github.com/mszoek/airyx/releases/tag/v0.2.2">0.2.2 (Atomic)</a></h1>
+    <p><strong><em>This is a Developer Preview release.</em></strong></p>
+    <p>
+        0.2.2 is the first build of Airyx based on the <a href="https://hellosystem.github.io/docs/">helloSystem</a> components
+        and FuryBSD LiveCD installer. It introduced <span class="code">DBusKit</span> with preliminary support for 
+        exporting NSMenus to the global menu bar over DBus and installs to a ZFS root.
+    </p>
+    <p>
+        The Atomic series is built with standard FreeBSD packages in /usr/local and was slow to boot the LiveCD
+        due to its need to copy the image to a ramdisk. These issues have been fixed for 0.3.0 (Tanuki).
+    </p>
+
