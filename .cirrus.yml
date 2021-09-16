@@ -12,8 +12,8 @@ airyx_task:
     SURGE_LOGIN: foo
     SURGE_TOKEN: bar
   script:
-    - pkg update
-    - pkg install -y npm 
+    - pkg update && pkg install -y npm 
     - npm install -g surge
+    - make -C src
     - surge --project . --domain airyx.org
   only_if: $CIRRUS_BRANCH == 'main'
