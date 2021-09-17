@@ -55,8 +55,6 @@
 		--header-contrast: #ccc;
 		--code: #222;
 		--code-contrast: #fff;
-		--primary-font-stack: 'Raleway', sans-serif;
-		--secondary-font-stack: 'Quicksand', sans-serif;
 		--nav: var(--background);
 		--nav-contrast: var(--text-color);
 		--nav-header: var(--primary);
@@ -147,7 +145,7 @@ header .social {
 }
 
 main {
-	font-family: 'Raleway', sans-serif;
+	font-family: var(--primary-font-stack);
 	font-size: 100%;
 	display: grid;
 	grid-template-columns: minmax(0, 1fr) 20em;
@@ -188,7 +186,7 @@ nav {
 nav .navheader {
 	padding: .3em 0;
 	text-align: center;
-	font-family: 'Quicksand', sans-serif;
+	font-family: var(--secondary-font-stack);
 	background-color: var(--nav-header);
 	color: var(--nav-header-contrast);
 }
@@ -204,7 +202,7 @@ nav .navbody li a {
 	color: var(--nav-contrast);
 	text-decoration: none;
 	padding-left: 3px;
-	font-family: 'Quicksand', sans-serif;
+	font-family: var(--secondary-font-stack);
 }
 
 /* Align the navigation icons */
@@ -224,7 +222,7 @@ a.twitter-timeline {
 footer {
 	color: var(--primary-contrast);
 	background-color: var(--primary);
-	font-family: 'Quicksand', sans-serif;
+	font-family: var(--secondary-font-stack);
 	padding: 1em;
 }
 
@@ -264,8 +262,28 @@ a:visited {
 	width: 100%;
 }
 
+figure {
+	width: 100%;
+	position: relative;
+	border: .2em solid black;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-color: #333;
+	margin: 1em 0;
+}
+
+figcaption {
+	background-color: rgba(255, 255, 255, 0.9);
+	position: absolute;
+	padding: 0.75em;
+	left: 1em;
+	bottom: 1em;
+	border-radius: .5em;
+}
+
 img.tinyicon {
-	width: 16px;
-	height: 16px;
+	width: 1em;
+	height: 1em;
 	border: none;
 }
