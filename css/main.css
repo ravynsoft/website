@@ -1,161 +1,267 @@
 @font-face {
-  font-family:"Quicksand";
-  src: url("../fonts/Quicksand-SemiBold.ttf") format("truetype");
+	font-family: "Quicksand";
+	src: url("../fonts/Quicksand-SemiBold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family:"Raleway";
-  src: url("../fonts/Raleway-Regular.ttf") format("truetype");
+	font-family: "Raleway";
+	src: url("../fonts/Raleway-Regular.ttf") format("truetype");
 }
 
-.header {
-	color: #101030;
-    font-family: 'Quicksand', sans-serif;
+/* Utility classes */
+*, *::before, *::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
-div.header {
-    padding: 4px;
-    background-color: #99ccff;
-	background-image: url('../images/sky.jpg');
-	display: block;
-	height: 160px;
-	width: 100%;
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
 }
 
-img#logo {
-	position: relative;
-    border: 0px;
-    top: 0px;
-	padding-top: 5px;
-	padding-left: 25px;
-    float: left; 
-	width: 300px;
-    height: 130px;
+:root {
+	--background: white;
+	--primary: #101030;
+	--primary-contrast: var(--background);
+	--text-color: var(--primary);
+	--header: #eee;
+	--header-contrast: rgb(10, 124, 235);
+	--code: #e0e0e0;
+	--code-contrast: #444;
+	--primary-font-stack: 'Raleway', sans-serif;
+	--secondary-font-stack: 'Quicksand', sans-serif;
+	--nav: var(--background);
+	--nav-contrast: var(--text-color);
+	--nav-header: var(--primary);
+	--nav-header-contrast: var(--background);
+	--link: #1e1eb3;
+	--link-visited: #58589d;
+	--focus: #ff7800;
 }
 
-div.logotext {
-	position: relative;
-    top: 128px;
-	left: -285px;
-	float: left;
+@media (prefers-color-scheme: dark) {
+	:root {
+		--background: #111;
+		--primary: #A0A0E0;
+		--primary-contrast: var(--background);
+		--text-color: #eee;
+		--header: #333;
+		--header-contrast: #ccc;
+		--code: #222;
+		--code-contrast: #fff;
+		--primary-font-stack: 'Raleway', sans-serif;
+		--secondary-font-stack: 'Quicksand', sans-serif;
+		--nav: var(--background);
+		--nav-contrast: var(--text-color);
+		--nav-header: var(--primary);
+		--nav-header-contrast: var(--background);
+		--link: #4848ff;
+		--link-visited: #8080c9;
+		--focus: #ff7800;
+	}
 }
 
-div.socials {
-	position: relative;
-	top: 20px;
-	margin-right: 120px;
-	float: right;
+html {
+	scrollbar-color: var(--primary) var(--primary-contrast);
 }
 
-.socials {
-	color: #101030;
+body {
+	background-color: var(--background);
+	color: var(--text-color);
+}
+
+header {
+	color: var(--header-contrast);
+	background-color: var(--header);
+	background-position: bottom left;
+	font-size: 1.5em;
+	padding: .6em 1.2em;
+	display: flex;
+}
+
+.social> :first-child {
+	color: var(--header-contrast);
+	transition: color 1s;
+}
+
+header .social {
+	padding: .5em;
+	height: 2em;
+}
+
+.flex-spacer {
+	flex-grow: 1;
+}
+
+.social-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: .5em;
+}
+
+.logo-container {
+	display: flex;
+	flex-direction: row;
 	text-decoration: none;
-	font-size: 24px;
+	color: inherit;
+	gap: .2em;
 }
 
-h1.logo {
-    padding: 0px;
-    font-size: 16px;
-    margin-top: 0px;
-    margin-bottom: 0px;
+.wordmark-container {
+	display: flex;
+	flex-direction: column;
+	margin-top: .1em;
 }
 
-div.body {
+.logo {
+	background-image: url('../images/AiryxLogo_Emblem@1x.svg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	display: inline-block;
+	height: 2em;
+	width: 2em;
+}
+
+.wordmark {
+	background-image: url('../images/AiryxLogo_Text@1x.svg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	display: inline-block;
+	height: 1em;
+	width: 4em;
+}
+
+.tagline {
+	font-family: var(--primary-font-stack);
+	font-size: .7em;
+	padding-left: .3em;
+}
+
+main {
 	font-family: 'Raleway', sans-serif;
-    color: black;
-    background-color: white;
 	font-size: 100%;
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) 20em;
 }
 
-div.sidebar {
-	position: relative;
-	float: right;
-	margin-left: 4px;
-	margin-right: 0px;
-	margin-top: 4px;
-	width: 240px;
+article {
+	padding: 2em;
+	grid-column: 1;
+	grid-row: 1;
 }
 
-div.nav {
-	font-family: 'Quicksand', sans-serif;
-	border-radius: 4px;
-	border:#101030 solid 2px;
+article ul {
+	margin-left: 2em;
 }
 
-div.navheader {
-	font-family: 'Quicksand', sans-serif;
-	background-color: #101030;
-	color: white;
+article h1, article h2, article h3 {
+	margin-bottom: .5em;
+}
+
+article h1:not(:first-child), article h2:not(:first-child), article h3:not(:first-child) {
+	margin-top: 1.5em;
+}
+
+article p {
+	margin: .5em 0;
+}
+
+aside {
+	grid-column: 2;
+	grid-row: 1;
+}
+
+nav {
+	border: var(--nav-header) solid .2em;
+	margin-bottom: 2em;
+}
+
+nav .navheader {
+	padding: .3em 0;
 	text-align: center;
-	padding-top: 2px;
-	padding-bottom: 2px;
-}
-
-div.navbody {
 	font-family: 'Quicksand', sans-serif;
-	color: #101030;
-	text-align: left;
-	width: 240px;
-	padding-top: 2px;
-	padding-bottom: 2px;
+	background-color: var(--nav-header);
+	color: var(--nav-header-contrast);
 }
 
-a.nav {
-	color: #101030;
+nav .navbody {
+	padding: .3em;
+	list-style-image: none;
+	list-style-type: none;
+	background-color: var(--nav);
+}
+
+nav .navbody li a {
+	color: var(--nav-contrast);
 	text-decoration: none;
 	padding-left: 3px;
 	font-family: 'Quicksand', sans-serif;
 }
 
-h1.body {
+/* Align the navigation icons */
+nav .fab, nav .fa, nav .far, nav .fas {
+	width: 1.5em;
+}
+
+/* Show something while the timeline is loading */
+a.twitter-timeline {
+	text-align: center;
+	display: block;
+	text-decoration: none;
+	font-size: 1.2em;
+	color: #333;
+}
+
+footer {
+	color: var(--primary-contrast);
+	background-color: var(--primary);
 	font-family: 'Quicksand', sans-serif;
-	color: #101030;
-	font-size: 125%;
+	padding: 1em;
 }
 
-div.footer {
-    color: #101030;
-    background-color: white;
-    position: relative;
-    margin-bottom: 32px;
-    margin-left: 8px;
-    font-family: 'Quicksand', sans-serif;
-}
-
-ul.body {
-	list-style-image: none;
+ul.iconlist {
 	list-style-type: none;
 }
 
-li {
-	padding-top: 3px;
-	padding-bottom: 2px;
+ul.iconlist .fab, ul.iconlist .fa, ul.iconlist .far, ul.iconlist .fas {
+	color: rgb(30, 144, 255);
+	width: 2em;
 }
 
-.blist { color: DodgerBlue; }
-
-.code {
+code, .code {
 	font-family: 'Monaco', 'Consolas', 'DejaVu Sans Mono', monospace;
-	font-size: 85%;
-	background-color: #e0e0e0;
-	border: 2px solid #e0e0e0;
+	font-size: .8em;
+	background-color: var(--code);
+	border: .1em solid var(--code);
+	color: var(--code-contrast);
 	border-radius: 5px;
-	padding-left: 3px;
-	padding-right: 3px;
+	padding: 0 .2em;
 }
 
-.small {
-	font-size: 75%;
+a {
+	color: var(--link);
 }
 
-a a:link { color: DodgerBlue; }
-a:visited { color: #101030; }
-a:hover { color: #401040; }
+a:visited {
+	color: var(--link-visited);
+}
 
-img.screenshot {
-	width: 720px;
-    height: 480px;
-    border: none;
+*:focus-visible {
+	outline: solid .3em var(--focus);
+	outline-offset: .2em;
+}
+
+.screenshot {
+	width: 100%;
 }
 
 img.tinyicon {
