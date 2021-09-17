@@ -178,6 +178,27 @@ aside {
 	grid-row: 1;
 }
 
+@media (max-width: 600px) {
+	header {
+		flex-direction: column;
+		gap: .5em;
+	}
+
+	main {
+		grid-template-columns: 1fr;
+	}
+
+	article {
+		grid-column: 1;
+		grid-row: 1;
+	}
+
+	aside {
+		grid-column: 1;
+		grid-row: 2;
+	}
+}
+
 nav {
 	border: var(--nav-header) solid .2em;
 	margin-bottom: 2em;
