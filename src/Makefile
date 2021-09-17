@@ -1,9 +1,5 @@
-HEADER= header.html
-FOOTER= footer.html
-PAGES= index faq releases screenshots
-
+PAGES = index faq releases screenshots
+TEMPLATE = template.html
 
 pages:
-	for p in ${PAGES}; do \
-		cat ${HEADER} $$p.tmpl ${FOOTER} > ../$$p.html; \
-	done
+	$(foreach p,$(PAGES),$(file > ../$(p).html,$(subst @MAINCONTENT@,$(file < $(p).tmpl),$(file < $(TEMPLATE)))))
