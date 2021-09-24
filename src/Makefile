@@ -4,14 +4,17 @@ HEADER= header.html
 FOOTER= footer.html
 PAGES= index faq releases screenshots
 
+PUBLICDIR= ../public
+OUTPUTDIR= ../dist
+
 all: clean pages
 
 pages:
+	mkdir ${OUTPUTDIR}
+	cp -r ${PUBLICDIR}/* ${OUTPUTDIR}
 	for p in ${PAGES}; do \
-		cat ${HEADER} $$p.tmpl ${FOOTER} > ../$$p.html; \
+		cat ${HEADER} $$p.tmpl ${FOOTER} > ${OUTPUTDIR}/$$p.html; \
 	done
 
 clean:
-	for p in ${PAGES}; do \
-		rm -f ../$$p.html; \
-	done
+	rm -rf ${OUTPUTDIR}
