@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/airyxos/website#readme",
   "devDependencies": {
+    "@11ty/eleventy": "^0.12.1",
     "surge": "^0.23.0"
   }
 }
