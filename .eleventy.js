@@ -3,6 +3,7 @@ module.exports = function (config) {
   config.addPassthroughCopy({ 'public/fonts': 'fonts' })
   config.addPassthroughCopy({ 'public/images': 'images' })
   config.addPassthroughCopy({ 'public/js': 'js' })
+  config.addPassthroughCopy('ROUTER')
 
   return {
     dir: {
