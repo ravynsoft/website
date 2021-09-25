@@ -1,11 +1,11 @@
 @font-face {
   font-family:"Quicksand";
-  src: url("../fonts/Quicksand-SemiBold.ttf") format("truetype");
+  src: url("/fonts/Quicksand-SemiBold.ttf") format("truetype");
 }
 
 @font-face {
   font-family:"Raleway";
-  src: url("../fonts/Raleway-Regular.ttf") format("truetype");
+  src: url("/fonts/Raleway-Regular.ttf") format("truetype");
 }
 
 .header {
