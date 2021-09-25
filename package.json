@@ -4,7 +4,9 @@
   "description": "airyx.org website",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\""
+    "clean": "rm -rf dist",
+    "prebuild": "npm run clean",
+    "build": "eleventy"
   },
   "repository": {
     "type": "git",
