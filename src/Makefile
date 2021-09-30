@@ -1,4 +1,4 @@
-SHELL := /bin/bash
+.SHELL: name=sh path=/bin/bash
 
 .PHONY: all pages clean
 
