@@ -15,5 +15,5 @@ airyx_task:
     - pkg update && pkg install -y npm 
     - npm install -g surge
     - make -C src
-    - surge --project . --domain airyx.org
+    - surge --project dist --domain airyx.org
   only_if: $CIRRUS_BRANCH == 'main'
