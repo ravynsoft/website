@@ -1,5 +1,23 @@
-PAGES = index faq releases screenshots
-TEMPLATE = template.html
+SHELL := /bin/bash
+
+.PHONY: all pages clean
+
+TEMPLATE= template.html
+PAGES= index faq releases screenshots
+
+PUBLICDIR= ../public
+OUTPUTDIR= ../dist
+
+all: clean pages
 
 pages:
-	$(foreach p,$(PAGES),$(file > ../$(p).html,$(subst @MAINCONTENT@,$(file < $(p).tmpl),$(file < $(TEMPLATE)))))
+	mkdir ${OUTPUTDIR}
+	cp -r ${PUBLICDIR}/* ${OUTPUTDIR}
+	for p in ${PAGES}; do \
+		template=$$(<${TEMPLATE}); \
+		content=$$(<$$p.tmpl); \
+		echo $${template/MAINCONTENT/$$content} > ${OUTPUTDIR}/$$p.html; \
+	done
+
+clean:
+	rm -rf ${OUTPUTDIR}
