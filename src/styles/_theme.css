@@ -1,0 +1,6 @@
+:root {
+  /* Colors */
+  --hue-primary: 205deg;
+  --color-primary: hsl(var(--hue-primary) 100% 63%);
+  --color-primary-light: hsl(var(--hue-primary) 100% 77%);
+}

@@ -21,6 +21,10 @@
   "homepage": "https://github.com/airyxos/website#readme",
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
+    "cssnano": "^5.0.8",
+    "postcss": "^8.3.8",
+    "postcss-import": "^14.0.2",
+    "postcss-preset-env": "^6.7.0",
     "surge": "^0.23.0"
   }
 }

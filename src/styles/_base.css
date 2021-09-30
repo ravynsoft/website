@@ -1,0 +1,14 @@
+html {
+  font-size: 1.2em;
+}
+
+body {
+  font-family: 'Satoshi', system-ui;
+  max-width: 50ch;
+  margin: 4rem auto;
+}
+
+p,
+:--headings {
+  margin-block: 1rem;
+}

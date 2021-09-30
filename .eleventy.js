@@ -5,6 +5,9 @@ module.exports = function (config) {
   config.addPassthroughCopy({ 'public/js': 'js' })
   config.addPassthroughCopy('_redirects')
 
+  // Watch and rebuild when styles change.
+  config.addWatchTarget('./src/styles')
+
   return {
     dir: {
       input: 'src',
