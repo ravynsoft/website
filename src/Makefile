@@ -1,7 +1,8 @@
+SHELL := /bin/bash
+
 .PHONY: all pages clean
 
-HEADER= header.html
-FOOTER= footer.html
+TEMPLATE= template.html
 PAGES= index faq releases screenshots
 
 PUBLICDIR= ../public
@@ -13,7 +14,9 @@ pages:
 	mkdir ${OUTPUTDIR}
 	cp -r ${PUBLICDIR}/* ${OUTPUTDIR}
 	for p in ${PAGES}; do \
-		cat ${HEADER} $$p.tmpl ${FOOTER} > ${OUTPUTDIR}/$$p.html; \
+		template=$$(<${TEMPLATE}); \
+		content=$$(<$$p.tmpl); \
+		echo $${template/MAINCONTENT/$$content} > ${OUTPUTDIR}/$$p.html; \
 	done
 
 clean:
