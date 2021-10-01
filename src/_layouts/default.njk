@@ -3,9 +3,9 @@
 <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/main.css"/>
+        <link rel="stylesheet" href="/css/main.css"/>
         <script src="https://kit.fontawesome.com/7d647651cc.js" crossorigin="anonymous"></script>
-        <script src="js/airyx.js"></script>
+        <script src="/js/airyx.js"></script>
         <title>AiryxOS</title>
 </head>
 <body>
@@ -64,7 +64,7 @@
                         <a class="twitter-timeline"  data-chrome="transparent nofooter" data-tweet-limit="3" href="https://twitter.com/AiryxOS" data-dnt="true">@AiryxOS on Twitter</a>
                         <script async src="https://platform.twitter.com/widgets.js"></script>
                 </aside>
-                <article>MAINCONTENT</article>
+                <article>{{ content | safe }}</article>
         </main>
         <footer>
                 <div class="small">&copy; 2021 the Airyx Project and Ravyn Software</div>

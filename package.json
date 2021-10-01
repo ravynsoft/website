@@ -4,7 +4,10 @@
   "description": "airyx.org website",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\""
+    "clean": "rm -rf dist",
+    "prebuild": "npm run clean",
+    "build": "eleventy",
+    "dev": "eleventy --serve"
   },
   "repository": {
     "type": "git",
@@ -17,6 +20,7 @@
   },
   "homepage": "https://github.com/airyxos/website#readme",
   "devDependencies": {
+    "@11ty/eleventy": "^0.12.1",
     "surge": "^0.23.0"
   }
 }

@@ -1,11 +1,11 @@
 @font-face {
 	font-family: "Quicksand";
-	src: url("../fonts/Quicksand-SemiBold.ttf") format("truetype");
+	src: url("/fonts/Quicksand-SemiBold.ttf") format("truetype");
 }
 
 @font-face {
 	font-family: "Raleway";
-	src: url("../fonts/Raleway-Regular.ttf") format("truetype");
+	src: url("/fonts/Raleway-Regular.ttf") format("truetype");
 }
 
 /* Utility classes */
@@ -119,7 +119,7 @@ header .social {
 }
 
 .logo {
-	background-image: url('../images/AiryxLogo_Emblem@1x.svg');
+	background-image: url('/images/AiryxLogo_Emblem@1x.svg');
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
@@ -129,7 +129,7 @@ header .social {
 }
 
 .wordmark {
-	background-image: url('../images/AiryxLogo_Text@1x.svg');
+	background-image: url('/images/AiryxLogo_Text@1x.svg');
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
