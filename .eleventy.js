@@ -1,3 +1,5 @@
+const eleventyNavigationPlugin = require('@11ty/eleventy-navigation')
+
 module.exports = function (config) {
   config.addPassthroughCopy({ 'public/css': 'css' })
   config.addPassthroughCopy({ 'public/fonts': 'fonts' })
@@ -7,6 +9,8 @@ module.exports = function (config) {
 
   // Watch and rebuild when styles change.
   config.addWatchTarget('./src/styles')
+
+  config.addPlugin(eleventyNavigationPlugin)
 
   return {
     dir: {
