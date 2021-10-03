@@ -4,8 +4,11 @@ html {
 
 body {
   font-family: 'Satoshi', system-ui;
-  max-width: 50ch;
-  margin: 4rem auto;
+  font-weight: var(--font-normal);
+  letter-spacing: 0.02em;
+  line-height: 1.75;
+  color: var(--color-text);
+  background-color: var(--color-surface);
 }
 
 p,
