@@ -1,6 +1,22 @@
 :root {
   /* Colors */
-  --hue-primary: 205deg;
-  --color-primary: hsl(var(--hue-primary) 100% 63%);
-  --color-primary-light: hsl(var(--hue-primary) 100% 77%);
+  --hue-primary: 228deg;
+  --hue-secondary: 325deg;
+
+  --color-primary-bare: var(--hue-primary) 100% 63%;
+  --color-primary-light-bare: var(--hue-primary) 100% 77%;
+  --color-primary-dark-bare: var(--hue-primary) 100% 49%;
+  --color-primary: hsl(var(--color-primary-bare));
+  --color-primary-light: hsl(var(--color-primary-light-bare));
+  --color-primary-dark: hsl(var(--color-primary-dark-bare));
+
+  --color-secondary-bare: var(--hue-secondary) 100% 63%;
+  --color-secondary: hsl(var(--color-secondary-bare));
+
+  --color-text: hsl(var(--hue-primary) 50% 10%);
+  --color-text-muted: hsl(var(--hue-primary) 25% 45%);
+
+  --color-border: hsl(var(--hue-primary) 20% 90%);
+
+  --color-surface: hsl(var(--hue-primary) 15% 95%);
 }
