@@ -27,3 +27,11 @@ p,
 :--headings {
   font-weight: var(--font-bold);
 }
+
+.main {
+  margin: 0 auto;
+  padding-top: calc(
+    var(--global-header-height) + 2 * var(--global-header-block-spacing)
+  );
+  max-width: 1440px;
+}

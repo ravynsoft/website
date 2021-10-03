@@ -26,4 +26,8 @@
 
   /* Animations */
   --animation-eased: cubic-bezier(0.52, 0.16, 0.24, 1);
+
+  /* Other globals */
+  --global-header-height: 48px;
+  --global-header-block-spacing: 1rem;
 }

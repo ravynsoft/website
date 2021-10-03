@@ -1,0 +1,58 @@
+.header {
+  position: fixed;
+  right: 0;
+  left: 0;
+}
+
+.header__inner {
+  --padding: 8px;
+  --shadow: var(--hue-primary) 30% 65%;
+
+  margin: var(--global-header-block-spacing);
+  padding: var(--padding);
+  height: var(--global-header-height);
+  overflow-y: hidden;
+
+  display: flex;
+  align-items: stretch;
+
+  border-radius: calc(var(--global-header-height) / 2);
+  background: white;
+
+  @supports (backdrop-filter: blur(5px)) {
+    background: hsl(0deg 0% 100% / 0.8);
+    backdrop-filter: saturate(180%) blur(16px);
+  }
+
+  will-change: box-shadow, border-radius, transform, height, margin;
+  transition: box-shadow 0.45s linear, transform 0.45s linear,
+    border-radius 0.45s linear, height 0.45s var(--animation-eased),
+    margin 0.45s var(--animation-eased);
+
+  /* TODO: Refactor these smoothAF shadows into a mixin */
+  box-shadow: 0 1px 1px hsl(var(--shadow) / 0.3),
+    0 2px 2px hsl(var(--shadow) / 0.2), 0 4px 4px hsl(var(--shadow) / 0.1);
+}
+
+.header__inner--raised {
+  transform: translateY(-3px);
+  box-shadow: 1px 8px 4px hsl(var(--shadow) / 0.2),
+    2px 16px 8px hsl(var(--shadow) / 0.1),
+    4px 32px 16px hsl(var(--shadow) / 0.05);
+}
+
+.header__menu-state {
+  display: none;
+}
+
+.header__menu-state:checked ~ .header__inner {
+  @media not (--viewport-large) {
+    margin: 0;
+    height: 100vh;
+    border-radius: 8px;
+  }
+
+  &:hover {
+    transform: none;
+  }
+}
