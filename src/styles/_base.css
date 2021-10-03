@@ -12,3 +12,7 @@ p,
 :--headings {
   margin-block: 1rem;
 }
+
+:--headings {
+  font-weight: var(--font-bold);
+}
