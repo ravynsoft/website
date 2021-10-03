@@ -19,4 +19,8 @@
   --color-border: hsl(var(--hue-primary) 20% 90%);
 
   --color-surface: hsl(var(--hue-primary) 15% 95%);
+
+  /* Type */
+  --font-normal: 450;
+  --font-bold: 900;
 }
