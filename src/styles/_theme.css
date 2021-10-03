@@ -23,4 +23,7 @@
   /* Type */
   --font-normal: 450;
   --font-bold: 900;
+
+  /* Animations */
+  --animation-eased: cubic-bezier(0.52, 0.16, 0.24, 1);
 }
