@@ -24,7 +24,10 @@ class Styles {
 
       return await postcss([
         postcssImport,
-        postcssPresetEnv({ stage: 0 }),
+        postcssPresetEnv({
+          stage: 0,
+          features: { 'logical-properties-and-values': false },
+        }),
         cssnano,
       ])
         .process(css, { from })
