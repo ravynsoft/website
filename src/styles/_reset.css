@@ -6,7 +6,8 @@
 }
 
 /* Remove default padding */
-:--lists-with-class {
+:--lists {
+  margin: 0;
   padding: 0;
 }
 
@@ -19,8 +20,7 @@ figcaption,
 blockquote,
 dl,
 dd,
-:--headings,
-:--lists-with-class {
+:--headings {
   margin: 0;
 }
 
@@ -33,7 +33,7 @@ body {
 }
 
 /* Remove list styles on ul, ol elements with a class attribute */
-:--lists-with-class {
+:--lists {
   list-style: none;
 }
 
