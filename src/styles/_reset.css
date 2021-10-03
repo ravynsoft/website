@@ -56,6 +56,12 @@ select {
   font: inherit;
 }
 
+/* Remove that pesky margin below inlined SVGs */
+svg {
+  display: block;
+  width: 100%;
+}
+
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   * {
