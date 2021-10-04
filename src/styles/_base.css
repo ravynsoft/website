@@ -11,10 +11,7 @@ body {
   background-color: var(--color-surface);
 }
 
-a:focus,
-button:focus,
-input:focus,
-textarea:focus {
+:focus-visible {
   outline: 2px solid var(--color-secondary);
   outline-offset: 2px;
 }
