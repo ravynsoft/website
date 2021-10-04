@@ -26,8 +26,8 @@
 
   will-change: box-shadow, border-radius, transform, height, margin;
   transition: box-shadow 0.45s linear, transform 0.45s linear,
-    border-radius 0.45s linear, height 0.45s var(--animation-eased),
-    margin 0.45s var(--animation-eased);
+    border-radius 0.45s var(--animation-eased),
+    height 0.45s var(--animation-eased), margin 0.45s var(--animation-eased);
 
   /* TODO: Refactor these smoothAF shadows into a mixin */
   box-shadow: 0 1px 1px hsl(var(--shadow) / 0.3),
