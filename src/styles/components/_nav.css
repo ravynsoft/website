@@ -145,17 +145,25 @@
 }
 
 .menu__label__bread--top {
-  top: 11px;
+  top: 10px;
+}
+
+.menu__label__bread--middle {
+  top: calc(50% - 1px);
 }
 
 .menu__label__bread--bottom {
-  bottom: 11px;
+  bottom: 10px;
 }
 
 .header__menu-state:checked ~ .header__inner .menu__label__bread--top {
-  transform: translateY(4px) rotate(45deg);
+  transform: translateY(5px) rotate(45deg);
+}
+
+.header__menu-state:checked ~ .header__inner .menu__label__bread--middle {
+  transform: scaleX(0);
 }
 
 .header__menu-state:checked ~ .header__inner .menu__label__bread--bottom {
-  transform: translateY(-4px) rotate(-45deg);
+  transform: translateY(-5px) rotate(-45deg);
 }
