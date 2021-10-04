@@ -19,6 +19,8 @@
   --color-border: hsl(var(--hue-primary) 20% 90%);
 
   --color-surface: hsl(var(--hue-primary) 15% 95%);
+  --color-surface-highest-bare: var(--hue-primary) 15% 99%;
+  --color-surface-highest: hsl(var(--color-surface-highest-bare));
 
   /* Type */
   --font-normal: 450;

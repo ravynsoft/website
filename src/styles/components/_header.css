@@ -17,10 +17,10 @@
   align-items: stretch;
 
   border-radius: calc(var(--global-header-height) / 2);
-  background: white;
+  background: var(--color-surface-highest);
 
   @supports (backdrop-filter: blur(5px)) {
-    background: hsl(0deg 0% 100% / 0.8);
+    background: hsl(var(--color-surface-highest-bare) / 0.8);
     backdrop-filter: saturate(180%) blur(16px);
   }
 
