@@ -1,5 +1,5 @@
 html {
-  font-size: 1.2em;
+  font-size: clamp(1em, 2.8vw, 1.25em);
 }
 
 body {
