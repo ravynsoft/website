@@ -23,6 +23,28 @@ p,
 
 :--headings {
   font-weight: var(--font-bold);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+h1,
+.h1 {
+  font-size: 4rem;
+}
+
+h2,
+.h2 {
+  font-size: 3rem;
+}
+
+h3,
+.h3 {
+  font-size: 2rem;
+}
+
+h4,
+.h4 {
+  font-size: 1.4rem;
 }
 
 .main {
