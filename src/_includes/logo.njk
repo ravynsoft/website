@@ -3,7 +3,7 @@
 
 {# `id` is a required and should be unique for all usages of logo on a page #}
 {% macro logo(id) %}
-  <svg class="logo" viewbox="0 0 {{ dim }} {{ dim }}" xmlns="http://www.w3.org/2000/svg">
+  <svg class="logo" viewBox="0 0 {{ dim }} {{ dim }}" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <mask id="tree-{{ id }}">
         <rect width="{{ dim }}" height="{{ dim }}" fill="white"/>
