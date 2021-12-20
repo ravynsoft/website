@@ -294,6 +294,12 @@ figure {
 	margin: 1em 0;
 }
 
+@supports not (aspect-ratio: 1/1) {
+	figure {
+		height: 60vh;
+	}
+}
+
 figcaption {
 	background-color: var(--background);
 	position: absolute;
