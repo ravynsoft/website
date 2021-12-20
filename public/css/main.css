@@ -295,7 +295,7 @@ figure {
 }
 
 figcaption {
-	background-color: rgba(255, 255, 255, 0.9);
+	background-color: var(--background);
 	position: absolute;
 	padding: 0.75em;
 	left: 1em;
