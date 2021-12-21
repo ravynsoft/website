@@ -16,11 +16,6 @@ body {
   outline-offset: 2px;
 }
 
-p,
-:--headings {
-  margin-block: 1rem;
-}
-
 :--headings {
   font-weight: var(--font-bold);
   line-height: 1;

@@ -14,7 +14,7 @@
   --color-secondary: hsl(var(--color-secondary-bare));
 
   --color-text: hsl(var(--hue-primary) 50% 10%);
-  --color-text-muted: hsl(var(--hue-primary) 25% 45%);
+  --color-text-muted: hsl(var(--hue-primary) 20% 45%);
 
   --color-border: hsl(var(--hue-primary) 20% 90%);
 

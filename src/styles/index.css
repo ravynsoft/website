@@ -7,4 +7,9 @@
 
 @import 'components/_logo';
 @import 'components/_header';
+@import 'components/_footer';
 @import 'components/_nav';
+@import 'components/_social';
+@import 'components/_button';
+
+@import 'pages/_home';
