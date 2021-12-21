@@ -1,0 +1,14 @@
+.footer {
+  padding: 4rem 0;
+  font-size: 0.8em;
+  text-align: center;
+  color: var(--color-text-muted);
+  background-color: var(--color-surface-low);
+}
+
+.footer__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}

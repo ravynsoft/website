@@ -19,6 +19,7 @@
   --color-border: hsl(var(--hue-primary) 20% 90%);
 
   --color-surface-lower: hsl(var(--hue-primary) 25% 90%);
+  --color-surface-low: hsl(var(--hue-primary) 15% 92%);
   --color-surface: hsl(var(--hue-primary) 15% 95%);
   --color-surface-highest-bare: var(--hue-primary) 5% 99%;
   --color-surface-highest: hsl(var(--color-surface-highest-bare));
