@@ -1,9 +1,8 @@
 .footer {
-  padding: 4rem 0;
-  font-size: 0.8em;
+  padding: 4rem 0 2rem;
+  font-size: 0.8rem;
   text-align: center;
   color: var(--color-text-muted);
-  background-color: var(--color-surface-low);
 }
 
 .footer__inner {

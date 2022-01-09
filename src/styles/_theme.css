@@ -13,16 +13,14 @@
   --color-secondary-bare: var(--hue-secondary) 100% 63%;
   --color-secondary: hsl(var(--color-secondary-bare));
 
-  --color-text: hsl(var(--hue-primary) 50% 10%);
-  --color-text-muted: hsl(var(--hue-primary) 20% 45%);
+  --color-text: hsl(var(--hue-primary) 80% 20%);
+  --color-text-muted: hsl(var(--hue-primary) 20% 50%);
 
   --color-border: hsl(var(--hue-primary) 20% 90%);
+  --color-card-border: hsl(var(--hue-primary) 15% 94%);
 
-  --color-surface-lower: hsl(var(--hue-primary) 25% 90%);
-  --color-surface-low: hsl(var(--hue-primary) 15% 92%);
-  --color-surface: hsl(var(--hue-primary) 15% 95%);
-  --color-surface-highest-bare: var(--hue-primary) 5% 99%;
-  --color-surface-highest: hsl(var(--color-surface-highest-bare));
+  --color-surface-low: hsl(var(--hue-primary) 40% 98%);
+  --color-surface: hsl(var(--hue-primary) 15% 100%);
 
   /* Type */
   --font-normal: 450;

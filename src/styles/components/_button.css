@@ -2,8 +2,14 @@
   --shadow-saturation: 80%;
   --shadow: var(--hue-primary) var(--shadow-saturation) 65%;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   padding: 0.5rem 2rem;
   border-radius: 0.5rem;
+
+  font-size: 0.875rem;
 }
 
 .button--primary {
@@ -34,7 +40,7 @@
 }
 
 .button--secondary {
-  border: 2px solid var(--color-surface-lower);
+  border: 2px solid var(--color-border);
   color: var(--color-text);
   transition: color 0.3s var(--animation-eased),
     border-color 0.3s var(--animation-eased);

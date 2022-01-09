@@ -6,9 +6,10 @@ body {
   font-family: 'Satoshi', system-ui;
   font-weight: var(--font-normal);
   letter-spacing: 0.02em;
-  line-height: 1.75;
+  line-height: 1.5;
   color: var(--color-text);
   background-color: var(--color-surface);
+  -webkit-font-smoothing: antialiased;
 }
 
 :focus-visible {
