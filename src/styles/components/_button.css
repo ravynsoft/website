@@ -10,6 +10,7 @@
   border-radius: 0.5rem;
 
   font-size: 0.875rem;
+  font-weight: var(--font-semibold);
 }
 
 .button--primary {
