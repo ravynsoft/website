@@ -157,6 +157,8 @@
 
   @media (--viewport-large) {
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-auto-flow: column;
     gap: 2rem;
   }
 }
