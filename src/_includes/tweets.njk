@@ -1,0 +1,39 @@
+{% macro tweet(data) %}
+  <li>
+    <a class="tweets__tweet" href="{{ data | tweetUrl }}" target="_blank">
+      <header>
+        <img class="tweet__profile-pic" src={{ data.user.profile_image_url_https | tweetImage(96) }}>
+        <div class="tweet__user">
+          <span class="tweet__name">{{ data.user.name }}</span>
+          <span class="tweet__screen-name">@{{ data.user.screen_name }}</span>
+        </div>
+        <div class="tweet__date">{{ data.created_at | tweetDateFmt }}</div>
+      </header>
+      <main>
+        <span>{{ data.full_text | tweetRemoveLink | safe }}</span>
+        {% if data.is_quote_status %}
+          <div class="tweet__quoted">
+            <header>
+              <img class="quoted__profile-pic" src={{ data.quoted_status.user.profile_image_url_https }}>
+              <div class="quoted__user">
+                <span class="quoted__name">{{ data.quoted_status.user.name }}</span>
+                <span class="quoted__screen-name">@{{ data.quoted_status.user.screen_name }}</span>
+              </div>
+              <span class="quoted__date__sep">·</span>
+              <div class="quoted__date">{{ data.created_at | tweetDateFmt }}</div>
+            </header>
+            <main>
+              <span>{{ data.quoted_status.full_text | tweetRemoveLink | safe }}</span>
+            </main>
+          </div>
+        {% endif %}
+      </main>
+    </a>
+  </li>
+{% endmacro %}
+
+<ul class="tweets">
+{%- for item in tweets -%}
+  {{ tweet(item) }}
+{%- endfor -%}
+</ul>

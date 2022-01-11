@@ -22,6 +22,23 @@
   --color-surface-low: hsl(var(--hue-primary) 40% 98%);
   --color-surface: hsl(var(--hue-primary) 15% 100%);
 
+  --shadow-color: var(--hue-primary) 0% 63%;
+  --shadow-elevation-low: 0px 0.6px 0.7px hsl(var(--shadow-color) / 0.34),
+    0px 1.1px 1.2px -1.2px hsl(var(--shadow-color) / 0.34),
+    0px 2.6px 2.9px -2.5px hsl(var(--shadow-color) / 0.34);
+  --shadow-elevation-medium: 0px 0.6px 0.7px hsl(var(--shadow-color) / 0.36),
+    0px 2.1px 2.4px -0.8px hsl(var(--shadow-color) / 0.36),
+    -0.1px 5.3px 6px -1.7px hsl(var(--shadow-color) / 0.36),
+    -0.2px 13px 14.6px -2.5px hsl(var(--shadow-color) / 0.36);
+  --shadow-elevation-high: 0px 0.6px 0.7px hsl(var(--shadow-color) / 0.34),
+    0px 3.8px 4.3px -0.4px hsl(var(--shadow-color) / 0.34),
+    -0.1px 7.1px 8px -0.7px hsl(var(--shadow-color) / 0.34),
+    -0.1px 11.6px 13.1px -1.1px hsl(var(--shadow-color) / 0.34),
+    -0.2px 18.6px 20.9px -1.4px hsl(var(--shadow-color) / 0.34),
+    -0.4px 29px 32.6px -1.8px hsl(var(--shadow-color) / 0.34),
+    -0.6px 44.1px 49.6px -2.1px hsl(var(--shadow-color) / 0.34),
+    -0.8px 65px 73.1px -2.5px hsl(var(--shadow-color) / 0.34);
+
   /* Type */
   --font-normal: 400;
   --font-semibold: 700;
