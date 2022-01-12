@@ -1,40 +1,9 @@
 {% from 'button.njk' import button %}
 
-<section class="u-container">
-  <p>
-  Airyx&trade; is a new open-source desktop operating system that aims to provide a similar experience and compatibiilty with macOS&reg; on x86-64 sytems. It builds on the solid foundations of FreeBSD, existing open source packages in the same space, and new code to fill the gaps. Airyx aims to feel sleek, stable, familiar and intuitive, handle your daily tasks, and provide as much compatibility as possible with the commercial OS that inspired it.
-</p>
+<section class="u-container more-section">
+  <p>Airyx™ is a new open-source desktop operating system that aims to provide a similar experience and compatibiilty with macOS® on x86-64 sytems. It builds on the solid foundations of FreeBSD, existing open source packages in the same space, and new code to fill the gaps. Airyx aims to feel sleek, stable, familiar and intuitive, handle your daily tasks, and provide as much compatibility as possible with the commercial OS that inspired it.</p>
 
-  <p>Airyx puts system things mainly into
-  <code>/System</code>,
-  <code>/Library</code>, and
-  <code>/usr</code>. The
-  <code>/usr/local</code>
-  tree is reserved for user additions (like FreeBSD packages). User home directories are appropriately under
-  <code>/Users</code>, and each has a
-  <code>~/Library</code>
-  folder for
-  <a href="https://developer.apple.com/documentation/appkit">Cocoa</a>
-  apps to use.
-  <code>Zsh</code>
-  is the default system shell.</p>
+  <p>Airyx puts system things mainly into <code>/System</code>, <code>/Library</code>, and <code>/usr</code>. The <code>/usr/local</code> tree is reserved for user additions (like FreeBSD packages). User home directories are appropriately under <code>/Users</code>, and each has a <code>~/Library</code> folder for <a href="https://developer.apple.com/documentation/appkit">Cocoa</a> apps to use. <code>Zsh</code> is the default system shell.</p>
 
-  <p>Properly packaged applications will typically live under
-  <code>/Applications</code>
-  or
-  <code>~/Applications</code>
-  and are built as a
-  <code>.app</code>
-    <a href="https://en.wikipedia.org/wiki/Bundle_(macOS)">Bundle</a>
-  or as an
-  <a href="https://appimage.org/">AppImage</a>. Traditional Unix-like applications are installed into fixed directories as usual. Airyx provides an implementation of Cocoa (still incomplete) and modern Objective-C runtime installed into
-  <code>/System/Library/Frameworks</code>. Compilers and linkers have been patched to support Frameworks, and the standard
-  <code>-F</code>
-  and
-  <code>-framework</code>
-  arguments work as expected. Support for XCode project files is planned, but BSD-style Makefiles are available today to easily build
-  <code>.app</code>
-  and
-  <code>.framework</code>
-  Bundles. Swift is also on the roadmap.</p>
+  <p>Properly packaged applications will typically live under <code>/Applications</code> or <code>~/Applications</code> and are built as a <code>.app</code> <a href="https://en.wikipedia.org/wiki/Bundle_(macOS">Bundle</a>) or as an <a href="https://appimage.org/">AppImage</a>. Traditional Unix-like applications are installed into fixed directories as usual. Airyx provides an implementation of Cocoa (still incomplete) and modern Objective-C runtime installed into <code>/System/Library/Frameworks</code>. Compilers and linkers have been patched to support Frameworks, and the standard <code>-F</code> and <code>-framework</code> arguments work as expected. Support for XCode project files is planned, but BSD-style Makefiles are available today to easily build <code>.app</code> and <code>.framework</code> Bundles. Swift is also on the roadmap.</p>
 </section>

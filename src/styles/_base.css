@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  font-family: 'Satoshi', system-ui;
+  font-family: var(--font-sans);
   font-weight: var(--font-normal);
   letter-spacing: 0.02em;
   line-height: 1.5;
@@ -44,9 +44,7 @@ h4,
 
 .main {
   margin: 0 auto;
-  padding-top: calc(
-    var(--global-header-height) + 2 * var(--global-header-block-spacing)
-  );
+  padding-top: calc(var(--global-header-height) + 2 * var(--global-header-block-spacing));
   max-width: 1440px;
 }
 
@@ -54,7 +52,7 @@ a:not([class]) {
   color: var(--color-primary);
   text-decoration: none;
   border-bottom: 1px dashed transparent;
-  transition: .2s all ease;
+  transition: 0.2s all ease;
 }
 
 a:not([class]):hover {

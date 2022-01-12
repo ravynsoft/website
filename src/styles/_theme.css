@@ -39,6 +39,10 @@
     -0.6px 44.1px 49.6px -2.1px hsl(var(--shadow-color) / 0.34),
     -0.8px 65px 73.1px -2.5px hsl(var(--shadow-color) / 0.34);
 
+  --font-sans: 'Satoshi', system-ui;
+  --font-mono: Fira Code VF, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono,
+    Courier New, monospace;
+
   /* Type */
   --font-normal: 400;
   --font-semibold: 700;
