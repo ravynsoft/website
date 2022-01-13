@@ -1,5 +1,6 @@
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation')
 const dateFns = require('date-fns')
+const MarkdownIt = require('markdown-it')
 
 module.exports = function (config) {
   config.addPassthroughCopy({ 'public/css': 'css' })
@@ -32,6 +33,17 @@ module.exports = function (config) {
     const parsedDate = dateFns.parse(obj, 'E LLL dd HH:mm:ss XXXX yyyy', new Date())
     const formatted = dateFns.formatDistance(parsedDate, new Date(), { addSuffix: true })
     return formatted
+  })
+
+  config.addFilter('githubDateFmt', (obj) => {
+    const parsedDate = dateFns.parseISO(obj)
+    const formatted = dateFns.format(parsedDate, 'do LLL yyyy')
+    return formatted
+  })
+
+  const markdown = new MarkdownIt()
+  config.addFilter('markdown', (obj) => {
+    return markdown.render(obj)
   })
 
   return {
