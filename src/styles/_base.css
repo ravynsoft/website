@@ -43,7 +43,6 @@ h4,
 }
 
 .main {
-  --header-space: calc(var(--global-header-height) + 2 * var(--global-header-block-spacing));
   margin: 0 auto;
   padding-top: calc(var(--header-space) + 2rem);
   max-width: 1440px;

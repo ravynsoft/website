@@ -57,4 +57,6 @@
   /* Other globals */
   --global-header-height: 48px;
   --global-header-block-spacing: 1rem;
+
+  --header-space: calc(var(--global-header-height) + 2 * var(--global-header-block-spacing));
 }
