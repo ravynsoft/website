@@ -1,5 +1,5 @@
 .home__section {
-  padding-block: 3rem;
+  padding-block: 2rem;
 
   display: flex;
   flex-direction: column;
@@ -24,7 +24,7 @@
   text-align: center;
 
   @media (--viewport-medium) {
-    padding-block-start: 4rem;
+    padding-block: 2rem;
   }
 }
 

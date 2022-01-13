@@ -19,6 +19,12 @@
     {% include 'header.njk' %}
 
     <main class="main" role="main">
+      {% if title %}
+        <header class="u-container page-header">
+          <h1 class="h2 page-header__title">{{ title }}</h1>
+          <p class="page-header__desc">{{ description }}</p>
+        </header>
+      {% endif %}
       {{ content | safe }}
     </main>
 
