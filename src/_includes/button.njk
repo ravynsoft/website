@@ -1,0 +1,5 @@
+{% macro button(element = 'button', type = 'primary', text, href, class) %}
+  <{{ element }} href="{{ href }}" class="button button--{{ type }} {{ class }}">
+    {{ text }}
+  </{{ element }}>
+{% endmacro %}
