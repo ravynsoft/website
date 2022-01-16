@@ -15,10 +15,17 @@ eleventyNavigation:
 
   <main>
     <dl class="faq__faq">
+      <dt>Can I run macOS apps on airyxOS?</dt>
+      <dd class="faq__markdown">
+        <p>No - not yet. This is a major goal and we're working towards it. So far, some trivial "hello world" binaries in C and Objective-C have been compiled on macOS Big Sur and the resulting Mach-O binaries ran on airyxOS using our in-dev Hybrid linker without any Frameworks or tools from macOS. Source code of some simple Cocoa AppKit-based applications have been built on airyxOS and run as native applications (e.g. <code>Install airyxOS.app</code>). While this is all very exciting, you will have to wait a bit longer to run Photoshop or Xcode.</p>
+      </dd>
+    </dl>
+
+    <dl class="faq__faq">
       <dt>Why BSD instead of Linux?</dt>
       <dd class="faq__markdown">
         <p>
-            In theory, it will be easier to build Mac code on FreeBSD because it is closer to macOS than Linux is. FreeBSD's kernel also supports a foreign system call interface which should help make emulating Mach system calls easier, and eliminates the need to emulate BSD system calls like Darling (on Linux) does.
+            In theory, it will be easier to build Mac code on FreeBSD because it is closer to macOS than Linux is. Using the BSD kernel also eliminates the need to emulate BSD system calls like Darling (on Linux) does, and made it easier to patch in Mach 3.0 support.
           </p>
         <p>Also, why not? Devils need love too!</p>
       </dd>
@@ -31,7 +38,7 @@ eleventyNavigation:
             The short answer is "hardware support". Airyx should run on most commodity x86_64 hardware using FreeBSD's very stable and performant drivers.
           </p>
         <p>
-            The longer answer is that plus I don't see any real advantage to using xnu or building my own Mach/BSD combination kernel. Any Mach syscalls that we eventually might need can be emulated so the xnu approach just seems to add complexity and the effort of writing and maintaining drivers.
+            The longer answer is that plus I don't see any real advantage to using xnu. We have merged in Mach support now (big thanks to NetBSD, NextBSD and the iX Systems folks for that) so the xnu approach just seems to add complexity and the effort of writing and maintaining drivers.
           </p>
         <p>
             Considering how big this project is already, I opted to stick with the BSD kernel - at least for now.
@@ -72,7 +79,7 @@ eleventyNavigation:
       <dt>I don't code but this looks awesome! Can I still help?</dt>
       <dd class="faq__markdown">
         <p>
-            Absolutely! There will be art, documentation, testing, UX and UI work, release management, project management, legal advice, and many other ways to contribute. This project is huge and help is very welcome. Check out the issues for ideas on how to contribute, or contact mszoek.
+            Absolutely! There will be art, documentation, testing, UX and UI work, release management, project management, legal advice, hosting, and many other ways to contribute. This project is huge and help is very welcome. Check out the issues for ideas on how to contribute, or contact mszoek.
           </p>
       </dd>
     </dl>
@@ -100,12 +107,12 @@ eleventyNavigation:
               </p>
 
             <p>
-                Airyx is explicitly trying to be compatible with Mac software at a source and eventually a binary level, without losing support for FreeBSD/X11 software, and to implement a very similar experience on the desktop and at the command line. For example, on Airyx you would be able to type <code>open -a MyApp image.jpg</code> and have <code>image.jpg</code> open in <em>MyApp</em>. You will find things in (mostly) the same directories as a Mac, like <code>~/Library</code> or <code>/System/Library/Fonts</code>. Airyx is not as concerned about keeping the OS as small and simple as possible, and more concerned about making it clean, secure, performant, and compatible - implementing many of the features I use daily in macOS while skipping the lock-in and "tabletization" of the computer.
+                Airyx is explicitly trying to be compatible with Mac software at a source and eventually a binary level, without losing support for FreeBSD/X11 software, and to implement a very similar experience on the desktop and at the command line. For example, on Airyx you can type <code>open -a MyApp image.jpg</code> and have <code>image.jpg</code> open in <em>MyApp</em>. You will find things in (mostly) the same directories as a Mac, like <code>~/Library</code> or <code>/System/Library/Fonts</code>. Airyx is not as concerned about keeping the OS as small and simple as possible, and more concerned about making it clean, secure, performant, and compatible - implementing many of the features I use daily in macOS while skipping the lock-in and "tabletization" of the computer.
               </p>
 
             <p>Some of the more technical differences between Airyx and hello are:
                 <ul>
-                <li>Airyx uses a patched kernel and compiler suite that supports Frameworks and will eventually support Mach-O as well as ELF</li>
+                <li>Airyx uses a patched kernel and compiler suite that supports Frameworks and has preliminary support for Mach-O as well as ELF</li>
                 <li>Airyx has a package repo with software built to "standard" paths like <code>/System</code>, <code>/etc</code>, and <code>/usr</code> instead of the FreeBSD repos which are built into <code>/usr/local</code>
                 </li>
                 <li>Airyx desktop is based on KDE Plasma where hello's desktop is based on openbox, Menu and Filer (originally from LXQt) plus other lightweight services for notifications (dunst), screen color temperature (redshift) etc</li>
@@ -122,10 +129,10 @@ eleventyNavigation:
               PureDarwin: Airyx is not based on Darwin (see "Why not Darwin" above) but uses many of the same underlying pieces.
             </li>
           <li>
-              Darling: Airyx is not based on Linux or Mach-O but uses many of the same underlying pieces. Darling's Cocoa implementation comes from the same source as Airyx's and I suspect we could share some code here. I'm definitely keeping an eye on Darling for binary compatibility down the road :)
+              Darling: Airyx is not based on Linux or Mach-O but uses many of the same underlying pieces. Darling's Cocoa implementation comes from the same source as Airyx's and I suspect we could share some code here. I'm definitely keeping an eye on Darling :)
             </li>
           <li>
-              GNUStep: GNUStep is pretty good - not gonna lie. We use the libobjc2 runtime from it. However, the changes they've made to sit alongside Linux, the GS* extension classes, and various other things made it "less than ideal" for Airyx. Also I prefer BSD/MIT/Apache-style licensing.
+              GNUStep: GNUStep is pretty good and their Cocoa implementation is much further ahead than ours. We use the libobjc2 runtime from it. However, the way it is packaged, the GS* extension classes, and various other things made it "less than ideal" for Airyx. Also I prefer BSD/MIT/Apache-style licensing. That said, I'm open to using it if we can make it work.
             </li>
         </ul>
         <p>
