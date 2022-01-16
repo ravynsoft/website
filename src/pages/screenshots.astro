@@ -1,0 +1,119 @@
+---
+import Layout from '../layouts/Default.astro'
+---
+<Layout
+  title="Screenshots"
+  description="These are very early screenshots of the OS. Things are in a flux and we'll keep them up-to-date."
+>
+  <section class="u-container screenshot__section">
+    <header>
+      <h2 class="h3">airyxOS Tanuki</h2>
+      <p>Beta screenshots</p>
+    </header>
+
+    <div class="screenshot__image-grid">
+      <figure>
+        <a href="/images/airyx_0.3_installer_confirm.png" target="_blank">
+          <img src="/images/airyx_0.3_installer_confirm.png"
+          alt="Our new Install airyxOS.app at the confirmation screen before installing">
+        </a>
+        <figcaption>Our new Install airyxOS.app at the confirmation screen before installing</figcaption>
+      </figure>
+
+      <figure>
+        <a href="https://pbs.twimg.com/media/FAkt7y6XsAMFBdq?format=jpg&name=medium" target="_blank">
+          <img src="https://pbs.twimg.com/media/FAkt7y6XsAMFBdq?format=jpg&name=medium"
+          alt="Updated menu bar with bolded application menu and the finalized airyxOS system icon">
+        </a>
+        <figcaption>Firefox.app with global menu integration</figcaption>
+      </figure>
+
+      <figure>
+        <a href="/images/airyx_0.3_menubar.png" target="_blank">
+          <img src="/images/airyx_0.3_menubar.png"
+          alt="Updated menu bar with bolded application menu and the finalized airyxOS system icon">
+        </a>
+        <figcaption>Updated menu bar with bolded application menu and the finalized airyxOS system icon</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="u-container screenshot__section">
+    <header>
+      <h2 class="h3">AiryxOS "Tanuki"</h2>
+      <p>Pre-release screenshots</p>
+    </header>
+
+    <div class="screenshot__image-grid">
+      <figure>
+        <a href="https://pbs.twimg.com/media/E_X9hOYUUAEQO-c?format=png&name=large" target="_blank">
+          <img src="https://pbs.twimg.com/media/E_X9hOYUUAEQO-c?format=png&name=large"
+          alt="The UEFI boot splash"/>
+        </a>
+        <figcaption>The UEFI boot splash</figcaption>
+      </figure>
+
+      <figure>
+        <a href="/images/RevealInFiler.gif" target="_blank">
+          <img src="/images/RevealInFiler.gif"
+          alt="Fun with the new open command: Reveal In Filer (open -R) and pipe input to default text editor (open -f)"/>
+        </a>
+        <figcaption>Fun with the new <code>open</code> command: Reveal In Filer (<code>open -R</code>) and pipe input to default text editor (<code>open -f</code>)</figcaption>
+      </figure>
+
+      <figure>
+        <a href="/images/airyx_0.3.0pre_about.png" target="_blank">
+          <img src="/images/airyx_0.3.0pre_about.png"
+          alt="The new system ('tree') menu and About dialog"/>
+        </a>
+        <figcaption>The new system ('tree') menu and About dialog</figcaption>
+      </figure>
+
+      <figure>
+        <a href="/images/airyx_0.3pre_splash.png" target="_blank">
+          <img src="/images/airyx_0.3pre_splash.png"
+          alt="The new Tanuki splash screen"/>
+        </a>
+        <figcaption>The new Tanuki splash screen :)</figcaption>
+      </figure>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .screenshot__section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .screenshot__image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+  }
+
+  .screenshot__image-grid > * {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .screenshot__image-grid a {
+    display: contents;
+  }
+
+  .screenshot__image-grid img {
+    border-radius: 16px;
+    overflow: hidden;
+
+    height: 300px;
+    padding-block: 0.5rem;
+    background-color: black;
+    object-fit: contain;
+  }
+
+  .screenshot__image-grid figcaption {
+    padding-block: 0.5rem;
+    font-size: 0.75rem;
+  }
+</style>

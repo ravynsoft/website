@@ -1,0 +1,170 @@
+---
+import dateFns from 'date-fns'
+
+const { tweets } = Astro.props
+
+function tweetUrl(tweetData) {
+  const url = `https://twitter.com/${tweetData.user.screen_name}/status/${tweetData.id_str}`
+  return url
+}
+
+function tweetImage(originalUrl, size) {
+  const result = originalUrl.replace(/_normal.png$/, `_x${size}.png`)
+  return result
+}
+
+function tweetDateFmt(tweetDate) {
+  const parsedDate = dateFns.parse(tweetDate, 'E LLL dd HH:mm:ss XXXX yyyy', new Date())
+  const formatted = dateFns.formatDistance(parsedDate, new Date(), { addSuffix: true })
+  return formatted
+}
+
+function tweetRemoveLink(tweetText) {
+  const result = tweetText.replace(/https:\/\/t.co\/\S*/gm, '')
+  return result
+}
+---
+
+<ul class="tweets">
+  {tweets.map(tweet => (
+    <li>
+      <a class="tweets__tweet" href={tweetUrl(tweet)} target="_blank">
+        <header>
+          <img class="tweet__profile-pic" src={tweetImage(tweet.user.profile_image_url_https, 96)} />
+          <div class="tweet__user">
+            <span class="tweet__name">{tweet.user.name}</span>
+            <span class="tweet__screen-name">@{tweet.user.screen_name}</span>
+          </div>
+          <div class="tweet__date">{tweetDateFmt(tweet.created_at)}</div>
+        </header>
+        <main>
+          <span>{tweetRemoveLink(tweet.full_text)}</span>
+          {
+            tweet.is_quote_status && (
+              <div class="tweet__quoted">
+                <header>
+                  <img class="quoted__profile-pic" src={tweet.quoted_status.user.profile_image_url_https} />
+                  <div class="quoted__user">
+                    <span class="quoted__name">{tweet.quoted_status.user.name}</span>
+                    <span class="quoted__screen-name">@{tweet.quoted_status.user.screen_name}</span>
+                  </div>
+                  <span class="quoted__date__sep">·</span>
+                  <div class="quoted__date">{tweetDateFmt(tweet.created_at)}</div>
+                </header>
+                <main>
+                  <span>{tweetRemoveLink(tweet.quoted_status.full_text)}</span>
+                </main>
+              </div>
+            )
+          }
+        </main>
+      </a>
+    </li>
+  ))}
+</ul>
+
+<style>
+  .tweets {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+
+    @media (--viewport-medium) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (--viewport-super-large) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .tweets__tweet,
+  .tweet__quoted {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    border-radius: 16px;
+    background-color: white;
+    border: 1px solid var(--color-border);
+    font-size: 0.875rem;
+
+    padding: 1rem;
+    color: inherit;
+  }
+
+  .tweets__tweet {
+    box-shadow: var(--shadow-elevation-low);
+  }
+
+  .tweet__quoted {
+    border-radius: calc(16px - 0.25rem);
+    padding: 0.5rem;
+  }
+
+  .tweets__tweet > :global(header),
+  .tweet__quoted > :global(header) {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .tweet__quoted > header {
+    align-items: center;
+  }
+
+  .tweets__tweet > :global(main) {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .tweet__profile-pic {
+    width: 32px;
+  }
+
+  .quoted__profile-pic {
+    width: 24px;
+  }
+
+  .tweet__user,
+  .quoted__user {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+
+    line-height: 1;
+    font-size: 0.875em;
+  }
+
+  .quoted__user {
+    flex-direction: row;
+  }
+
+  .tweet__name,
+  .quoted__name {
+    font-weight: var(--font-bold);
+  }
+
+  .tweet__screen-name,
+  .quoted__screen-name {
+    color: var(--color-text-muted);
+  }
+
+  .tweet__date,
+  .quoted__date {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    line-height: 1;
+  }
+
+  .quoted__date__sep {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    line-height: 1;
+  }
+
+  .tweet__date {
+    margin-inline-start: auto;
+  }
+</style>

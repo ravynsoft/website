@@ -2,12 +2,13 @@
   "name": "website",
   "version": "1.0.0",
   "description": "airyx.org website",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "clean": "rm -rf dist",
     "prebuild": "npm run clean",
-    "build": "eleventy",
-    "dev": "eleventy --serve"
+    "build": "astro build",
+    "dev": "astro dev",
+    "preview": "astro preview"
   },
   "repository": {
     "type": "git",
@@ -20,17 +21,12 @@
   },
   "homepage": "https://github.com/airyxos/website#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^0.12.1",
-    "@11ty/eleventy-cache-assets": "^2.3.0",
-    "@11ty/eleventy-navigation": "^0.3.2",
+    "astro": "^0.22.11",
     "cssnano": "^5.0.8",
     "date-fns": "^2.28.0",
-    "dotenv": "^10.0.0",
-    "node-fetch": "^2.6.6",
     "postcss": "^8.3.8",
     "postcss-import": "^14.0.2",
     "postcss-preset-env": "^6.7.0",
-    "surge": "^0.23.0",
     "twitter": "^1.7.1"
   }
 }

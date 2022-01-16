@@ -1,0 +1,113 @@
+---
+import { Markdown } from 'astro/components'
+import dateFns from 'date-fns'
+import Button from '../components/LinkButton.astro'
+import Layout from '../layouts/Default.astro'
+
+const response = await fetch('https://api.github.com/repos/mszoek/airyx/releases')
+const releases = await response.json();
+
+function githubDateFmt(obj) {
+  const parsedDate = dateFns.parseISO(obj)
+  const formatted = dateFns.format(parsedDate, 'do LLL yyyy')
+  return formatted
+}
+---
+<Layout
+  title="Releases"
+  description="All the releases and their details like features and bug-fixes, and link to discussions."
+>
+  <section class="u-container">
+    <ul class="releases__list">
+      {
+        releases.map(release => (
+          <li>
+            <aside>
+              <span class="releases__user">{release.author.login}</span>
+              <span class="releases__date">{githubDateFmt(release.created_at)}</span>
+              {release.discussion_url && (
+                <Button href={release.discussion_url} text="Discuss" class="releases__discussion" />
+              )}
+            </aside>
+            <main>
+              <h2 class="h4">{release.name}</h2>
+              <div class="releases__markdown">
+                <Markdown>{release.body}</Markdown>
+              </div>
+            </main>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</Layout>
+
+<style>
+  .releases__list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-size: 0.875rem;
+  }
+
+  .releases__list > li {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 1rem;
+  }
+
+  .releases__list > li > aside {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .releases__list > li > main {
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    padding: 1rem;
+    box-shadow: var(--shadow-elevation-low);
+  }
+
+  .releases__list > li > main > h2 {
+    margin-block-end: 1rem;
+  }
+
+  .releases__user {
+    font-weight: var(--font-semibold);
+  }
+
+  .releases__discussion {
+    margin-block-start: 0.5rem;
+  }
+
+  .releases__markdown :--headings {
+    font-weight: var(--font-semibold);
+    margin-block: 1rem;
+  }
+
+  .releases__markdown h2 {
+    border-bottom: 1px solid var(--color-border);
+    padding-block-end: 0.3rem;
+    font-size: 1.2em;
+  }
+
+  .releases__markdown h3 {
+    font-size: 1.1em;
+  }
+
+  .releases__markdown :--lists {
+    margin-block-start: 0;
+    margin-block-end: 1rem;
+    padding-left: 2em;
+  }
+
+  .releases__markdown ul {
+    list-style-type: disc;
+  }
+
+  .releases__markdown p {
+    margin-block-start: 0;
+    margin-block-end: 1rem;
+  }
+</style>
