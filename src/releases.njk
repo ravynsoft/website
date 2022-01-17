@@ -17,7 +17,14 @@ eleventyNavigation:
         <aside>
           <span class="releases__user">{{ release.author.login }}</span>
           <span class="releases__date">{{ release.created_at | githubDateFmt }}</span>
-          {{ button(element='a', href=release.discussion_url, text='Discuss', class='releases__discussion') }}
+          {{
+            button(
+              element='a',
+              href=release.discussion_url,
+              text='Discuss',
+              class='releases__discussion'
+            ) if release.discussion_url
+          }}
         </aside>
         <main>
           <h2 class="h4">{{ release.name }}</h2>
