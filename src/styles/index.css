@@ -1,20 +1,3 @@
-@import '_selectors';
-@import '_media';
-@import '_reset';
-@import '_theme';
-@import '_base';
-@import '_utilities';
-
-@import 'components/_logo';
-@import 'components/_header';
-@import 'components/_footer';
-@import 'components/_nav';
-@import 'components/_social';
-@import 'components/_button';
-@import 'components/_tweets';
-
-@import 'pages/_home';
-@import 'pages/_more';
-@import 'pages/_screenshot';
-@import 'pages/_releases';
-@import 'pages/_faq';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

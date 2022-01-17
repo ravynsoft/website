@@ -2,9 +2,8 @@ const fs = require('fs')
 const path = require('path')
 
 const postcss = require('postcss')
-const postcssImport = require('postcss-import')
-const postcssPresetEnv = require('postcss-preset-env')
-const cssnano = require('cssnano')
+const tailwind = require('tailwindcss')
+const autoprefixer = require('autoprefixer')
 
 const ENTRY_FILE = 'index.css'
 
@@ -22,14 +21,7 @@ class Styles {
       const from = path.join(__dirname, `../styles/${ENTRY_FILE}`)
       const css = fs.readFileSync(from)
 
-      return await postcss([
-        postcssImport,
-        postcssPresetEnv({
-          stage: 0,
-          features: { 'logical-properties-and-values': false },
-        }),
-        cssnano,
-      ])
+      return await postcss([tailwind, autoprefixer])
         .process(css, { from })
         .then((result) => result.css)
     } catch (err) {
