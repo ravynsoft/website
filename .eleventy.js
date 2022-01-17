@@ -41,6 +41,8 @@ module.exports = function (config) {
     return formatted
   })
 
+  config.addShortcode('year', () => `${new Date().getFullYear()}`)
+
   const markdown = new MarkdownIt()
   config.addFilter('markdown', (obj) => {
     return markdown.render(obj)
