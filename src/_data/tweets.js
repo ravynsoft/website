@@ -31,5 +31,5 @@ module.exports = async function () {
 
   await asset.save(timeline, 'json')
 
-  return timeline
+  return timeline.slice(0, 3)
 }
