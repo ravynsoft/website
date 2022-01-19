@@ -10,7 +10,7 @@ var client = new Twitter({
 
 const params = {
   screen_name: 'AiryxOS',
-  count: 10,
+  count: 30,
   exclude_replies: true,
   include_rts: false,
   tweet_mode: 'extended',
