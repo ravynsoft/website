@@ -1,13 +1,3 @@
-if (
-  window.matchMedia &&
-  window.matchMedia('(prefers-color-scheme: dark)').matches
-) {
-  let meta = document.createElement('meta')
-  meta.name = 'twitter:widgets:theme'
-  meta.content = 'dark'
-  document.head.appendChild(meta)
-}
-
 const menuStateInput = document.querySelector('#menu-state')
 
 menuStateInput.addEventListener('change', (e) => {
