@@ -1,23 +1,23 @@
 ---
 title: Technical Details
-description: Technical information about the current version of airyxOS.
+description: Technical information about the current version of ravynOS.
 ---
 
 {% from 'button.njk' import button %}
 
 <section class="u-container more-section">
-  <p>AiryxOS™ is a new open-source desktop operating system that aims to provide a similar experience and compatibiilty with macOS® on x86-64 systems. It builds on the solid foundations of FreeBSD, existing open source packages in the same space, and new code to fill the gaps. Airyx aims to feel sleek, stable, familiar and intuitive, handle your daily tasks, and provide as much compatibility as possible with the commercial OS that inspired it.</p>
+  <p>ravynOS™ is an open-source desktop operating system that aims to provide a similar experience and compatibiilty with macOS® on x86-64 systems, and eventually ARM system. It builds on the solid foundations of FreeBSD, existing open source packages in the same space, and new code to fill the gaps. ravynOS aims to feel sleek, stable, familiar and intuitive, handle your daily tasks, and provide as much compatibility as possible with the commercial OS that inspired it.</p>
 
-  <p>AiryxOS puts system things mainly into <code>/System</code>, <code>/Library</code>, and <code>/usr</code>. The <code>/usr/local</code> tree is reserved for user additions (like FreeBSD packages). User home directories are appropriately under <code>/Users</code>, and each has a <code>~/Library</code> folder for <a href="https://developer.apple.com/documentation/appkit">Cocoa</a> apps to use. <code>Zsh</code> is the default system shell.</p>
+  <p>ravynOS puts system things mainly into <code>/System</code>, <code>/Library</code>, and <code>/usr</code>. The <code>/usr/local</code> tree is reserved for user additions (like FreeBSD packages). User home directories are appropriately under <code>/Users</code>, and each has a <code>~/Library</code> folder for <a href="https://developer.apple.com/documentation/appkit">Cocoa</a> apps to use. <code>Zsh</code> is the default system shell.</p>
 
   <p>Properly packaged applications will typically live under <code>/Applications</code> or <code>~/Applications</code> and are built as a <code>.app</code>
     <a href="https://en.wikipedia.org/wiki/Bundle_(macOS)">Bundle</a> or as an <a href="https://appimage.org/">AppImage</a>. These types of applications are self-contained, do not usually need installers or de-installers, and can be moved around the filesystem without breaking. Traditional Unix-like applications are installed into fixed directories as usual.</p>
     
-  <p>AiryxOS provides an implementation of Cocoa (still incomplete) and modern Objective-C runtime installed into <code>/System/Library/Frameworks</code>. It also provides a growing list of Mac-compatible APIs such as LaunchServices, Grand Central Dispatch, XPC, and compatibility with Mach 3.0 system calls (0.4pre1+) and C functions. There is a growing list of compatible commands as well, such as <code>open</code> and <code>launchctl</code>. From 0.4pre1 onwards, <code>launchd</code> is the system init (PID 1) and some services now run as LaunchDaemons and LaunchAgents.</p>
+  <p>ravynOS provides an implementation of Cocoa (still incomplete) and modern Objective-C runtime installed into <code>/System/Library/Frameworks</code>. It also provides a growing list of Mac-compatible APIs such as LaunchServices, Grand Central Dispatch, XPC, and compatibility with Mach 3.0 system calls (0.4pre1+) and C functions. There is a growing list of compatible commands as well, such as <code>open</code> and <code>launchctl</code>. From 0.4pre1 onwards, <code>launchd</code> is the system init (PID 1) and some services now run as LaunchDaemons and LaunchAgents.</p>
   
 <p>The system compilers and linkers have been patched to support Frameworks, and the standard <code>-F</code> and <code>-framework</code> arguments work as expected. Support for XCode project files is planned, but BSD-style Makefiles are available today to easily build <code>.app</code> and <code>.framework</code> Bundles. Java 17 is available in <code>/Library/Java</code>. Swift is also on the roadmap.</p>
 
-<p>The <a href="/screenshots">desktop environment</a> (currently based on parts of KDE 5) and system applications (Filer, Dock, global menu system, default app bundles, etc) are being carefully designed to fit well together and provide consistency and a familiar look &amp; feel.</p>
+<p>The <a href="/screenshots">desktop environment</a> and system applications (Filer, Dock, global menu system, default app bundles, etc) are being carefully designed from the ground up to fit well together and provide consistency and a familiar look &amp; feel.</p>
 
-<p>AiryxOS is still very early in development but is progressing fast and becoming more usable every day. If this sounds like your dream system, please join us to help make it a reality!</p>
+<p>ravynOS is still very early in development. If this sounds like your dream system, please join us to help make it a reality!</p>
 </section>
