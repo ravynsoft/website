@@ -9,7 +9,7 @@ var client = new Twitter({
 })
 
 const params = {
-  screen_name: 'AiryxOS',
+  screen_name: 'ravynsoft',
   count: 30,
   exclude_replies: true,
   include_rts: false,
