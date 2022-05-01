@@ -15,9 +15,9 @@ eleventyNavigation:
 
   <main>
     <dl class="faq__faq">
-      <dt>Can I run macOS apps on airyxOS?</dt>
+      <dt>Can I run macOS apps on ravynOS?</dt>
       <dd class="faq__markdown">
-        <p>No - not yet. This is a major goal and we're working towards it. So far, some trivial "hello world" binaries in C and Objective-C have been compiled on macOS Big Sur and the resulting Mach-O binaries ran on airyxOS using our in-dev Hybrid linker without any Frameworks or tools from macOS. Source code of some simple Cocoa AppKit-based applications have been built on airyxOS and run as native applications (e.g. <code>Install airyxOS.app</code>). While this is all very exciting, you will have to wait a bit longer to run Photoshop or Xcode.</p>
+        <p>No - not yet. This is a major goal and we're working towards it. So far, some trivial "hello world" binaries in C and Objective-C have been compiled on macOS Big Sur and the resulting Mach-O binaries ran on ravynOS using our in-dev Hybrid linker without any Frameworks or tools from macOS. Source code of some simple Cocoa AppKit-based applications have been built on ravynOS and run as native applications (e.g. <code>Install ravynOS.app</code>). While this is all very exciting, you will have to wait a bit longer to run Photoshop or Xcode.</p>
       </dd>
     </dl>
 
@@ -35,7 +35,7 @@ eleventyNavigation:
       <dt>Why BSD instead of Darwin?</dt>
       <dd class="faq__markdown">
         <p>
-            The short answer is "hardware support". Airyx should run on most commodity x86_64 hardware using FreeBSD's very stable and performant drivers.
+            The short answer is "hardware support". ravynOS should run on most commodity x86_64 hardware using FreeBSD's very stable and performant drivers.
           </p>
         <p>
             The longer answer is that plus I don't see any real advantage to using xnu. We have merged in Mach support now (big thanks to NetBSD, NextBSD and the iX Systems folks for that) so the xnu approach just seems to add complexity and the effort of writing and maintaining drivers.
@@ -50,7 +50,7 @@ eleventyNavigation:
       <dt>Is this... legally sketchy?</dt>
       <dd class="faq__markdown">
         <p>
-            No. Consider projects like ReactOS, a from-scratch effort to create an OS compatible with Microsoft Windows, GNUstep, which provides an open implementation of Cocoa APIs and other things, or Darling, a Darwin (macOS) emulation on Linux. Airyx is similar and stands on the shoulders of many such projects.
+            No. Consider projects like ReactOS, a from-scratch effort to create an OS compatible with Microsoft Windows, GNUstep, which provides an open implementation of Cocoa APIs and other things, or Darling, a Darwin (macOS) emulation on Linux. ravynOS is similar and stands on the shoulders of many such projects.
           </p>
 
         <p>
@@ -100,25 +100,25 @@ eleventyNavigation:
         <ul>
           <li>
             <p>
-                helloSystem: We <em>are</em> in fact working with helloSystem! As some people have noticed, Airyx 0.2.X was basically helloSystem. (That was the second PoC. The first had been built on vanilla FreeBSD and had no GUI at all.) Under the hood, however, Airyx 0.2.2 has a partial implementation of Cocoa, a modified compiler & linker that support frameworks, and several other additions that make it distinct. We have similar philosophies, and share technology and cooperate where it makes sense (e.g. Filer), but the project goals are quite different.
+                helloSystem: We <em>have been</em> in fact working with helloSystem! As some people have noticed, Release 0.2.X was basically helloSystem. (That was the second PoC. The first had been built on vanilla FreeBSD and had no GUI at all.) Under the hood, however, release 0.2.2 has a partial implementation of Cocoa, a modified compiler & linker that support frameworks, and several other additions that make it distinct. We have similar philosophies, and share technology and cooperate where it makes sense (e.g. Filer), but the project goals are quite different.
               </p>
             <p>
                 helloSystem wants to create a computer that is <a href="https://github.com/helloSystem/hello"> simple to use, open, elegant, small and fast</a>. Older MacOS X and Classic are an inspiration to what that might look like, but they are not explicitly trying to create an open-source Mac. In fact they're mostly avoiding Objective C and XML plists and other Mac technology in favor of simpler and/or more modern ways (e.g. Qt, C++, JSON).
               </p>
 
             <p>
-                Airyx is explicitly trying to be compatible with Mac software at a source and eventually a binary level, without losing support for FreeBSD/X11 software, and to implement a very similar experience on the desktop and at the command line. For example, on Airyx you can type <code>open -a MyApp image.jpg</code> and have <code>image.jpg</code> open in <em>MyApp</em>. You will find things in (mostly) the same directories as a Mac, like <code>~/Library</code> or <code>/System/Library/Fonts</code>. Airyx is not as concerned about keeping the OS as small and simple as possible, and more concerned about making it clean, secure, performant, and compatible - implementing many of the features I use daily in macOS while skipping the lock-in and "tabletization" of the computer.
+                ravynOS is explicitly trying to be compatible with Mac software at a source and eventually a binary level, without losing support for FreeBSD/X11 software, and to implement a very similar experience on the desktop and at the command line. For example, on ravynOS you can type <code>open -a MyApp image.jpg</code> and have <code>image.jpg</code> open in <em>MyApp</em>. You will find things in (mostly) the same directories as a Mac, like <code>~/Library</code> or <code>/System/Library/Fonts</code>. This project is not as concerned about keeping the OS as small and simple as possible, and more concerned about making it clean, secure, performant, and compatible - implementing many of the features I use daily in macOS while skipping the lock-in and "tabletization" of the computer.
               </p>
 
-            <p>Some of the more technical differences between Airyx and hello are:
+            <p>Some of the more technical differences between ravynOS and hello are:
                 <ul>
-                <li>Airyx uses a patched kernel and compiler suite that supports Frameworks and has preliminary support for Mach-O as well as ELF</li>
-                <li>Airyx has a package repo with software built to "standard" paths like <code>/System</code>, <code>/etc</code>, and <code>/usr</code> instead of the FreeBSD repos which are built into <code>/usr/local</code>
+                <li>ravynOS uses a patched kernel with support for Mach, just like xnu, and a compiler suite that supports Frameworks and has preliminary support for Mach-O as well as ELF</li>
+                <li>ravynOS has a package repo with software built to "standard" paths like <code>/System</code>, <code>/etc</code>, and <code>/usr</code> instead of the FreeBSD repos which are built into <code>/usr/local</code>
                 </li>
-                <li>Airyx desktop is based on KDE Plasma where hello's desktop is based on openbox, Menu and Filer (originally from LXQt) plus other lightweight services for notifications (dunst), screen color temperature (redshift) etc</li>
-                <li>helloSystem uses a simplified .app structure whereas Airyx uses real Bundles for .app</li>
-                <li>helloSystem tends to use typical Unix paths and files, while Airyx is moving towards typical Mac paths and files</li>
-                <li>Airyx tries to provide the same APIs as macOS</li>
+                <li>ravynOS desktop is being written from scratch with Cocoa, Mach, and OpenGL on a Wayland compositor, where hello's desktop is based on openbox, Menu and Filer (originally from LXQt) plus other lightweight services for notifications (dunst), screen color temperature (redshift) etc</li>
+                <li>helloSystem uses a simplified .app structure whereas ravynOS uses real Bundles for .app</li>
+                <li>helloSystem tends to use typical Unix paths and files, while ravynOS is moving towards typical Mac paths and files</li>
+                <li>ravynOS tries to provide the same APIs as macOS</li>
               </ul>
             </p>
           </li>
@@ -126,17 +126,17 @@ eleventyNavigation:
               elementaryOS: Currently using some icons and themes and totally open to other possibilities. However, we are not aligned on our preferred stacks - GTK vs Qt/Cocoa - which makes it harder.
             </li>
           <li>
-              PureDarwin: Airyx is not based on Darwin (see "Why not Darwin" above) but uses many of the same underlying pieces.
+              PureDarwin: ravynOS is not based on Darwin (see "Why not Darwin" above) but uses many of the same underlying pieces.
             </li>
           <li>
-              Darling: Airyx is not based on Linux or Mach-O but uses many of the same underlying pieces. Darling's Cocoa implementation comes from the same source as Airyx's and I suspect we could share some code here. I'm definitely keeping an eye on Darling :)
+              Darling: ravynOS is not based on Linux or Mach-O but uses many of the same underlying pieces. Darling's Cocoa implementation comes from the same source as ours and I suspect we could share some code here. I'm definitely keeping an eye on Darling :)
             </li>
           <li>
-              GNUStep: GNUStep is pretty good and their Cocoa implementation is much further ahead than ours. We use the libobjc2 runtime from it. However, the way it is packaged, the GS* extension classes, and various other things made it "less than ideal" for Airyx. Also I prefer BSD/MIT/Apache-style licensing. That said, I'm open to using it if we can make it work.
+              GNUStep: GNUStep is pretty good and their Cocoa implementation is much further ahead than ours. We use the libobjc2 runtime from it. However, the way it is packaged, the GS* extension classes, and various other things made it "less than ideal" for ravynOS. Also I prefer BSD/MIT/Apache-style licensing. That said, I'm open to using it if we can make it work.
             </li>
         </ul>
         <p>
-            Notwithstanding the above, I'm open to collaboration with anyone who finds parts of Airyx useful or who has code they think might be useful to it.
+            Notwithstanding the above, I'm open to collaboration with anyone who finds parts of ravynOS useful or who has code they think might be useful to it.
           </p>
       </dd>
     </dl>
@@ -168,7 +168,7 @@ eleventyNavigation:
       <dt>Why won't it start in VirtualBox?</dt>
       <dd class="faq__markdown">
         <p>
-              Airyx 0.2.2 may hang after booting the LiveCD with a black screen if you run in VirtualBox with the default VMSVGA driver. Changing to the VBoxSVGA driver for display may fix the issue. See <a href="https://github.com/mszoek/airyx/issues/74">issue #74</a> for details.
+              Release 0.2.2 may hang after booting the LiveCD with a black screen if you run in VirtualBox with the default VMSVGA driver. Changing to the VBoxSVGA driver for display may fix the issue. See <a href="https://github.com/mszoek/airyx/issues/74">issue #74</a> for details.
             </p>
       </dd>
     </dl>
