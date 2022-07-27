@@ -23,14 +23,14 @@ eleventyNavigation:
   </p>
 
   <div class="hero__ctas">
-    {{ button(element='a', href='https://github.com/mszoek/airyx/releases', text='Download ravynOS') }}
+    {{ button(element='a', href='https://github.com/ravynsoft/ravynos/releases', text='Download ravynOS') }}
     {{ button(element='a', type='secondary', href='/more', class='hero__cta__learn', text='Learn More') }}
   </div>
 
   <footer class="hero__footer">
-    This is a developer preview image that’s mainly intended for helping build the system. We recommend running in a virtual machine, although it should work on any hardware supported by FreeBSD-CURRENT (14.0) with at least 2GB (8GB recommended) RAM.
-    <strong>PLEASE NOTE:</strong> On 2022-02-14, we decided to abandon the current path of using X11/KDE desktop components and write from scratch a new UI that will align better with our goals.
-    This stepping back will slow the project but ultimately should result in a better outcome. Thanks for your patience.
+    This is a developer preview image that’s mainly intended for helping build the system. You will need real hardware to run it. It should work on any hardware supported by FreeBSD-CURRENT (14.0) with at least 2GB (8GB recommended) RAM.<br/>
+    <strong>PLEASE NOTE:</strong> On 2022-02-14, we decided to abandon the current path of using X11/KDE desktop components and write from scratch a new UI that will align better with our goals. A very early UI on the new WindowServer is starting to take shape as of 2022-07-27.
+    Thanks for your patience as we work to make ravynOS the best possible version.
   </footer>
 </section>
 
@@ -131,8 +131,8 @@ eleventyNavigation:
     <p class="h3 section__header__hl">We’ve got your apps covered.</p>
 
     <p class="section__header__text">
-      All of your FreeBSD ports and apps, Linux apps, and even trivial Darwin
-      &amp; macOS binaries can now run on ravynOS. And we’re actively working on
+      Many FreeBSD ports and apps, Linux apps, and even trivial Darwin
+      &amp; macOS binaries can run on ravynOS. And we’re actively working on
       improving it!
     </p>
   </header>
@@ -153,8 +153,8 @@ eleventyNavigation:
       <div class="apps__list__details">
         <h4>FreeBSD, Mostly</h4>
         <p>
-          Most FreeBSD ports and packages continue to work on ravynOS right out
-          of the box.
+          FreeBSD ports and packages that support Wayland continue to work on ravynOS right out
+          of the box, or with minor changes.
         </p>
       </div>
     </li>
@@ -162,18 +162,17 @@ eleventyNavigation:
       <div class="apps__list__details">
         <h4>Linux, Sometimes</h4>
         <p>
-          Many Linux applications are expected to work with FreeBSD’s emulation
+          Many Linux applications that support Wayland are expected to work with FreeBSD’s Linux emulation
           layer.
         </p>
       </div>
     </li>
     <li class="apps__list__source">
       <div class="apps__list__details">
-        <h4>Cocoa, May Be</h4>
+        <h4>macOS, Maybe</h4>
         <p>
-          Trivial macOS and Darwin applications may run directly on ravynOS with
-          our in-development Translator. AppKit-based source code may build and
-          run natively.
+          Trivial macOS and Darwin applications may run directly on ravynOS. This is an active
+          area of work and research.  AppKit-based source code may build and run natively.
         </p>
       </div>
     </li>
@@ -206,7 +205,7 @@ eleventyNavigation:
       <span>🙋🏽‍♂️</span>
       <span>
         Ask questions on the
-        <a href="https://github.com/mszoek/airyx/discussions">discussion forum</a>.
+        <a href="https://github.com/ravynsoft/ravynos/discussions">discussion forum</a>.
       </span>
     </li>
     <li>
@@ -215,7 +214,7 @@ eleventyNavigation:
         Hang out with us and others like you on
         <a href="https://discord.com/invite/8caJbAGNwY">Discord</a>,
         <a href="https://web.libera.chat/?channel=#airyx">IRC</a>, or
-        <a href="https://app.element.io/#/room/#airyx:matrix.org">Matrix</a>.
+        <a href="https://app.element.io/#/room/%23ravynOS-general:matrix.org">Matrix</a>.
       </span>
     </li>
   </ul>
