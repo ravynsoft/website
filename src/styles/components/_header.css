@@ -7,7 +7,7 @@
 }
 
 .header__inner {
-  --padding: 8px;
+  --padding: 3px;
   --shadow: var(--hue-primary) 30% 65%;
 
   margin: var(--global-header-block-spacing);
