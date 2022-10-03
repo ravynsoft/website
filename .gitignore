@@ -2,6 +2,7 @@ dist
 node_modules/
 .env
 .cache
-
+#asdf-vm generated dotfile
+.tool-versions
 # Local Netlify folder
 .netlify
