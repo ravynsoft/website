@@ -56,21 +56,16 @@
 }
 
 .hero__punchline {
-  font-weight: var(--font-semibold);
-  -webkit-text-fill-color: transparent;
-
-  background-color: var(--color-primary);
-  background-image: linear-gradient(
-    268.67deg,
-    var(--color-primary) 3.43%,
-    var(--color-secondary) 99%
-  );
-  background-size: 100%;
+  text-align: center;
+  background: linear-gradient(268.67deg, var(--color-primary) 20%, var(--color-secondary) 40%, var(--color-secondary) 60%, var(--color-primary) 80%);
+  background-size: 200% auto;
+  color: #000;
   background-clip: text;
-
-  & span {
-    white-space: nowrap;
-  }
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 700ms linear infinite;
+  
 }
 
 .hero__desc {
@@ -196,4 +191,22 @@
   display: flex;
   gap: 0.8ch;
   margin-block-end: 0.25rem;
+}
+
+.divbox {
+  background-color: var(--color-secondary);
+  border-radius: 1em;
+  padding: 2%;
+}
+
+.divbox >  p {
+  color: black;
+}
+
+
+@keyframes shine {
+  to {
+    
+    background-position: 200% center;
+  }
 }
