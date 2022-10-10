@@ -14,7 +14,7 @@ eleventyNavigation:
   <ul class="releases__list">
     {% for release in releases %}
       <li>
-        <aside>
+        <aside class="button__element">
           <span class="releases__user">{{ release.author.login }}</span>
           <span class="releases__date">{{ release.created_at | githubDateFmt }}</span>
           {{
@@ -25,7 +25,7 @@ eleventyNavigation:
               class='releases__discussion'
             ) if release.discussion_url
           }}
-        </aside>
+        </aside>&nbsp;
         <main>
           <h2 class="h4">{{ release.name }}</h2>
           <div class="releases__markdown">{{ release.body | markdown | safe }}</div>

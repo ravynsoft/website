@@ -9,20 +9,20 @@ eleventyNavigation:
 ---
 
 <section id="general" class="u-container faq__section">
-  <aside>
+  <div>
     <h2 class="h4">General</h2>
-  </aside>
+    </div>&nbsp;
 
   <main>
     <dl class="faq__faq">
       <dt>Can I run macOS apps on ravynOS?</dt>
       <dd class="faq__markdown">
-        <p>No - not yet. This is a major goal and we're working towards it. So far, some trivial "hello world" binaries in C and Objective-C have been compiled on macOS Big Sur and the resulting Mach-O binaries ran on ravynOS using our in-dev Hybrid linker without any Frameworks or tools from macOS. Source code of some simple Cocoa AppKit-based applications have been built on ravynOS and run as native applications (e.g. <code>Install ravynOS.app</code>). While this is all very exciting, you will have to wait a bit longer to run Photoshop or Xcode.</p>
+        <p>No - not yet. This is a major goal and we're working towards it. So far, some trivial "Hello World" binaries in C and Objective-C have been compiled on macOS Big Sur and the resulting Mach-O binaries ran on ravynOS using our in-dev Hybrid linker without any Frameworks or tools from macOS. Source code of some simple Cocoa AppKit-based applications have been built on ravynOS and run as native applications (e.g. <code>Install ravynOS.app</code>). While this is all very exciting, you will have to wait a bit longer to run Photoshop or Xcode.</p>
       </dd>
     </dl>
 
     <dl class="faq__faq">
-      <dt>Why BSD instead of Linux?</dt>
+      <dt id="whylinux">Why BSD instead of Linux?</dt>
       <dd class="faq__markdown">
         <p>
             In theory, it will be easier to build Mac code on FreeBSD because it is closer to macOS than Linux is. Using the BSD kernel also eliminates the need to emulate BSD system calls like Darling (on Linux) does, and made it easier to patch in Mach 3.0 support.
@@ -32,13 +32,13 @@ eleventyNavigation:
     </dl>
 
     <dl class="faq__faq">
-      <dt>Why BSD instead of Darwin?</dt>
+      <dt id="whybsd">Why BSD instead of Darwin?</dt>
       <dd class="faq__markdown">
         <p>
             The short answer is "hardware support". ravynOS should run on most commodity x86_64 hardware using FreeBSD's very stable and performant drivers.
           </p>
         <p>
-            The longer answer is that plus I don't see any real advantage to using xnu. We have merged in Mach support now (big thanks to NetBSD, NextBSD and the iX Systems folks for that) so the xnu approach just seems to add complexity and the effort of writing and maintaining drivers.
+            The longer answer is that plus I don't see any real advantage to using XNU. We have merged in Mach support now (big thanks to NetBSD, NextBSD and the iX Systems folks for that) so the xnu approach just seems to add complexity and the effort of writing and maintaining drivers.
           </p>
         <p>
             Considering how big this project is already, I opted to stick with the BSD kernel - at least for now.
@@ -50,7 +50,7 @@ eleventyNavigation:
       <dt>Is this... legally sketchy?</dt>
       <dd class="faq__markdown">
         <p>
-            No. Consider projects like ReactOS, a from-scratch effort to create an OS compatible with Microsoft Windows, GNUstep, which provides an open implementation of Cocoa APIs and other things, or Darling, a Darwin (macOS) emulation on Linux. ravynOS is similar and stands on the shoulders of many such projects.
+            No. Consider projects like ReactOS, a from-scratch effort to create an OS compatible with Microsoft Windows, GNUstep, which provides an open implementation of Cocoa APIs and other things, or Darling, a compatibility layer for running Darwin (macOS) binaries on Linux. ravynOS is similar and stands on the shoulders of many such projects.
           </p>
 
         <p>
@@ -110,12 +110,12 @@ eleventyNavigation:
                 ravynOS is explicitly trying to be compatible with Mac software at a source and eventually a binary level, without losing support for FreeBSD/X11 software, and to implement a very similar experience on the desktop and at the command line. For example, on ravynOS you can type <code>open -a MyApp image.jpg</code> and have <code>image.jpg</code> open in <em>MyApp</em>. You will find things in (mostly) the same directories as a Mac, like <code>~/Library</code> or <code>/System/Library/Fonts</code>. This project is not as concerned about keeping the OS as small and simple as possible, and more concerned about making it clean, secure, performant, and compatible - implementing many of the features I use daily in macOS while skipping the lock-in and "tabletization" of the computer.
               </p>
 
-            <p>Some of the more technical differences between ravynOS and hello are:
+            <p>Some of the more technical differences between ravynOS and helloSystem are:
                 <ul>
                 <li>ravynOS uses a patched kernel with support for Mach, just like xnu, and a compiler suite that supports Frameworks and has preliminary support for Mach-O as well as ELF</li>
                 <li>ravynOS has a package repo with software built to "standard" paths like <code>/System</code>, <code>/etc</code>, and <code>/usr</code> instead of the FreeBSD repos which are built into <code>/usr/local</code>
                 </li>
-                <li>ravynOS desktop is being written from scratch with Cocoa, Mach, and OpenGL on a Wayland compositor, where hello's desktop is based on openbox, Menu and Filer (originally from LXQt) plus other lightweight services for notifications (dunst), screen color temperature (redshift) etc</li>
+                <li>ravynOS desktop is being written from scratch with Cocoa, Mach, and OpenGL on a Wayland compositor, whereas helloSystem's desktop is based on OpenBox, Menu and Filer (originally from LXQt) plus other lightweight services for notifications (dunst), screen color temperature (redshift) etc</li>
                 <li>helloSystem uses a simplified .app structure whereas ravynOS uses real Bundles for .app</li>
                 <li>helloSystem tends to use typical Unix paths and files, while ravynOS is moving towards typical Mac paths and files</li>
                 <li>ravynOS tries to provide the same APIs as macOS</li>
@@ -126,7 +126,7 @@ eleventyNavigation:
               elementaryOS: Currently using some icons and themes and totally open to other possibilities. However, we are not aligned on our preferred stacks - GTK vs Qt/Cocoa - which makes it harder.
             </li>
           <li>
-              PureDarwin: ravynOS is not based on Darwin (see "Why not Darwin" above) but uses many of the same underlying pieces.
+              PureDarwin: ravynOS is not based on Darwin (see <a href="#whylinux">"Why not Darwin"</a> above) but uses many of the same underlying pieces.
             </li>
           <li>
               Darling: ravynOS is not based on Linux or Mach-O but uses many of the same underlying pieces. Darling's Cocoa implementation comes from the same source as ours and I suspect we could share some code here. I'm definitely keeping an eye on Darling :)
@@ -155,22 +155,42 @@ eleventyNavigation:
           </p>
       </dd>
     </dl>
+
   </main>
 </section>
 
 <section id="troubleshooting" class="u-container faq__section">
-  <aside>
+  <div>
     <h2 class="h4">Troubleshooting</h2>
-  </aside>
+    </div>&nbsp;
 
   <main>
     <dl class="faq__faq">
-      <dt>Why won't it start in VirtualBox?</dt>
+      
+      <dt>I downloaded the developer preview liveCD. What is the username and password?</dt>
+      <dd class="faq__markdown">
+        <p>The login credential for the liveboot currently is: <em>liveuser</em>, all in small letters, and <b>no password</b>. Just type <em>liveuser</em> in the username field and press enter/click on the login button.</p>
+      </dd>
+
+      <dt>Why won't it display GUI in VirtualBox/Vmware/QEMU?</dt>
       <dd class="faq__markdown">
         <p>
-              Release 0.2.2 may hang after booting the LiveCD with a black screen if you run in VirtualBox with the default VMSVGA driver. Changing to the VBoxSVGA driver for display may fix the issue. See <a href=https://github.com/ravynsoft/ravynos/issues/74>issue #74</a> for details.
-            </p>
+              Since ravynOS 0.4.0 is having its GUI written from scratch, there is no driver for any virtual machine GPU yet, including VMware VGA, Virtualbox SVGA, virtio-vga or qxl and thus, no form of graphics acceleration is currently available. The OS will display a shell-like/ tty interface on virtual machines. 
+        </p>      
+        <p>
+            We are working on this, and help is welcome. There is work being done on vmwgfx for ravynOS and this might be released soon, making it possible to test LiveCD on virtual machines 🙂. Currently, VMs are usable for non-UI development.
+        </p>
       </dd>
+
+
+      <dt>When I try booting the LiveCD for ravynOS, it shows a blank screen on my PC. Why is that so?</dt>
+      <dd class="faq__markdown">
+        <p>
+              Video drivers, for the time being, exist for only Intel HD series, Intel Iris series (Xe graphics), most AMD integrated and discrete GPUs. There is no driver yet for NVIDIA. Help fixing this is most welcome.  If your GPU is supported, the GUI starts automatically on boot. If not, you will receive boot messages on screen followed by a shell-like interface (<b>tty1</b>).
+        </p>
+      </dd>
+
+    
     </dl>
   </main>
 </section>

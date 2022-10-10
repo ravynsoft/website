@@ -158,7 +158,7 @@
 }
 
 .header__menu-state:checked ~ .header__inner .menu__label__bread--top {
-  transform: translateY(5px) rotate(45deg);
+  transform: translateY(10px) rotate(45deg) scaleX(2);
 }
 
 .header__menu-state:checked ~ .header__inner .menu__label__bread--middle {
@@ -166,5 +166,5 @@
 }
 
 .header__menu-state:checked ~ .header__inner .menu__label__bread--bottom {
-  transform: translateY(-5px) rotate(-45deg);
+  transform: translateY(-10px) rotate(-45deg) scaleX(2);
 }

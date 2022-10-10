@@ -1,17 +1,28 @@
 .faq__section {
-  display: grid;
-  grid-template-columns: 1fr 4fr;
+  display: block;
   gap: 1rem;
   scroll-margin-top: var(--header-space);
 }
 
-.faq__section > aside > h2 {
-  position: sticky;
+.faq__section > div {
+  color: white;
+  position:sticky;
+  text-align: center;
   top: var(--header-space);
+  background-color: var(--color-primary);
+  border-radius: 1rem;
 }
 
-.faq__section:target > aside > h2 {
-  color: var(--color-primary);
+.h4 {
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+.faq__section:target > div  {
+  background-color: var(--color-secondary);
+  color: var( --color-primary);
+  transition-duration: 2s;
+  transition-property: color background-color;
 }
 
 .faq__section > main {
@@ -63,8 +74,11 @@
 .faq__markdown code {
   font-family: var(--font-mono);
   font-size: 0.875em;
-
   border: 1px solid var(--color-border);
   padding: 1px 4px;
   border-radius: 8px;
+}
+
+body {
+  position: relative;
 }
