@@ -64,7 +64,7 @@
   text-fill-color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: shine 700ms linear infinite;
+  animation: shine 7000ms linear infinite;
   
 }
 
