@@ -1,7 +1,7 @@
 :root {
   /* Colors */
   --hue-primary: 228deg;
-  --hue-secondary: 325deg;
+  --hue-secondary: 271deg;
 
   --color-primary-bare: var(--hue-primary) 100% 63%;
   --color-primary-light-bare: var(--hue-primary) 100% 77%;
@@ -10,7 +10,7 @@
   --color-primary-light: hsl(var(--color-primary-light-bare));
   --color-primary-dark: hsl(var(--color-primary-dark-bare));
 
-  --color-secondary-bare: var(--hue-secondary) 100% 63%;
+  --color-secondary-bare: var(--hue-secondary) 100% 70%;
   --color-secondary: hsl(var(--color-secondary-bare));
 
   --color-text: hsl(var(--hue-primary) 80% 20%);

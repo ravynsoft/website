@@ -73,6 +73,11 @@
   color: var(--color-text-muted);
 }
 
+.hero__desc__highlight {
+  max-width: 50ch;
+  color: #fff;
+}
+
 .hero__ctas {
   display: flex;
   flex-wrap: wrap;
@@ -198,11 +203,6 @@
   border-radius: 1em;
   padding: 2%;
 }
-
-.divbox >  p {
-  color: black;
-}
-
 
 @keyframes shine {
   to {
