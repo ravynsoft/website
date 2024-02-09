@@ -8,5 +8,4 @@ ravynOS (formerly airyxOS) is a new open source OS project that aims to provide 
 
 1. `npm install`
 2. `cp .env.example .env`
-3. Fill in credentials for Twitter API (Create a standalone app on Twitter Dev)
-4. `npm run dev`
+3. `npm run dev`
