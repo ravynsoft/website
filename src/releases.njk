@@ -11,26 +11,57 @@ eleventyNavigation:
 {% from 'button.njk' import button %}
 
 <section class="u-container">
-  <ul class="releases__list">
-    {% for release in releases %}
-      <li>
-        <aside class="button__element">
-          <span class="releases__user">{{ release.author.login }}</span>
-          <span class="releases__date">{{ release.created_at | githubDateFmt }}</span>
-          {{
-            button(
-              element='a',
-              href=release.discussion_url,
-              text='Discuss',
-              class='releases__discussion'
-            ) if release.discussion_url
-          }}
-        </aside>&nbsp;
-        <main>
-          <h2 class="h4">{{ release.name }}</h2>
-          <div class="releases__markdown">{{ release.body | markdown | safe }}</div>
-        </main>
-      </li>
-    {% endfor %}
+  <ul id="release_list" class="releases__list">
   </ul>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js">
+</script>
+<script type="text/javascript">
+const req = new Request(
+    "https://api.github.com/repos/ravynsoft/ravynos/releases", {
+    headers: {
+        "Accept": "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2022-11-28"
+    }
+});
+fetch(req)
+    .then((response) => response.json())
+    .then((data) => {
+        const list = document.getElementById("release_list");
+        for(const rls of data) {
+            const item = document.createElement("li");
+
+            const aside = document.createElement("aside");
+            aside.setAttribute("class", "button__element");
+
+            const pubdate = new Date(rls.created_at);
+            const datespan = document.createElement("span");
+            datespan.setAttribute("class", "releases__date");
+            datespan.textContent = pubdate.toDateString();
+            aside.appendChild(datespan);
+
+            const link = document.createElement("a");
+            link.href = rls.discussion_url;
+            link.setAttribute("class", "button button--primary releases__discussion");
+            aside.appendChild(link).textContent = "Discuss";
+
+            item.appendChild(aside);
+
+            const main = document.createElement("main");
+            const rlslink = document.createElement("a");
+            rlslink.href = rls.html_url;
+            rlslink.setAttribute("class", "h4");
+            main.appendChild(rlslink).textContent = rls.name;
+
+            const notes = document.createElement("div");
+            notes.setAttribute("class", "releases__markdown");
+            const converter = new showdown.Converter();
+            notes.innerHTML = converter.makeHtml(rls.body);
+            main.appendChild(notes);
+
+            item.appendChild(main);
+            list.appendChild(item);
+        }});
+</script>
+
 </section>
