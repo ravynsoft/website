@@ -23,8 +23,8 @@
   border-radius: 16px;
   overflow: hidden;
 
-  height: 300px;
-  padding-block: 0.5rem;
+  height: auto;
+  padding-block: 0rem;
   background-color: black;
   object-fit: contain;
 }
