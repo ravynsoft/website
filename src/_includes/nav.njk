@@ -31,6 +31,11 @@
           {{ item.title }}
         </a>
       </li>
+{% if item.title == "Source" %}
+      <li class="nav__item nav__item--wiki">
+        <a href="https://wiki.ravynos.com" class="nav__link">Wiki</a>
+      </li>
+    {% endif %}
     {% endfor %}
   </ul>
 {% endmacro %}
