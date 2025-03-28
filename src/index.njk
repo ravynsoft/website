@@ -34,9 +34,18 @@ eleventyNavigation:
   </div>
 
   <footer class="hero__footer">
-    This is a <b>developer preview image</b> that’s mainly intended for helping build the system. You will need real hardware to run it. It should work on any hardware supported by FreeBSD-CURRENT (14.0) with at least 2GB (8GB recommended) RAM.<br/>
-    <strong>PLEASE NOTE:</strong> On 2022-02-14, we decided to abandon the current path of using X11/KDE desktop components and write from scratch a new UI that will align better with our goals. A very early UI on the new WindowServer is starting to take shape as of 2022-07-27.
+    This is a <b>developer preview image</b> that’s mainly intended for helping build the system. 
+    Our new windowserver now supports running in a vm! 
+    It should also work on any hardware supported by FreeBSD-CURRENT (15.0) with at least 2GB (8GB recommended) RAM.
+    <br><br>
+    On 2022-02-14, we decided to abandon the current 
+    path of using X11/KDE desktop components and write from scratch a new UI that will 
+    align better with our goals. A very early UI on the new WindowServer is starting to take shape as of 2022-07-27.
     Thanks for your patience as we work to make ravynOS the best possible version.
+    <br><br>
+    Due to incomatibilities with FreeBSD drivers, we have had to take another detour to 
+    write a windowserver that supports framebuffer rendering, allowing VMs to function. 
+    As of 2024-10-11, this new windowserver is mostly functional with supporting native ravynOS applications.
   </footer>
 </section>
 
@@ -50,7 +59,8 @@ eleventyNavigation:
 
     <p class="section__header__text">
       We intend to bring many of the features you’ve come to love from macOS to
-      ravynOS such as clean design, global menus, and drag-and-drop installs.
+      ravynOS such as clean design, global menus, and drag-and-drop installs. 
+      These features are currently either in development, or on our roadmap:
     </p>
   </header>
 
@@ -137,9 +147,9 @@ eleventyNavigation:
     <p class="h3 section__header__hl">We’ve got your apps covered.</p>
 
     <p class="section__header__text">
-      Many FreeBSD ports and apps, Linux apps, and even trivial Darwin
-      &amp; macOS binaries can run on ravynOS. And we’re actively working on
-      improving it!
+      Soon we hope to have many apps supported on our system, 
+      but currently only native ravynOS applications are working with our new windowserver.
+      We hope to soon support the following:
     </p>
   </header>
 
@@ -220,7 +230,6 @@ eleventyNavigation:
       <span>
         Hang out with us and others like you on
         <a href="https://discord.com/invite/8caJbAGNwY">Discord</a>,
-        <a href="https://web.libera.chat/?channel=#airyx">IRC</a>, or
         <a href="https://matrix.to/#/#ravynOS-general:matrix.org">Matrix</a>.
         <a href="https://t.me/ravynOS">Telegram</a>
       </span>
@@ -237,16 +246,15 @@ eleventyNavigation:
     <p class="h3 section__header__hl">Sometimes we get covered.</p>
 
     <p class="section__header__text">
-      <a href="https://www.phoronix.com/scan.php?page=news_item&px=airyxOS-FreeBSD-macOS">This 
-      article</a> appeared on Phoronix. 
-      <a href="https://www.xda-developers.com/airyxos-macos-clone/">XDA</a> recently wrote about
-      us. <a href="https://lunduke.substack.com/">Bryan Lunduke</a> covered
-      <a href="https://lunduke.substack.com/p/the-freebsd-based-macos-clones-airyxos">airyxOS and helloSystem</a> on Substack.
-      <a href="https://console.substack.com/p/console-67">Console issue #67</a>
-      featured us along with an interview!
-      <a href="https://linuxgamecast.com/">LinuxGameCast</a>
-      gave an early version a look in their
-      <a href="https://linuxgamecast.com/2021/08/lwdw-287-turbocharging-firefox-nvme-for-pi/">LWDW episode 287</a>.
+      <p><a href="https://linuxiac.com/ravynos-a-macos-inspired-freebsd-based-desktop/">Linuxiac</a> covered pygmy marmoset.</p>
+      <br>
+      <p>Before our rebrand:</p>
+      <p><a href="https://www.phoronix.com/scan.php?page=news_item&px=airyxOS-FreeBSD-macOS">This article</a> appeared on Phoronix.</p>
+      <p><a href="https://www.xda-developers.com/airyxos-macos-clone/">XDA</a> recently wrote about us.</p>
+      <p><a href="https://lunduke.substack.com/">Bryan Lunduke</a> covered <a href="https://lunduke.substack.com/p/the-freebsd-based-macos-clones-airyxos">airyxOS and helloSystem</a> on Substack.</p>
+      <p><a href="https://console.substack.com/p/console-67">Console issue #67</a> featured us along with an interview!</p>
+      <p><a href="https://linuxgamecast.com/">LinuxGameCast</a> gave an early version a look in their
+      <a href="https://linuxgamecast.com/2021/08/lwdw-287-turbocharging-firefox-nvme-for-pi/">LWDW episode 287</a>.</p>
     </p>
   </header>
 </section>

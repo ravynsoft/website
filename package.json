@@ -1,7 +1,7 @@
 {
   "name": "website",
   "version": "1.0.0",
-  "description": "airyx.org website",
+  "description": "ravynos.com website",
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf dist",
@@ -11,17 +11,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/airyxos/website.git"
+    "url": "git+https://github.com/ravynos/website.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/airyxos/website/issues"
+    "url": "https://github.com/ravynos/website/issues"
   },
-  "homepage": "https://github.com/airyxos/website#readme",
+  "homepage": "https://github.com/ravynos/website#readme",
   "devDependencies": {
     "@11ty/eleventy": "^1.0.0",
-    "@11ty/eleventy-cache-assets": "^2.3.0",
     "@11ty/eleventy-navigation": "^0.3.2",
     "cssnano": "^5.0.8",
     "date-fns": "^2.28.0",
@@ -29,5 +28,8 @@
     "postcss": "^8.3.8",
     "postcss-import": "^14.0.2",
     "postcss-preset-env": "^6.7.0"
+  },
+  "dependencies": {
+    "@11ty/eleventy-cache-assets": "^2.3.0"
   }
 }
