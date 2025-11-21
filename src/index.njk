@@ -12,31 +12,21 @@ eleventyNavigation:
     <h1 class="hero__title">
       ravynOS
     </h1>
-    <h2 class="h4 hero__punchline">
-      <span>Finesse of macOS.</span>
-      <span>Freedom of FreeBSD.</span>
-    </h2>
-  </header>
 
   <p class="hero__desc">
-   We love macOS, but we’re not a fan of the ever-closing hardware and ecosystem. So, we are creating ravynOS&nbsp;&mdash;&nbsp;an OS aimed to provide the finesse of macOS with the freedom of FreeBSD.
+   We love macOS, but we’re not a fan of the ever-closing hardware and ecosystem. So, we are creating ravynOS&nbsp;&mdash;&nbsp;an OS aimed to provide the finesse of macOS with the freedom of open source.
   </p>
   
   <div class="divbox">
    <p class="hero__desc__highlight">
-    ravynOS is an open-source operating system based on FreeBSD, CMU Mach, and Apple open-source code that aims to be compatible with macOS applications and has no hardware restrictions.
+    ravynOS is an early-stage (pre-alpha) open-source operating system based on Darwin, FreeBSD, and Apple open-source code that aims to be compatible with macOS applications and has no hardware restrictions.
    </p>
    </div>
 
-  <div class="hero__ctas">
-    {{ button(element='a', href='https://github.com/ravynsoft/ravynos/releases', text='Download ravynOS') }}
-    {{ button(element='a', type='secondary', href='/more', class='hero__cta__learn', text='Learn More') }}
-  </div>
-
   <footer class="hero__footer">
-    This is a <b>developer preview image</b> that’s mainly intended for helping build the system. You will need real hardware to run it. It should work on any hardware supported by FreeBSD-CURRENT (14.0) with at least 2GB (8GB recommended) RAM.<br/>
-    <strong>PLEASE NOTE:</strong> On 2022-02-14, we decided to abandon the current path of using X11/KDE desktop components and write from scratch a new UI that will align better with our goals. A very early UI on the new WindowServer is starting to take shape as of 2022-07-27.
-    Thanks for your patience as we work to make ravynOS the best possible version.
+    This is a <b>developer preview image</b> that’s intended for people building the system.</br>
+    It is not polished, not completed, and not ready for end users yet.
+    Devs: Join the Discord to participate!
   </footer>
 </section>
 
@@ -60,7 +50,7 @@ eleventyNavigation:
       <div class="feature__info">
         <h3 class="feature__title">Clean Design</h3>
         {# <p class="feature__para">
-          Fluid and elegant design reminiscent of Aqua.
+          Fluid and elegant design reminiscent of Aqua. We call it Magma - it's fire, but it moves slow :)
         </p> #}
       </div>
     </li>
@@ -103,7 +93,7 @@ eleventyNavigation:
       <div class="feature__info">
         <h3 class="feature__title">Cocoa APIs</h3>
         {# <p class="feature__para">
-          Source compatibility with Cocoa APIs.
+          Source compatibility with Cocoa APIs. Binary compatibility with some macOS apps.
         </p> #}
       </div>
     </li>
@@ -114,72 +104,6 @@ eleventyNavigation:
         {# <p class="feature__para">
           Familiar commands like launchctl and open.
         </p> #}
-      </div>
-    </li>
-    <li class="feature">
-      <img alt="The FreeBSD devil from the bottom" src="/images/features/super-stability.svg"/>
-      <div class="feature__info">
-        <h3 class="feature__title">Superb Stability</h3>
-        {# <p class="feature__para">
-          Stable, secure, performant.
-        </p> #}
-      </div>
-    </li>
-  </ul>
-</section>
-
-<section class="u-container home__section home__section--apps">
-  <header class="section__header">
-    <h2 class="section__header__title">
-      Apps
-    </h2>
-
-    <p class="h3 section__header__hl">We’ve got your apps covered.</p>
-
-    <p class="section__header__text">
-      Many FreeBSD ports and apps, Linux apps, and even trivial Darwin
-      &amp; macOS binaries can run on ravynOS. And we’re actively working on
-      improving it!
-    </p>
-  </header>
-
-  <ul class="apps__list">
-    <li class="apps__list__source">
-      <div class="apps__list__details">
-        <h4>ravynOS, Always</h4>
-        <p>
-          We're building familiar apps native to ravynOS, packaged as portable
-          .app bundles and built with our core technologies of Cocoa, Qt, and
-          Mach. These are guaranteed to work and fit seamlessly into your desktop.
-
-        </p>
-      </div>
-    </li>
-    <li class="apps__list__source">
-      <div class="apps__list__details">
-        <h4>FreeBSD, Mostly</h4>
-        <p>
-          FreeBSD ports that support Wayland continue to work on ravynOS right out
-          of the box, or with minor changes.
-        </p>
-      </div>
-    </li>
-    <li class="apps__list__source">
-      <div class="apps__list__details">
-        <h4>Linux, Sometimes</h4>
-        <p>
-          Many Linux applications that support Wayland are expected to work with FreeBSD’s Linux emulation
-          layer.
-        </p>
-      </div>
-    </li>
-    <li class="apps__list__source">
-      <div class="apps__list__details">
-        <h4>macOS, Maybe</h4>
-        <p>
-          Trivial macOS and Darwin applications may run directly on ravynOS. This is an active
-          area of work and research.  AppKit-based source code may build and run natively.
-        </p>
       </div>
     </li>
   </ul>
@@ -195,8 +119,7 @@ eleventyNavigation:
 
     <p class="section__header__text">
       If this sounds like your dream system, please help us make it a reality!
-      We’ve got a Discord, IRC, and Matrix. Chats are bridged. There's also a
-      Telegram group (not currently bridged).
+      We’ve got a Discord, IRC, and Matrix. Chats are bridged.
     </p>
   </header>
 
@@ -205,7 +128,8 @@ eleventyNavigation:
       <span>📖</span>
       <span>
         Read the <a href="https://wiki.ravynos.com/">project wiki</a>
-        to find answers or troubleshoot.
+        to find answers or troubleshoot. Please note it is mostly out of date now that we
+        have pivoted to a Darwin base! You can help update it.
       </span>
     </li>
     <li>
@@ -220,33 +144,10 @@ eleventyNavigation:
       <span>
         Hang out with us and others like you on
         <a href="https://discord.com/invite/8caJbAGNwY">Discord</a>,
-        <a href="https://web.libera.chat/?channel=#airyx">IRC</a>, or
         <a href="https://matrix.to/#/#ravynOS-general:matrix.org">Matrix</a>.
-        <a href="https://t.me/ravynOS">Telegram</a>
       </span>
     </li>
   </ul>
 </section>
 
-<section class="u-container home__section">
-  <header class="section__header">
-    <h2 class="section__header__title">
-      Spotlight
-    </h2>
-
-    <p class="h3 section__header__hl">Sometimes we get covered.</p>
-
-    <p class="section__header__text">
-      <a href="https://www.phoronix.com/scan.php?page=news_item&px=airyxOS-FreeBSD-macOS">This 
-      article</a> appeared on Phoronix. 
-      <a href="https://www.xda-developers.com/airyxos-macos-clone/">XDA</a> recently wrote about
-      us. <a href="https://lunduke.substack.com/">Bryan Lunduke</a> covered
-      <a href="https://lunduke.substack.com/p/the-freebsd-based-macos-clones-airyxos">airyxOS and helloSystem</a> on Substack.
-      <a href="https://console.substack.com/p/console-67">Console issue #67</a>
-      featured us along with an interview!
-      <a href="https://linuxgamecast.com/">LinuxGameCast</a>
-      gave an early version a look in their
-      <a href="https://linuxgamecast.com/2021/08/lwdw-287-turbocharging-firefox-nvme-for-pi/">LWDW episode 287</a>.
-    </p>
-  </header>
 </section>
