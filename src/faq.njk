@@ -22,31 +22,6 @@ eleventyNavigation:
     </dl>
 
     <dl class="faq__faq">
-      <dt id="whylinux">Why BSD instead of Linux?</dt>
-      <dd class="faq__markdown">
-        <p>
-            In theory, it will be easier to build Mac code on FreeBSD because it is closer to macOS than Linux is. Using the BSD kernel also eliminates the need to emulate BSD system calls like Darling (on Linux) does, and made it easier to patch in Mach 3.0 support.
-          </p>
-        <p>Also, why not? Devils need love too!</p>
-      </dd>
-    </dl>
-
-    <dl class="faq__faq">
-      <dt id="whybsd">Why BSD instead of Darwin?</dt>
-      <dd class="faq__markdown">
-        <p>
-            The short answer is "hardware support". ravynOS should run on most commodity x86_64 hardware using FreeBSD's very stable and performant drivers.
-          </p>
-        <p>
-            The longer answer is that plus I don't see any real advantage to using XNU. We have merged in Mach support now (big thanks to NetBSD, NextBSD and the iX Systems folks for that) so the xnu approach just seems to add complexity and the effort of writing and maintaining drivers.
-          </p>
-        <p>
-            Considering how big this project is already, I opted to stick with the BSD kernel - at least for now.
-          </p>
-      </dd>
-    </dl>
-
-    <dl class="faq__faq">
       <dt>Is this... legally sketchy?</dt>
       <dd class="faq__markdown">
         <p>
@@ -94,54 +69,6 @@ eleventyNavigation:
     </dl>
 
     <dl class="faq__faq">
-      <dt>Why aren't you working with project XXXX? Isn't this a duplication of effort?</dt>
-      <dd class="faq__markdown">
-        <p>This one has been asked a lot so:</p>
-        <ul>
-          <li>
-            <p>
-                helloSystem: We <em>have been</em> in fact working with helloSystem! As some people have noticed, Release 0.2.X was basically helloSystem. (That was the second PoC. The first had been built on vanilla FreeBSD and had no GUI at all.) Under the hood, however, release 0.2.2 has a partial implementation of Cocoa, a modified compiler & linker that support frameworks, and several other additions that make it distinct. We have similar philosophies, and share technology and cooperate where it makes sense (e.g. Filer), but the project goals are quite different.
-              </p>
-            <p>
-                helloSystem wants to create a computer that is <a href="https://github.com/helloSystem/hello"> simple to use, open, elegant, small and fast</a>. Older MacOS X and Classic are an inspiration to what that might look like, but they are not explicitly trying to create an open-source Mac. In fact they're mostly avoiding Objective C and XML plists and other Mac technology in favor of simpler and/or more modern ways (e.g. Qt, C++, JSON).
-              </p>
-
-            <p>
-                ravynOS is explicitly trying to be compatible with Mac software at a source and eventually a binary level, without losing support for FreeBSD/X11 software, and to implement a very similar experience on the desktop and at the command line. For example, on ravynOS you can type <code>open -a MyApp image.jpg</code> and have <code>image.jpg</code> open in <em>MyApp</em>. You will find things in (mostly) the same directories as a Mac, like <code>~/Library</code> or <code>/System/Library/Fonts</code>. This project is not as concerned about keeping the OS as small and simple as possible, and more concerned about making it clean, secure, performant, and compatible - implementing many of the features I use daily in macOS while skipping the lock-in and "tabletization" of the computer.
-              </p>
-
-            <p>Some of the more technical differences between ravynOS and helloSystem are:
-                <ul>
-                <li>ravynOS uses a patched kernel with support for Mach, just like xnu, and a compiler suite that supports Frameworks and has preliminary support for Mach-O as well as ELF</li>
-                <li>ravynOS has a package repo with software built to "standard" paths like <code>/System</code>, <code>/etc</code>, and <code>/usr</code> instead of the FreeBSD repos which are built into <code>/usr/local</code>
-                </li>
-                <li>ravynOS desktop is being written from scratch with Cocoa, Mach, and OpenGL on a Wayland compositor, whereas helloSystem's desktop is based on OpenBox, Menu and Filer (originally from LXQt) plus other lightweight services for notifications (dunst), screen color temperature (redshift) etc</li>
-                <li>helloSystem uses a simplified .app structure whereas ravynOS uses real Bundles for .app</li>
-                <li>helloSystem tends to use typical Unix paths and files, while ravynOS is moving towards typical Mac paths and files</li>
-                <li>ravynOS tries to provide the same APIs as macOS</li>
-              </ul>
-            </p>
-          </li>
-          <li>
-              elementaryOS: Currently using some icons and themes and totally open to other possibilities. However, we are not aligned on our preferred stacks - GTK vs Qt/Cocoa - which makes it harder.
-            </li>
-          <li>
-              PureDarwin: ravynOS is not based on Darwin (see <a href="#whylinux">"Why not Darwin"</a> above) but uses many of the same underlying pieces.
-            </li>
-          <li>
-              Darling: ravynOS is not based on Linux or Mach-O but uses many of the same underlying pieces. Darling's Cocoa implementation comes from the same source as ours and I suspect we could share some code here. I'm definitely keeping an eye on Darling :)
-            </li>
-          <li>
-              GNUStep: GNUStep is pretty good and their Cocoa implementation is much further ahead than ours. We use the libobjc2 runtime from it. However, the way it is packaged, the GS* extension classes, and various other things made it "less than ideal" for ravynOS. Also I prefer BSD/MIT/Apache-style licensing. That said, I'm open to using it if we can make it work.
-            </li>
-        </ul>
-        <p>
-            Notwithstanding the above, I'm open to collaboration with anyone who finds parts of ravynOS useful or who has code they think might be useful to it.
-          </p>
-      </dd>
-    </dl>
-
-    <dl class="faq__faq">
       <dt>This is a huge effort. Y'all must be crazy!</dt>
       <dd class="faq__markdown">
         <p>
@@ -166,7 +93,7 @@ eleventyNavigation:
 
   <main>
     <dl class="faq__faq">
-      
+<!--      
       <dt>I downloaded the developer preview liveCD. What is the username and password?</dt>
       <dd class="faq__markdown">
         <p>The login credential for the liveboot currently is: <em>liveuser</em>, all in small letters, and <b>no password</b>. Just type <em>liveuser</em> in the username field and press enter/click on the login button.</p>
@@ -189,7 +116,7 @@ eleventyNavigation:
               Video drivers, for the time being, exist for only Intel HD series, Intel Iris series (Xe graphics), most AMD integrated and discrete GPUs. There is no driver yet for NVIDIA. Help fixing this is most welcome.  If your GPU is supported, the GUI starts automatically on boot. If not, you will receive boot messages on screen followed by a shell-like interface (<b>tty1</b>).
         </p>
       </dd>
-
+-->
     
     </dl>
   </main>
