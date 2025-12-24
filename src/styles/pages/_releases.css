@@ -5,25 +5,27 @@
   font-size: 0.875rem;
 }
 
-.releases__list > li {
+.releases__list>li {
   grid-template-columns: 20% 80%;
   gap: 1rem;
 }
 
-.releases__list > li > aside {
+.releases__list>li>aside {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  gap: 0.5rem;
+  margin-block-end: 1rem;
 }
 
-.releases__list > li > main {
+.releases__list>li>main {
   border: 1px solid var(--color-border);
   border-radius: 16px;
   padding: 1rem;
   box-shadow: var(--shadow-elevation-low);
 }
 
-.releases__list > li > main > h2 {
+.releases__list>li>main>h2 {
   margin-block-end: 1rem;
 }
 
