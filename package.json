@@ -21,7 +21,6 @@
   "homepage": "https://github.com/airyxos/website#readme",
   "devDependencies": {
     "@11ty/eleventy": "^1.0.0",
-    "@11ty/eleventy-cache-assets": "^2.3.0",
     "@11ty/eleventy-navigation": "^0.3.2",
     "cssnano": "^5.0.8",
     "date-fns": "^2.28.0",
@@ -29,5 +28,8 @@
     "postcss": "^8.3.8",
     "postcss-import": "^14.0.2",
     "postcss-preset-env": "^6.7.0"
+  },
+  "dependencies": {
+    "@11ty/eleventy-fetch": "^5.1.1"
   }
 }

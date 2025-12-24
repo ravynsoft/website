@@ -1,8 +1,10 @@
-const Cache = require('@11ty/eleventy-cache-assets')
+const EleventyFetch = require("@11ty/eleventy-fetch");
 
 module.exports = async function () {
-  return Cache('https://api.github.com/repos/ravynsoft/ravynos/releases', {
-    duration: '1h',
-    type: 'json',
-  })
+  let url = "https://api.github.com/repos/ravynsoft/ravynos/releases";
+
+  return EleventyFetch(url, {
+    duration: "1h",
+    type: "json",
+  });
 }
