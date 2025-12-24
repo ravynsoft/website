@@ -5,7 +5,7 @@ Built with **Eleventy (11ty)**, PostCSS, and vanilla JavaScript.
 
 ![](https://api.cirrus-ci.com/github/ravynsoft/ravynos.svg?branch=main) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - Node.js (LTS recommended)
@@ -22,11 +22,6 @@ Built with **Eleventy (11ty)**, PostCSS, and vanilla JavaScript.
 2. Install dependencies:
    ```bash
    npm install
-   ```
-
-3. Setup environment variables (optional):
-   ```bash
-   cp .env.example .env
    ```
 
 ### Development
@@ -47,7 +42,7 @@ To build the static site for production (outputs to `dist/`):
 npm run build
 ```
 
-## 🎨 Key Features
+## Key Features
 
 - **Theme System**: content-aware Dark/Light mode with system preference detection and persistence.
 - **Glassmorphism UI**: Heavy use of `backdrop-filter: blur()` on headers and cards for a modern, OS-like feel.
@@ -64,22 +59,6 @@ npm run build
 - **Styling**: PostCSS with CSS Nested, Custom Media, and Import plugins.
 - **Scripts**: Vanilla JS bundled with `esbuild`.
 - **Assets**: `@11ty/eleventy-img` for image optimization.
-
-## 📂 Project Structure
-
-```
-├── src/
-│   ├── _includes/      # Nunjucks partials (header, footer, etc.)
-│   ├── scripts/        # Client-side JavaScript
-│   ├── styles/         # CSS files (organized by components/pages)
-│   ├── tasks/          # Build scripts (styles.11ty.js, scripts.11ty.js)
-│   ├── index.njk       # Homepage
-│   ├── releases.njk    # Releases page
-│   └── faq.njk         # FAQ page
-├── dist/               # Output directory (gitignored)
-├── .eleventy.js        # 11ty configuration
-└── package.json
-```
 
 ## 🤝 Contributing
 
