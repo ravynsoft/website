@@ -6,9 +6,7 @@
 
 .faq__section>div {
   color: white;
-  position: sticky;
   text-align: center;
-  top: var(--header-space);
   background-color: var(--color-primary);
   border-radius: 1rem;
   padding-block: 1%;
