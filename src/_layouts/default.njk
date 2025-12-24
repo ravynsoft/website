@@ -11,9 +11,26 @@
     <link rel="preconnect" href="https://cdn.fontshare.com"/>
     <link href="https://api.fontshare.com/css?f[]=satoshi@400,700,900&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="/css/main.css"/>
-    <script src="/js/airyx.js" type="module"></script>
+    <script src="/js/main.js" defer></script>
 
-    <title>ravynOS – {{ title or 'Finesse of macOS. Freedom of Open Source.' }}</title>
+    <title>{% if title %}{{ title }} – {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{{ description or site.description }}">
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+    
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="{{ site.title }}">
+    <meta property="og:title" content="{{ title or site.title }}">
+    <meta property="og:description" content="{{ description or site.description }}">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:image" content="{{ site.url }}{{ image or site.og.image }}">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="{{ site.twitter.cardType }}">
+    <meta name="twitter:site" content="{{ site.twitter.handle }}">
+    <meta name="twitter:title" content="{{ title or site.title }}">
+    <meta name="twitter:description" content="{{ description or site.description }}">
+    <meta name="twitter:image" content="{{ site.url }}{{ image or site.og.image }}">
   </head>
   <body>
     {% include 'header.njk' %}

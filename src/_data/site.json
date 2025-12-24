@@ -1,0 +1,18 @@
+{
+    "title": "ravynOS",
+    "description": "Finesse of macOS. Freedom of Open Source.",
+    "url": "https://ravynos.com",
+    "language": "en",
+    "author": {
+        "name": "ravynOS Team",
+        "email": "info@ravynos.com",
+        "url": "https://ravynos.com"
+    },
+    "twitter": {
+        "handle": "@ravynos",
+        "cardType": "summary_large_image"
+    },
+    "og": {
+        "image": "/images/og-image.png"
+    }
+}
