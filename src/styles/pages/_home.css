@@ -50,7 +50,7 @@
 }
 
 .section__header--hero {
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .hero__title {
@@ -69,12 +69,17 @@
 }
 
 .hero__desc {
-  max-width: 50ch;
-  color: var(--color-text-muted);
+  max-width: 55ch;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--color-text);
 }
 
 .hero__desc__highlight {
-  max-width: 50ch;
+  max-width: 55ch;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  font-weight: var(--font-normal);
   color: #fff;
 }
 
@@ -90,9 +95,14 @@
 }
 
 .hero__footer {
-  max-width: 80ch;
-  font-size: 0.75rem;
+  max-width: 70ch;
+  font-size: 0.875rem;
+  line-height: 1.6;
   color: var(--color-text-muted);
+  padding: 1rem 1.5rem;
+  background: var(--color-surface-low);
+  border-radius: 0.75rem;
+  border: 1px solid var(--color-border);
 }
 
 .features__list {
@@ -199,7 +209,7 @@
 }
 
 .divbox {
-  background-color: var(--color-secondary);
+  background-color: hsl(0deg 60% 55%);
   border-radius: 1em;
   padding: 2%;
 }
