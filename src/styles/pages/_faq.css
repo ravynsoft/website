@@ -4,28 +4,24 @@
   scroll-margin-top: var(--header-space);
 }
 
-.faq__section > div {
+.faq__section>div {
   color: white;
-  position:sticky;
+  position: sticky;
   text-align: center;
   top: var(--header-space);
   background-color: var(--color-primary);
   border-radius: 1rem;
+  padding-block: 1%;
 }
 
-.h4 {
-  padding-top: 1%;
-  padding-bottom: 1%;
-}
-
-.faq__section:target > div  {
+.faq__section:target>div {
   background-color: var(--color-secondary);
-  color: var( --color-primary);
+  color: var(--color-primary);
   transition-duration: 2s;
-  transition-property: color background-color;
+  transition-property: color, background-color;
 }
 
-.faq__section > main {
+.faq__section>main {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -37,7 +33,7 @@
   gap: 0.5rem;
 }
 
-.faq__faq > dt {
+.faq__faq>dt {
   font-weight: var(--font-bold);
 }
 
@@ -77,8 +73,4 @@
   border: 1px solid var(--color-border);
   padding: 1px 4px;
   border-radius: 8px;
-}
-
-body {
-  position: relative;
 }

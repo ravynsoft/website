@@ -62,12 +62,10 @@
   background: linear-gradient(268.67deg, var(--color-primary) 20%, var(--color-secondary) 40%, var(--color-secondary) 60%, var(--color-primary) 80%);
   background-size: 200% auto;
   color: #000;
-  background-clip: text;
-  text-fill-color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
   animation: shine 7000ms linear infinite;
-  
 }
 
 .hero__desc {
@@ -100,7 +98,7 @@
 .features__list {
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: 1fr;
   width: 100%;
 
   @media (--viewport-medium) {
@@ -208,7 +206,7 @@
 
 @keyframes shine {
   to {
-    
+
     background-position: 200% center;
   }
 }

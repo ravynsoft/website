@@ -1,6 +1,6 @@
 const menuStateInput = document.querySelector('#menu-state')
 
-menuStateInput.addEventListener('change', (e) => {
+menuStateInput?.addEventListener('change', (e) => {
   if (e.target.checked) {
     document.documentElement.classList.add('u-lock-scroll')
   } else {
@@ -10,12 +10,14 @@ menuStateInput.addEventListener('change', (e) => {
 
 const header = document.querySelector('#header')
 
-window.addEventListener('scroll', () => {
-  const scroll = window.scrollY
+if (header) {
+  window.addEventListener('scroll', () => {
+    const scroll = window.scrollY
 
-  if (scroll >= 20) {
-    header.classList.add('header__inner--raised')
-  } else {
-    header.classList.remove('header__inner--raised')
-  }
-})
+    if (scroll >= 20) {
+      header.classList.add('header__inner--raised')
+    } else {
+      header.classList.remove('header__inner--raised')
+    }
+  })
+}
