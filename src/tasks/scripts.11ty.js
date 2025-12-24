@@ -9,6 +9,7 @@ class Scripts {
         return {
             permalink: `js/main.js`,
             eleventyExcludeFromCollections: true,
+            layout: null,
         }
     }
 

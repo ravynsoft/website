@@ -44,50 +44,91 @@ eleventyNavigation:
     </p>
   </header>
 
-  <ul class="features__list">
-    <li class="feature feature--clean-design">
-      <img alt="An illustration of a clean window design" src="/images/features/clean-design.svg"/>
-      <div class="feature__info">
-        <h3 class="feature__title">Clean Design</h3>
+  <div class="features__list">
+    <div class="feature-row">
+      <div class="feature-row__image">
+        <img alt="An illustration of a clean window design" src="/images/features/clean-design.svg"/>
       </div>
-    </li>
-    <li class="feature">
-      <img alt="An illustration of a global menu" src="/images/features/global-menu.svg"/>
-      <div class="feature__info">
-        <h3 class="feature__title">Global Menus</h3>
+      <div class="feature-row__content">
+        <h3 class="feature-row__title">Clean Design</h3>
+        <p class="feature-row__text">
+          A distract-free interface that puts your content first. Beautiful transparency, refined typography, and elegant spacing inspired by the best.
+        </p>
       </div>
-    </li>
-    <li class="feature">
-      <img alt="An illustration of Shift and S keys" src="/images/features/shortcuts.svg"/>
-      <div class="feature__info">
-        <h3 class="feature__title">Consistent Shortcuts</h3>
+    </div>
+
+    <div class="feature-row">
+      <div class="feature-row__image">
+        <img alt="An illustration of a global menu" src="/images/features/global-menu.svg"/>
       </div>
-    </li>
-    <li class="feature">
-      <img alt="An illustration of an app ready to be dragged to Applications folder" src="/images/features/simple-installs.svg"/>
-      <div class="feature__info">
-        <h3 class="feature__title">Simple Installs</h3>
+      <div class="feature-row__content">
+        <h3 class="feature-row__title">Global Menus</h3>
+        <p class="feature-row__text">
+          Save vertical space and access commands consistently. The global menu bar separates application control from window content.
+        </p>
       </div>
-    </li>
-    <li class="feature">
-      <img alt="Four familiar folders - Application, System, Library, and Users" src="/images/features/familiar-folders.svg"/>
-      <div class="feature__info">
-        <h3 class="feature__title">Familiar Folders</h3>
+    </div>
+
+    <div class="feature-row">
+      <div class="feature-row__image">
+        <img alt="An illustration of Shift and S keys" src="/images/features/shortcuts.svg"/>
       </div>
-    </li>
-    <li class="feature">
-      <img alt="An illustration with some Cocoa Appkit code" src="/images/features/cocoa-apis.svg"/>
-      <div class="feature__info">
-        <h3 class="feature__title">Cocoa APIs</h3>
+      <div class="feature-row__content">
+        <h3 class="feature-row__title">Consistent Shortcuts</h3>
+        <p class="feature-row__text">
+          Muscle memory matters. Use the standard Command-key shortcuts you already know and love across the entire system.
+        </p>
       </div>
-    </li>
-    <li class="feature">
-      <img alt="An illustration of the macOS’ open command" src="/images/features/commands.svg"/>
-      <div class="feature__info">
-        <h3 class="feature__title">Nifty Commands</h3>
+    </div>
+
+    <div class="feature-row">
+      <div class="feature-row__image">
+        <img alt="An illustration of an app ready to be dragged to Applications folder" src="/images/features/simple-installs.svg"/>
       </div>
-    </li>
-  </ul>
+      <div class="feature-row__content">
+        <h3 class="feature-row__title">Simple Installs</h3>
+        <p class="feature-row__text">
+          No installers, no registries. Just drag the application bundle to your Applications folder and you're done.
+        </p>
+      </div>
+    </div>
+
+    <div class="feature-row">
+      <div class="feature-row__image">
+        <img alt="Four familiar folders - Application, System, Library, and Users" src="/images/features/familiar-folders.svg"/>
+      </div>
+      <div class="feature-row__content">
+        <h3 class="feature-row__title">Familiar Folders</h3>
+        <p class="feature-row__text">
+          Feel at home with a standard hierarchy: Applications, System, Library, and Users. Everything is exactly where you expect it.
+        </p>
+      </div>
+    </div>
+
+    <div class="feature-row">
+      <div class="feature-row__image">
+        <img alt="An illustration with some Cocoa Appkit code" src="/images/features/cocoa-apis.svg"/>
+      </div>
+      <div class="feature-row__content">
+        <h3 class="feature-row__title">Cocoa APIs</h3>
+        <p class="feature-row__text">
+          Native support for key frameworks. Developers can port existing Cocoa applications with minimal changes.
+        </p>
+      </div>
+    </div>
+
+    <div class="feature-row">
+      <div class="feature-row__image">
+        <img alt="An illustration of the macOS’ open command" src="/images/features/commands.svg"/>
+      </div>
+      <div class="feature-row__content">
+        <h3 class="feature-row__title">Nifty Commands</h3>
+        <p class="feature-row__text">
+          Power at your fingertips. Use 'open', 'pbcopy', and other familiar terminal utilities to speed up your workflow.
+        </p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="u-container home__section">
@@ -104,31 +145,31 @@ eleventyNavigation:
     </p>
   </header>
 
-  <ul class="contribute__list">
-    <li>
-      <span>📖</span>
-      <span>
-        Read the <a href="https://wiki.ravynos.com/">project wiki</a>
-        to find answers or troubleshoot. Please note it is mostly out of date now that we
-        have pivoted to a Darwin base! You can help update it.
-      </span>
-    </li>
-    <li>
-      <span>🙋🏽‍♂️</span>
-      <span>
-        Ask questions on the
-        <a href="https://github.com/ravynsoft/ravynos/discussions">discussion forum</a>.
-      </span>
-    </li>
-    <li>
-      <span>💬</span>
-      <span>
-        Hang out with us and others like you on
-        <a href="https://discord.com/invite/8caJbAGNwY">Discord</a>,
-        <a href="https://matrix.to/#/#ravynOS-general:matrix.org">Matrix</a>.
-      </span>
-    </li>
-  </ul>
+  <div class="contribute__grid">
+    <a href="https://wiki.ravynos.com/" class="contribute__card">
+      <div class="contribute__icon">📖</div>
+      <h3 class="contribute__title">Project Wiki</h3>
+      <p class="contribute__text">
+        Documentation, troubleshooting, and guides. Help us keep it up to date!
+      </p>
+    </a>
+
+    <a href="https://github.com/ravynsoft/ravynos/discussions" class="contribute__card">
+      <div class="contribute__icon">🙋🏽‍♂️</div>
+      <h3 class="contribute__title">Discussions</h3>
+      <p class="contribute__text">
+        Ask questions, share ideas, and engage with the community on GitHub.
+      </p>
+    </a>
+
+    <a href="https://discord.com/invite/8caJbAGNwY" class="contribute__card">
+      <div class="contribute__icon">💬</div>
+      <h3 class="contribute__title">Join Chat</h3>
+      <p class="contribute__text">
+        Real-time chat on Discord and Matrix. Hang out with the team and users.
+      </p>
+    </a>
+  </div>
 </section>
 
 

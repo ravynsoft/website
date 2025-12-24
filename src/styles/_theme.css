@@ -1,4 +1,7 @@
+/* Dark mode by default */
 :root {
+  color-scheme: dark light;
+
   /* Colors */
   --hue-primary: 228deg;
   --hue-secondary: 271deg;
@@ -13,31 +16,32 @@
   --color-secondary-bare: var(--hue-secondary) 100% 70%;
   --color-secondary: hsl(var(--color-secondary-bare));
 
-  --color-text: hsl(var(--hue-primary) 80% 20%);
-  --color-text-muted: hsl(var(--hue-primary) 20% 45%);
+  /* Dark mode colors (default) */
+  --color-text: hsl(var(--hue-primary) 10% 92%);
+  --color-text-muted: hsl(var(--hue-primary) 15% 60%);
+  --color-border: hsl(var(--hue-primary) 20% 25%);
+  --color-card-border: hsl(var(--hue-primary) 15% 20%);
+  --color-surface-low: hsl(var(--hue-primary) 20% 12%);
+  --color-surface: hsl(var(--hue-primary) 20% 8%);
+  --color-header-bg: hsl(var(--hue-primary) 20% 12% / 0.85);
 
-  --color-border: hsl(var(--hue-primary) 20% 90%);
-  --color-card-border: hsl(var(--hue-primary) 15% 94%);
-
-  --color-surface-low: hsl(var(--hue-primary) 40% 98%);
-  --color-surface: hsl(var(--hue-primary) 15% 100%);
-
-  --shadow-color: var(--hue-primary) 0% 63%;
-  --shadow-elevation-low: 0px 0.6px 0.7px hsl(var(--shadow-color) / 0.34),
-    0px 1.1px 1.2px -1.2px hsl(var(--shadow-color) / 0.34),
-    0px 2.6px 2.9px -2.5px hsl(var(--shadow-color) / 0.34);
-  --shadow-elevation-medium: 0px 0.6px 0.7px hsl(var(--shadow-color) / 0.36),
-    0px 2.1px 2.4px -0.8px hsl(var(--shadow-color) / 0.36),
-    -0.1px 5.3px 6px -1.7px hsl(var(--shadow-color) / 0.36),
-    -0.2px 13px 14.6px -2.5px hsl(var(--shadow-color) / 0.36);
-  --shadow-elevation-high: 0px 0.6px 0.7px hsl(var(--shadow-color) / 0.34),
-    0px 3.8px 4.3px -0.4px hsl(var(--shadow-color) / 0.34),
-    -0.1px 7.1px 8px -0.7px hsl(var(--shadow-color) / 0.34),
-    -0.1px 11.6px 13.1px -1.1px hsl(var(--shadow-color) / 0.34),
-    -0.2px 18.6px 20.9px -1.4px hsl(var(--shadow-color) / 0.34),
-    -0.4px 29px 32.6px -1.8px hsl(var(--shadow-color) / 0.34),
-    -0.6px 44.1px 49.6px -2.1px hsl(var(--shadow-color) / 0.34),
-    -0.8px 65px 73.1px -2.5px hsl(var(--shadow-color) / 0.34);
+  /* Shadows */
+  --shadow-color: 0deg 0% 0%;
+  --shadow-elevation-low: 0px 0.6px 0.7px hsl(var(--shadow-color) / 0.5),
+    0px 1.1px 1.2px -1.2px hsl(var(--shadow-color) / 0.5),
+    0px 2.6px 2.9px -2.5px hsl(var(--shadow-color) / 0.5);
+  --shadow-elevation-medium: 0px 0.6px 0.7px hsl(var(--shadow-color) / 0.5),
+    0px 2.1px 2.4px -0.8px hsl(var(--shadow-color) / 0.5),
+    -0.1px 5.3px 6px -1.7px hsl(var(--shadow-color) / 0.5),
+    -0.2px 13px 14.6px -2.5px hsl(var(--shadow-color) / 0.5);
+  --shadow-elevation-high: 0px 0.6px 0.7px hsl(var(--shadow-color) / 0.5),
+    0px 3.8px 4.3px -0.4px hsl(var(--shadow-color) / 0.5),
+    -0.1px 7.1px 8px -0.7px hsl(var(--shadow-color) / 0.5),
+    -0.1px 11.6px 13.1px -1.1px hsl(var(--shadow-color) / 0.5),
+    -0.2px 18.6px 20.9px -1.4px hsl(var(--shadow-color) / 0.5),
+    -0.4px 29px 32.6px -1.8px hsl(var(--shadow-color) / 0.5),
+    -0.6px 44.1px 49.6px -2.1px hsl(var(--shadow-color) / 0.5),
+    -0.8px 65px 73.1px -2.5px hsl(var(--shadow-color) / 0.5);
 
   --font-sans: 'Satoshi', system-ui;
   --font-mono: Fira Code VF, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono,
@@ -54,9 +58,20 @@
   /* Z-indexes */
   --layer-menu: 100;
 
-  /* Other globals */
-  --global-header-height: 48px;
+  /* Header - taller */
+  --global-header-height: 64px;
   --global-header-block-spacing: 1rem;
-
   --header-space: calc(var(--global-header-height) + 2 * var(--global-header-block-spacing));
+}
+
+/* Light mode */
+[data-theme="light"] {
+  --color-text: hsl(var(--hue-primary) 80% 20%);
+  --color-text-muted: hsl(var(--hue-primary) 20% 45%);
+  --color-border: hsl(var(--hue-primary) 20% 85%);
+  --color-card-border: hsl(var(--hue-primary) 15% 90%);
+  --color-surface-low: hsl(var(--hue-primary) 40% 96%);
+  --color-surface: hsl(var(--hue-primary) 15% 99%);
+  --color-header-bg: hsl(0deg 0% 100% / 0.85);
+  --shadow-color: var(--hue-primary) 30% 50%;
 }
