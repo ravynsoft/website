@@ -10,6 +10,8 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  align-items: center;
+  text-align: center;
 }
 
 .home__section :--headings {
@@ -48,7 +50,7 @@
 }
 
 .section__header--hero {
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .hero__title {
@@ -60,21 +62,24 @@
   background: linear-gradient(268.67deg, var(--color-primary) 20%, var(--color-secondary) 40%, var(--color-secondary) 60%, var(--color-primary) 80%);
   background-size: 200% auto;
   color: #000;
-  background-clip: text;
-  text-fill-color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
   animation: shine 7000ms linear infinite;
-  
 }
 
 .hero__desc {
-  max-width: 50ch;
-  color: var(--color-text-muted);
+  max-width: 55ch;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--color-text);
 }
 
 .hero__desc__highlight {
-  max-width: 50ch;
+  max-width: 55ch;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  font-weight: var(--font-normal);
   color: #fff;
 }
 
@@ -90,15 +95,20 @@
 }
 
 .hero__footer {
-  max-width: 80ch;
-  font-size: 0.75rem;
+  max-width: 70ch;
+  font-size: 0.875rem;
+  line-height: 1.6;
   color: var(--color-text-muted);
+  padding: 1rem 1.5rem;
+  background: var(--color-surface-low);
+  border-radius: 0.75rem;
+  border: 1px solid var(--color-border);
 }
 
 .features__list {
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: 1fr;
   width: 100%;
 
   @media (--viewport-medium) {
@@ -199,14 +209,14 @@
 }
 
 .divbox {
-  background-color: var(--color-secondary);
+  background-color: hsl(0deg 60% 55%);
   border-radius: 1em;
   padding: 2%;
 }
 
 @keyframes shine {
   to {
-    
+
     background-position: 200% center;
   }
 }
