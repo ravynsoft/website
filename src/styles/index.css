@@ -11,6 +11,7 @@
 @import 'components/_nav';
 @import 'components/_social';
 @import 'components/_button';
+@import 'components/_announcement';
 
 @import 'pages/_home';
 @import 'pages/_more';

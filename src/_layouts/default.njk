@@ -33,6 +33,14 @@
     <meta name="twitter:image" content="{{ site.url }}{{ image or site.og.image }}">
   </head>
   <body>
+    <!-- Announcement Bar - remove 'announcement--hidden' class to show -->
+    <div class="announcement announcement--hidden">
+      <div class="u-container announcement__inner">
+        <p class="announcement__text"><strong>New release available!</strong> Check out the latest version of ravynOS. <a href="/releases.html">Learn more →</a></p>
+        <button class="announcement__close" aria-label="Close announcement">&times;</button>
+      </div>
+    </div>
+
     {% include 'header.njk' %}
 
     <main class="main" role="main">

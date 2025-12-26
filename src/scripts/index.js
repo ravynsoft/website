@@ -52,3 +52,17 @@ themeToggle?.addEventListener('click', () => {
     localStorage.setItem('theme', 'light')
   }
 })
+
+// Announcement bar close
+const announcementClose = document.querySelector('.announcement__close')
+const announcement = document.querySelector('.announcement')
+
+announcementClose?.addEventListener('click', () => {
+  announcement?.classList.add('announcement--hidden')
+  sessionStorage.setItem('announcementClosed', 'true')
+})
+
+// Keep announcement closed if user already closed it this session
+if (sessionStorage.getItem('announcementClosed') === 'true') {
+  announcement?.classList.add('announcement--hidden')
+}
