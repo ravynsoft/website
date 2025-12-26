@@ -66,6 +66,17 @@ h4,
   color: var(--color-text-muted);
 }
 
+.page-header__desc a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s ease;
+}
+
+.page-header__desc a:hover {
+  color: var(--color-secondary);
+}
+
 a:not([class]) {
   color: var(--color-primary);
   text-decoration: none;
