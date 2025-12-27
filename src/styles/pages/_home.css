@@ -317,16 +317,6 @@
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: 16px;
-  text-decoration: none;
-  transition: transform 0.3s var(--animation-eased),
-    box-shadow 0.3s var(--animation-eased),
-    border-color 0.3s ease;
-}
-
-.contribute__card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-elevation-medium);
-  border-color: var(--color-primary);
 }
 
 .contribute__icon {
@@ -345,7 +335,29 @@
   font-size: 0.9rem;
   line-height: 1.5;
   color: var(--color-text-muted);
-  margin: 0;
+  margin: 0 0 1rem;
+}
+
+.contribute__link {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: var(--font-semibold);
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.contribute__link:hover {
+  background-color: hsl(var(--color-primary-bare) / 0.15);
+  color: var(--color-primary-light);
+}
+
+.contribute__links {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 
