@@ -156,14 +156,15 @@
   border-radius: 1px;
 
   position: absolute;
-  left: 7px;
+  left: 50%;
+  margin-left: -9px;
   z-index: 1;
 
   transition: transform 0.5s var(--animation-eased);
 }
 
 .menu__label__bread--top {
-  top: 10px;
+  top: 25%;
 }
 
 .menu__label__bread--middle {
@@ -171,11 +172,12 @@
 }
 
 .menu__label__bread--bottom {
-  bottom: 10px;
+  bottom: 25%;
 }
 
 .header__menu-state:checked~.header__inner .menu__label__bread--top {
-  transform: translateY(10px) rotate(45deg) scaleX(2);
+  top: calc(50% - 1px);
+  transform: rotate(45deg) scaleX(2);
 }
 
 .header__menu-state:checked~.header__inner .menu__label__bread--middle {
@@ -183,7 +185,8 @@
 }
 
 .header__menu-state:checked~.header__inner .menu__label__bread--bottom {
-  transform: translateY(-10px) rotate(-45deg) scaleX(2);
+  bottom: calc(50% - 1px);
+  transform: rotate(-45deg) scaleX(2);
 }
 
 /* Right-side actions (icons + theme toggle) */
@@ -192,6 +195,10 @@
   align-items: center;
   gap: 0.75rem;
   margin-left: auto;
+
+  @media not (--viewport-large) {
+    margin-top: 0.5rem;
+  }
 }
 
 .icon-link {
