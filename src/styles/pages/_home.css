@@ -59,6 +59,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  padding-block: 0.2em;
 }
 
 .hero__punchline {
@@ -118,6 +119,25 @@
   line-height: 1.6;
   color: #fff;
   margin: 0;
+}
+
+/* Styling the 'here' link inside the red banner */
+.hero__banner__text a {
+  color: #ffffff;
+  font-weight: var(--font-bold);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.hero__banner__text a:hover {
+  color: var(--color-primary-light);
+  opacity: 0.9;
+}
+
+[data-theme="light"] .hero__banner__text a {
+  color: #ffffff;
 }
 
 .hero__desc__highlight {
@@ -215,9 +235,10 @@
   display: none;
 }
 
-/* Invert shortcuts image for light theme (original is designed for dark) */
-[data-theme="light"] .img--light[src*="shortcuts"] {
-  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1)) invert(1);
+/* Invert shortcuts.svg in dark mode */
+.img--dark.icon-invert,
+[data-theme="dark"] .icon-invert {
+  filter: invert(1) brightness(1.5) drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3)) !important;
 }
 
 .feature-row__content {
@@ -241,6 +262,7 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin: 0;
+  padding-block: 0.2em;
 }
 
 .feature-row__text {
@@ -368,8 +390,6 @@
   flex-wrap: wrap;
   justify-content: center;
 }
-
-
 
 @keyframes shine {
   to {
