@@ -346,6 +346,15 @@
   padding: 0.5rem 1rem;
   border-radius: 8px;
   transition: background-color 0.2s ease, color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contribute__link svg {
+  width: 1.25em;
+  height: 1.25em;
+  fill: currentColor;
 }
 
 .contribute__link:hover {
