@@ -36,6 +36,7 @@
 .nav__link {
   display: flex;
   align-items: center;
+  gap: 0.4rem;
   padding: 0 1.25rem;
   font-size: 0.9rem;
   font-weight: var(--font-semibold);
@@ -50,6 +51,10 @@
   &:hover {
     color: var(--color-primary);
   }
+}
+
+.nav__icon {
+  flex-shrink: 0;
 }
 
 .nav__menu .nav__link {
@@ -90,7 +95,7 @@
 }
 
 .nav__item--logo {
-  --logo-size: calc(var(--global-header-height) - var(--padding) * 2);
+  --logo-size: calc(var(--global-header-height) - 1rem);
   --logo-sky: var(--color-primary);
   --logo-land: var(--color-primary);
 
@@ -98,6 +103,15 @@
     padding-inline: 0;
     border-radius: 100%;
   }
+
+  & img {
+    filter: invert(1);
+    transition: filter 0.3s var(--animation-eased);
+  }
+}
+
+[data-theme="light"] .nav__item--logo img {
+  filter: none;
 }
 
 .nav__menu .nav__item--logo {
@@ -116,8 +130,8 @@
 
 .nav__item--menu {
   position: relative;
-  height: calc(var(--global-header-height) - var(--padding) * 2);
-  width: calc(var(--global-header-height) - var(--padding) * 2);
+  height: calc(var(--global-header-height) - 1rem);
+  width: calc(var(--global-header-height) - 1rem);
 
   @media (--viewport-large) {
     display: none;
@@ -170,4 +184,68 @@
 
 .header__menu-state:checked~.header__inner .menu__label__bread--bottom {
   transform: translateY(-10px) rotate(-45deg) scaleX(2);
+}
+
+/* Right-side actions (icons + theme toggle) */
+.nav__item--actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-left: auto;
+}
+
+.icon-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  transition: color 0.3s ease;
+}
+
+.icon-link:hover {
+  color: var(--color-primary);
+}
+
+.icon-link svg {
+  width: 28px;
+  height: 28px;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: color 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.theme-toggle:hover {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+  background: hsl(var(--hue-primary) 100% 63% / 0.1);
+}
+
+.theme-toggle__icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Show sun in dark mode, moon in light mode */
+.theme-toggle__icon--moon {
+  display: none;
+}
+
+[data-theme="light"] .theme-toggle__icon--sun {
+  display: none;
+}
+
+[data-theme="light"] .theme-toggle__icon--moon {
+  display: block;
 }

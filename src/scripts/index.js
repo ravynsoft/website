@@ -21,3 +21,48 @@ if (header) {
     }
   })
 }
+
+// Theme toggle
+const themeToggle = document.querySelector('#theme-toggle')
+const html = document.documentElement
+
+// Check for saved preference or system preference
+const savedTheme = localStorage.getItem('theme')
+const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+
+// Set initial theme
+if (savedTheme === 'light') {
+  html.setAttribute('data-theme', 'light')
+} else if (savedTheme === 'dark') {
+  html.removeAttribute('data-theme')
+} else if (!systemPrefersDark) {
+  html.setAttribute('data-theme', 'light')
+}
+
+themeToggle?.addEventListener('click', () => {
+  const isLight = html.getAttribute('data-theme') === 'light'
+
+  if (isLight) {
+    // Switch to dark
+    html.removeAttribute('data-theme')
+    localStorage.setItem('theme', 'dark')
+  } else {
+    // Switch to light
+    html.setAttribute('data-theme', 'light')
+    localStorage.setItem('theme', 'light')
+  }
+})
+
+// Announcement bar close
+const announcementClose = document.querySelector('.announcement__close')
+const announcement = document.querySelector('.announcement')
+
+announcementClose?.addEventListener('click', () => {
+  announcement?.classList.add('announcement--hidden')
+  sessionStorage.setItem('announcementClosed', 'true')
+})
+
+// Keep announcement closed if user already closed it this session
+if (sessionStorage.getItem('announcementClosed') === 'true') {
+  announcement?.classList.add('announcement--hidden')
+}

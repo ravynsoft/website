@@ -1,72 +1,169 @@
 .releases__list {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  font-size: 0.875rem;
-}
-
-.releases__list>li {
-  grid-template-columns: 20% 80%;
   gap: 1rem;
+  font-size: 0.9rem;
 }
 
-.releases__list>li>aside {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.5rem;
-  margin-block-end: 1rem;
-}
-
-.releases__list>li>main {
+.release__item {
   border: 1px solid var(--color-border);
-  border-radius: 16px;
-  padding: 1rem;
+  border-radius: 12px;
+  background: var(--color-surface);
+  overflow: hidden;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.release__item:hover {
+  border-color: var(--color-primary);
   box-shadow: var(--shadow-elevation-low);
 }
 
-.releases__list>li>main>h2 {
-  margin-block-end: 1rem;
+.release__item[open] {
+  box-shadow: var(--shadow-elevation-medium);
+  border-color: var(--color-primary);
 }
 
-.releases__user {
+.release__summary {
+  list-style: none;
+  /* Hide default triangle */
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  background: transparent;
+  width: 100%;
+}
+
+.release__summary::-webkit-details-marker {
+  display: none;
+}
+
+.release__header {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.release__date {
+  font-family: var(--font-mono);
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.release__title {
+  margin: 0;
+  font-size: 1.1rem;
   font-weight: var(--font-semibold);
+  color: var(--color-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.releases__discussion {
-  margin-block-start: 0.5rem;
+.release__tag {
+  background: var(--color-surface-low);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 0.25rem 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-primary);
 }
 
-.releases__markdown :--headings {
-  font-weight: var(--font-semibold);
-  margin-block: 1rem;
+.release__chevron {
+  color: var(--color-text-muted);
+  transition: transform 0.2s ease, color 0.2s ease;
+  display: flex;
+  align-items: center;
 }
 
-.releases__markdown h2 {
-  border-bottom: 1px solid var(--color-border);
-  padding-block-end: 0.3rem;
-  font-size: 1.2em;
+.release__item[open] .release__chevron {
+  transform: rotate(180deg);
+  color: var(--color-primary);
 }
 
-.releases__markdown h3 {
-  font-size: 1.1em;
+/* Content area */
+.release__content {
+  padding: 0 1.5rem 1.5rem;
+  border-top: 1px solid var(--color-border);
+  margin-top: 0.5rem;
+  padding-top: 1.5rem;
+  animation: slideDown 0.3s ease-out;
 }
 
-.releases__markdown :--lists {
-  margin-block-start: 0;
-  margin-block-end: 1rem;
-  padding-left: 2em;
-}
-
-.releases__markdown ul {
-  list-style-type: disc;
-}
-
-.releases__markdown p {
-  margin-block-start: 0;
-  margin-block-end: 1rem;
+.release__actions {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px dashed var(--color-border);
 }
 
 .releases__markdown {
-  overflow: auto;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.releases__markdown h2 {
+  font-size: 1.25rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.5rem;
+  color: var(--color-text);
+}
+
+.releases__markdown ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.releases__markdown li {
+  margin-bottom: 0.5rem;
+}
+
+.button--small {
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .release__header {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "date tag"
+      "title chevron";
+    gap: 0.5rem;
+  }
+
+  .release__date {
+    grid-area: date;
+  }
+
+  .release__tag {
+    grid-area: tag;
+    justify-self: end;
+  }
+
+  .release__title {
+    grid-area: title;
+  }
+
+  .release__chevron {
+    grid-area: chevron;
+    justify-self: end;
+  }
 }

@@ -9,21 +9,21 @@ eleventyNavigation:
 ---
 
 <section id="general" class="u-container faq__section">
-  <div>
-    <h2 class="h4">General</h2>
-    </div>&nbsp;
+  <header class="section__header">
+    <h2 class="section__header__title">General Questions</h2>
+  </header>
 
-  <main>
-    <dl class="faq__faq">
-      <dt>Can I run macOS apps on ravynOS?</dt>
-      <dd class="faq__markdown">
+  <div class="faq__list">
+    <details class="faq__item">
+      <summary class="faq__question">Can I run macOS apps on ravynOS?</summary>
+      <div class="faq__answer">
         <p>No - not yet. This is a major goal and we're working towards it. So far, some trivial "Hello World" binaries in C and Objective-C have been compiled on macOS Big Sur and the resulting Mach-O binaries ran on ravynOS using our in-dev Hybrid linker without any Frameworks or tools from macOS. Source code of some simple Cocoa AppKit-based applications have been built on ravynOS and run as native applications (e.g. <code>Install ravynOS.app</code>). While this is all very exciting, you will have to wait a bit longer to run Photoshop or Xcode.</p>
-      </dd>
-    </dl>
+      </div>
+    </details>
 
-    <dl class="faq__faq">
-      <dt>Is this... legally sketchy?</dt>
-      <dd class="faq__markdown">
+    <details class="faq__item">
+      <summary class="faq__question">Is this... legally sketchy?</summary>
+      <div class="faq__answer">
         <p>
             No. Consider projects like ReactOS, a from-scratch effort to create an OS compatible with Microsoft Windows, GNUstep, which provides an open implementation of Cocoa APIs and other things, or Darling, a compatibility layer for running Darwin (macOS) binaries on Linux. ravynOS is similar and stands on the shoulders of many such projects.
           </p>
@@ -31,46 +31,46 @@ eleventyNavigation:
         <p>
             All code used is freely available under open source licenses. No proprietary elements like fonts, icons, trademarks, etc can be used. Original code must be written using "clean room" techniques - that is, from public documentation like developer guides by people who have never seen the proprietary code - and released under the FreeBSD license or the MIT license.
           </p>
-      </dd>
-    </dl>
+      </div>
+    </details>
 
-    <dl class="faq__faq">
-      <dt>What programming languages does ravynOS use?</dt>
-      <dd class="faq__markdown">
+    <details class="faq__item">
+      <summary class="faq__question">What programming languages does ravynOS use?</summary>
+      <div class="faq__answer">
         <p>
             The goal is to use a small core set of languages as much as possible: the "C" family (C, C++, Objective-C, and Objective-C++), Swift, Python, Java, and shell scripts. This should cover most needs.
           </p>
-      </dd>
-    </dl>
+      </div>
+    </details>
 
-    <dl class="faq__faq">
-      <dt>I can code in those! How can I help?</dt>
-      <dd class="faq__markdown">
+    <details class="faq__item">
+      <summary class="faq__question">I can code in those! How can I help?</summary>
+      <div class="faq__answer">
         <p>Great! Take a look at the issues list to find something that interests you, or contact mszoek.</p>
-      </dd>
-    </dl>
+      </div>
+    </details>
 
-    <dl class="faq__faq">
-      <dt>I don't code but this looks awesome! Can I still help?</dt>
-      <dd class="faq__markdown">
+    <details class="faq__item">
+      <summary class="faq__question">I don't code but this looks awesome! Can I still help?</summary>
+      <div class="faq__answer">
         <p>
             Absolutely! There will be art, documentation, testing, UX and UI work, release management, project management, legal advice, hosting, and many other ways to contribute. This project is huge and help is very welcome. Check out the issues for ideas on how to contribute, or contact mszoek.
           </p>
-      </dd>
-    </dl>
+      </div>
+    </details>
 
-    <dl class="faq__faq">
-      <dt>Can I support the project financially?</dt>
-      <dd class="faq__markdown">
+    <details class="faq__item">
+      <summary class="faq__question">Can I support the project financially?</summary>
+      <div class="faq__answer">
         <p>
             You sure can! I've signed up for GitHub Sponsors to make monthly sponsorship easy. You can also make a contribution via <a href="https://paypal.me/thatzoek?locale.x=en_US">PayPal</a>.
           </p>
-      </dd>
-    </dl>
+      </div>
+    </details>
 
-    <dl class="faq__faq">
-      <dt>This is a huge effort. Y'all must be crazy!</dt>
-      <dd class="faq__markdown">
+    <details class="faq__item">
+      <summary class="faq__question">This is a huge effort. Y'all must be crazy!</summary>
+      <div class="faq__answer">
         <p>
             Yes. <em>Here's to the crazy ones... because the people who are crazy enough to think they can change the world are the ones that do.</em>
         </p>
@@ -80,44 +80,46 @@ eleventyNavigation:
         <p>
             I've always liked Apple's design and elegance, but am not thrilled with the direction of recent macOS&reg; or how closed the hardware has become. And I'm a big believer in open source. So ... let's build something that feels as elegant, without all the lock-in, and maybe (just maybe) I can get it to a point that reasonably useful Mac apps build & run on it. And if not, we'll build a lot of cool pieces along the way and learn a ton. I'm OK with that.
           </p>
-      </dd>
-    </dl>
-
-  </main>
+      </div>
+    </details>
+  </div>
 </section>
 
 <section id="troubleshooting" class="u-container faq__section">
-  <div>
-    <h2 class="h4">Troubleshooting</h2>
-    </div>&nbsp;
+  <header class="section__header">
+    <h2 class="section__header__title">Troubleshooting</h2>
+  </header>
 
-  <main>
-    <dl class="faq__faq">
-<!--      
-      <dt>I downloaded the developer preview liveCD. What is the username and password?</dt>
-      <dd class="faq__markdown">
-        <p>The login credential for the liveboot currently is: <em>liveuser</em>, all in small letters, and <b>no password</b>. Just type <em>liveuser</em> in the username field and press enter/click on the login button.</p>
-      </dd>
-
-      <dt>Why won't it display GUI in VirtualBox/Vmware/QEMU?</dt>
-      <dd class="faq__markdown">
+  <div class="faq__list">
+    <details class="faq__item">
+      <summary class="faq__question">ravynOS won't boot on my hardware. What can I do?</summary>
+      <div class="faq__answer">
         <p>
-              Since ravynOS 0.4.0 is having its GUI written from scratch, there is no driver for any virtual machine GPU yet, including VMware VGA, Virtualbox SVGA, virtio-vga or qxl and thus, no form of graphics acceleration is currently available. The OS will display a shell-like/ tty interface on virtual machines. 
-        </p>      
-        <p>
-            We are working on this, and help is welcome. There is work being done on vmwgfx for ravynOS and this might be released soon, making it possible to test LiveCD on virtual machines 🙂. Currently, VMs are usable for non-UI development.
+          Make sure your hardware meets the minimum requirements. ravynOS requires a 64-bit x86 CPU with SSE4.2 support, at least 4GB of RAM, and a UEFI-capable system. If you're still having issues, try disabling Secure Boot in your BIOS settings.
         </p>
-      </dd>
-
-
-      <dt>When I try booting the LiveCD for ravynOS, it shows a blank screen on my PC. Why is that so?</dt>
-      <dd class="faq__markdown">
         <p>
-              Video drivers, for the time being, exist for only Intel HD series, Intel Iris series (Xe graphics), most AMD integrated and discrete GPUs. There is no driver yet for NVIDIA. Help fixing this is most welcome.  If your GPU is supported, the GUI starts automatically on boot. If not, you will receive boot messages on screen followed by a shell-like interface (<b>tty1</b>).
+          Check the <a href="https://wiki.ravynos.com/">wiki</a> for a list of known compatible hardware and troubleshooting tips.
         </p>
-      </dd>
--->
-    
-    </dl>
-  </main>
+      </div>
+    </details>
+
+    <details class="faq__item">
+      <summary class="faq__question">My graphics aren't working correctly. How do I fix this?</summary>
+      <div class="faq__answer">
+        <p>
+          Graphics support is still being actively developed. If you experience issues, you can try using the safe mode boot option by pressing Enter at the boot menu and selecting "Boot ravynOS Safe Mode."
+        </p>
+      </div>
+    </details>
+
+    <details class="faq__item">
+      <summary class="faq__question">How do I report a bug?</summary>
+      <div class="faq__answer">
+        <p>
+          Please file issues on our <a href="https://github.com/ravynsoft/ravynos/issues">GitHub Issues</a> page. Include as much detail as possible: your hardware specifications, what you were doing when the issue occurred, and any error messages you saw.
+        </p>
+      </div>
+    </details>
+  </div>
 </section>
+

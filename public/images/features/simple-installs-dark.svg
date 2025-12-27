@@ -1,0 +1,36 @@
+<svg viewBox="0 0 128 72" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { font: 6px system-ui; fill: #e8e8f0; }
+    .app-icon, .arrow { font-size: 20px; }
+  </style>
+
+  <defs>
+    <linearGradient id="si-folder-gradient" gradientTransform="rotate(90)">
+      <stop offset="80%" stop-color="#85CCF4" />
+      <stop offset="100%" stop-color="#3B9FD2" />
+    </linearGradient>
+  </defs>
+
+  <rect
+    x="14" y="18"
+    rx="8" ry="8"
+    width="32" height="32"
+    fill="#9043BB"
+  />
+
+  <text class="app-icon" x="29" y="42" text-anchor="middle">📐</text>
+  <text x="30" y="60" text-anchor="middle">Appy</text>
+
+  <text class="arrow" x="53" y="42">→</text>
+
+  <path d="M89.144 12.11h6.621c.893 0 1.734.42 2.27 1.135l1.135 1.514a2.838 2.838 0 0 0 2.27 1.135h16.08a2.838 2.838 0 0 1 2.837 2.837v19.863a2.838 2.838 0 0 1-2.837 2.838H89.144a2.838 2.838 0 0 1-2.838-2.838V14.948a2.838 2.838 0 0 1 2.838-2.838z" fill-rule="nonzero" fill="#3B9FD2" transform="translate(-6 5)" />
+
+  <rect
+    x="80" y="24"
+    rx="3" ry="3"
+    width="35" height="25"
+    fill="url(#si-folder-gradient)"
+  />
+
+  <text x="97" y="60" text-anchor="middle">Applications</text>
+</svg>

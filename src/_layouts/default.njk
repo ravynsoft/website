@@ -3,9 +3,12 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="theme-color" content="#4268ff"/>
+    <meta name="keywords" content="ravynOS, macOS alternative, open source operating system, FreeBSD, Darwin, Cocoa, AppKit, Unix, desktop OS"/>
 
     <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
     <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
 
     <link rel="preconnect" href="https://api.fontshare.com"/>
     <link rel="preconnect" href="https://cdn.fontshare.com"/>
@@ -23,7 +26,10 @@
     <meta property="og:description" content="{{ description or site.description }}">
     <meta property="og:url" content="{{ site.url }}{{ page.url }}">
     <meta property="og:image" content="{{ site.url }}{{ image or site.og.image }}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="{{ site.twitter.cardType }}">
@@ -31,8 +37,64 @@
     <meta name="twitter:title" content="{{ title or site.title }}">
     <meta name="twitter:description" content="{{ description or site.description }}">
     <meta name="twitter:image" content="{{ site.url }}{{ image or site.og.image }}">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "{{ site.title }}",
+      "url": "{{ site.url }}",
+      "logo": "{{ site.url }}/images/ravynos-mark.svg",
+      "description": "{{ site.description }}",
+      "sameAs": [
+        "https://github.com/ravynsoft/ravynos",
+        "https://twitter.com/ravynos",
+        "https://discord.com/invite/8caJbAGNwY"
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "{{ site.title }}",
+      "url": "{{ site.url }}",
+      "description": "{{ site.description }}",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "{{ site.url }}/faq.html?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "{{ site.title }}",
+      "operatingSystem": "ravynOS",
+      "applicationCategory": "OperatingSystem",
+      "description": "An open-source operating system based on Darwin and FreeBSD that aims to be compatible with macOS applications.",
+      "url": "{{ site.url }}",
+      "downloadUrl": "{{ site.url }}/releases.html",
+      "author": {
+        "@type": "Organization",
+        "name": "ravynOS Team"
+      },
+      "license": "https://opensource.org/licenses/BSD-2-Clause"
+    }
+    </script>
   </head>
   <body>
+    <!-- Announcement Bar - remove 'announcement--hidden' class to show -->
+    <div class="announcement announcement--hidden">
+      <div class="u-container announcement__inner">
+        <p class="announcement__text"><strong>New release available!</strong> Check out the latest version of ravynOS. <a href="/releases.html">Learn more →</a></p>
+        <button class="announcement__close" aria-label="Close announcement">&times;</button>
+      </div>
+    </div>
+
     {% include 'header.njk' %}
 
     <main class="main" role="main">

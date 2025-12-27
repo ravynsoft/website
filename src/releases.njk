@@ -30,36 +30,79 @@ fetch(req)
         const list = document.getElementById("release_list");
         for(const rls of data) {
             const item = document.createElement("li");
+            const details = document.createElement("details");
+            details.classList.add("release__item");
 
-            const aside = document.createElement("aside");
-            aside.setAttribute("class", "button__element");
+            const summary = document.createElement("summary");
+            summary.classList.add("release__summary");
+            
+            // Flex container for summary content
+            const summaryContent = document.createElement("div");
+            summaryContent.classList.add("release__header");
 
+            // Date
             const pubdate = new Date(rls.created_at);
-            const datespan = document.createElement("span");
-            datespan.setAttribute("class", "releases__date");
-            datespan.textContent = pubdate.toDateString();
-            aside.appendChild(datespan);
+            const dateSpan = document.createElement("span");
+            dateSpan.classList.add("release__date");
+            dateSpan.textContent = pubdate.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+            
+            // Title
+            const title = document.createElement("h3");
+            title.classList.add("release__title");
+            title.textContent = rls.name;
 
-            const link = document.createElement("a");
-            link.href = rls.discussion_url;
-            link.setAttribute("class", "button button--primary releases__discussion");
-            aside.appendChild(link).textContent = "Discuss";
+            // Version tag
+            const tag = document.createElement("span");
+            tag.classList.add("release__tag");
+            tag.textContent = rls.tag_name;
 
-            item.appendChild(aside);
+            // Chevron icon
+            const chevron = document.createElement("div");
+            chevron.classList.add("release__chevron");
+            chevron.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>`;
 
-            const main = document.createElement("main");
-            const rlslink = document.createElement("a");
-            rlslink.href = rls.html_url;
-            rlslink.setAttribute("class", "h4");
-            main.appendChild(rlslink).textContent = rls.name;
+            summaryContent.appendChild(dateSpan);
+            summaryContent.appendChild(title);
+            summaryContent.appendChild(tag);
+            summaryContent.appendChild(chevron);
+            summary.appendChild(summaryContent);
 
-            const notes = document.createElement("div");
-            notes.setAttribute("class", "releases__markdown");
+            // Details content
+            const content = document.createElement("div");
+            content.classList.add("release__content");
+            
+            // Links/Actions
+            const actions = document.createElement("div");
+            actions.classList.add("release__actions");
+            
+            const discussLink = document.createElement("a");
+            discussLink.href = rls.discussion_url;
+            discussLink.className = "button button--secondary button--small";
+            discussLink.target = "_blank";
+            discussLink.rel = "noopener noreferrer";
+            discussLink.textContent = "Discuss on GitHub";
+
+            const downloadLink = document.createElement("a");
+            downloadLink.href = rls.html_url;
+            downloadLink.className = "button button--primary button--small";
+            downloadLink.target = "_blank";
+            downloadLink.rel = "noopener noreferrer";
+            downloadLink.textContent = "View Release";
+
+            if (rls.discussion_url) actions.appendChild(discussLink);
+            actions.appendChild(downloadLink);
+            content.appendChild(actions);
+
+            // Markdown body
+            const body = document.createElement("div");
+            body.className = "releases__markdown";
             const converter = new showdown.Converter();
-            notes.innerHTML = converter.makeHtml(rls.body);
-            main.appendChild(notes);
+            body.innerHTML = converter.makeHtml(rls.body);
+            content.appendChild(body);
 
-            item.appendChild(main);
+            details.appendChild(summary);
+            details.appendChild(content);
+            item.appendChild(details);
             list.appendChild(item);
         }});
 </script>
