@@ -1,0 +1,35 @@
+<svg viewBox="0 0 128 72" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { font: 6px system-ui; fill: #e8e8f0; }
+  </style>
+
+  <defs>
+    <linearGradient id="ff-folder-gradient" gradientTransform="rotate(90)">
+      <stop offset="80%" stop-color="#85CCF4" />
+      <stop offset="100%" stop-color="#3B9FD2" />
+    </linearGradient>
+
+    <g id="ff-folder">
+      <path d="M89.144 12.11h6.621c.893 0 1.734.42 2.27 1.135l1.135 1.514a2.838 2.838 0 0 0 2.27 1.135h16.08a2.838 2.838 0 0 1 2.837 2.837v19.863a2.838 2.838 0 0 1-2.837 2.838H89.144a2.838 2.838 0 0 1-2.838-2.838V14.948a2.838 2.838 0 0 1 2.838-2.838z" fill-rule="nonzero" fill="#3B9FD2" transform="translate(-86 -12)" />
+
+      <rect
+        x="0" y="7"
+        rx="3" ry="3"
+        width="35" height="25"
+        fill="url(#ff-folder-gradient)"
+      />
+    </g>
+  </defs>
+
+  <use href="#ff-folder" x="35" y="10" transform="scale(.6)" />
+  <text x="30" y="33" text-anchor="middle">Applications</text>
+
+  <use href="#ff-folder" x="140" y="10" transform="scale(.6)" />
+  <text x="94" y="33" text-anchor="middle">System</text>
+
+  <use href="#ff-folder" x="35" y="70" transform="scale(.6)" />
+  <text x="31" y="69" text-anchor="middle">Library</text>
+
+  <use href="#ff-folder" x="140" y="70" transform="scale(.6)" />
+  <text x="94" y="69" text-anchor="middle">Users</text>
+</svg>

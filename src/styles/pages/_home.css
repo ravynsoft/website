@@ -79,6 +79,47 @@
   color: var(--color-text);
 }
 
+.hero__tagline {
+  max-width: 60ch;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  font-style: italic;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+.hero__bubble {
+  max-width: 60ch;
+  padding: 1.25rem 1.75rem;
+  background: linear-gradient(135deg,
+      hsl(var(--color-primary-bare) / 0.15) 0%,
+      hsl(var(--color-secondary-bare) / 0.15) 100%);
+  border: 1px solid hsl(var(--color-primary-bare) / 0.3);
+  border-radius: 1rem;
+  position: relative;
+}
+
+.hero__bubble__text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.hero__banner {
+  max-width: 70ch;
+  padding: 1rem 1.5rem;
+  background: hsl(0deg 60% 50%);
+  border-radius: 0.75rem;
+}
+
+.hero__banner__text {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #fff;
+  margin: 0;
+}
+
 .hero__desc__highlight {
   max-width: 55ch;
   font-size: 1.1rem;
@@ -154,6 +195,29 @@
 
 .feature-row:hover .feature-row__image img {
   transform: scale(1.05);
+}
+
+/* Theme-specific images: show/hide based on current theme */
+/* Dark mode is default (no data-theme attribute or data-theme="dark") */
+.img--light {
+  display: none;
+}
+
+.img--dark {
+  display: block;
+}
+
+[data-theme="light"] .img--light {
+  display: block;
+}
+
+[data-theme="light"] .img--dark {
+  display: none;
+}
+
+/* Invert shortcuts image for light theme (original is designed for dark) */
+[data-theme="light"] .img--light[src*="shortcuts"] {
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1)) invert(1);
 }
 
 .feature-row__content {
@@ -284,11 +348,7 @@
   margin: 0;
 }
 
-.divbox {
-  background-color: hsl(0deg 60% 55%);
-  border-radius: 1em;
-  padding: 2%;
-}
+
 
 @keyframes shine {
   to {
