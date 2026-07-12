@@ -17,7 +17,7 @@ eleventyNavigation:
     <details class="faq__item">
       <summary class="faq__question">Can I run macOS apps on ravynOS?</summary>
       <div class="faq__answer">
-        <p>No - not yet. This is a major goal and we're working towards it. So far, some trivial "Hello World" binaries in C and Objective-C have been compiled on macOS Big Sur and the resulting Mach-O binaries ran on ravynOS using our in-dev Hybrid linker without any Frameworks or tools from macOS. Source code of some simple Cocoa AppKit-based applications have been built on ravynOS and run as native applications (e.g. <code>Install ravynOS.app</code>). While this is all very exciting, you will have to wait a bit longer to run Photoshop or Xcode.</p>
+        <p>No - not yet. This is a major goal and we're working towards it. So far, only trivial CLI programs (e.g, small things in Swift) have been able to run.</p>
       </div>
     </details>
 
@@ -103,31 +103,18 @@ eleventyNavigation:
       <summary class="faq__question">ravynOS won't boot on my hardware. What can I do?</summary>
       <div class="faq__answer">
         <p>
-          Make sure your hardware meets the minimum requirements. ravynOS requires a 64-bit x86 CPU with SSE4.2 support, at least 4GB of RAM, and a UEFI-capable system. If you're still having issues, try disabling Secure Boot in your BIOS settings.
-        </p>
-        <p>
-          Check the <a href="https://wiki.ravynos.com/">wiki</a> for a list of known compatible hardware and troubleshooting tips.
+          The Darwin-based versions of ravynOS are very new and as such lack the same variety of hardware compatibility that was seen on FreeBSD-based releases. As such, it will take a while before most hardware is able to run ravynOS effectively. In the meantime, however, you're free to play with the system in a Virtual Machine.
         </p>
       </div>
     </details>
-
-    <details class="faq__item">
-      <summary class="faq__question">My graphics aren't working correctly. How do I fix this?</summary>
-      <div class="faq__answer">
-        <p>
-          Graphics support is still being actively developed. If you experience issues, you can try using the safe mode boot option by pressing Enter at the boot menu and selecting "Boot ravynOS Safe Mode."
-        </p>
-      </div>
-    </details>
-
+    
     <details class="faq__item">
       <summary class="faq__question">How do I report a bug?</summary>
       <div class="faq__answer">
         <p>
-          Please file issues on our <a href="https://github.com/ravynsoft/ravynos/issues">GitHub Issues</a> page. Include as much detail as possible: your hardware specifications, what you were doing when the issue occurred, and any error messages you saw.
+          Please file issues on our <a href="https://github.com/ravynsoft/ravynos/issues">GitHub Issues</a> page. Include as much detail as possible: your hardware or VM specifications, what you were doing when the issue occurred, and any error messages you saw.
         </p>
       </div>
     </details>
   </div>
 </section>
-
