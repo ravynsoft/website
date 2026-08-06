@@ -6,3 +6,4 @@ node_modules/
 .tool-versions
 # Local Netlify folder
 .netlify
+.DS_Store
