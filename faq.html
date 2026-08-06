@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - ravynOS</title>
+    <meta name="description" content="Find answers to common questions and problems here.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .page-header {
+            padding-top: calc(var(--nav-height) + 60px);
+            padding-bottom: 40px;
+            text-align: center;
+            background: linear-gradient(to bottom, #ffffff, #f9f9f9);
+        }
+        .faq-section {
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            margin-bottom: 20px;
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 20px;
+        }
+        .faq-question {
+            font-size: 20px;
+            font-weight: 400;
+            cursor: pointer;
+            list-style: none;
+            color: #222;
+        }
+        .faq-question::-webkit-details-marker {
+            display: none;
+        }
+        .faq-answer {
+            margin-top: 15px;
+            color: #666;
+            line-height: 1.6;
+        }
+        .faq-answer p { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <nav class="global-nav">
+        <div class="nav-content">
+            <a href="index.html" class="nav-logo">
+                <img src="public/logo.svg" alt="ravynOS Logo" width="20" height="20">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Overview</a></li>
+                <li><a href="releases.html">Releases</a></li>
+                <li><a href="wiki.html">Wiki</a></li>
+                <li><a href="faq.html" style="color: #000; font-weight: 500;">FAQ</a></li>
+                <li><a href="https://github.com/ravynsoft/ravynos">GitHub</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <h1 class="hero-title" style="font-size: 48px;">FAQ</h1>
+        <p class="hero-tagline" style="font-size: 18px;">Find answers to common questions and problems here.</p>
+    </header>
+
+    <section class="faq-section">
+        <h2 class="section-title" style="font-size: 28px; margin-bottom: 30px;">General Questions</h2>
+        
+        <details class="faq-item fade-in-up">
+            <summary class="faq-question">Can I run macOS apps on ravynOS?</summary>
+            <div class="faq-answer">
+                <p>No - not yet. This is a major goal and we're working towards it. So far, some trivial "Hello World" binaries in C and Objective-C have been compiled on macOS Big Sur and the resulting Mach-O binaries ran on ravynOS using our in-dev Hybrid linker without any Frameworks or tools from macOS. Source code of some simple Cocoa AppKit-based applications have been built on ravynOS and run as native applications (e.g. <code>Install ravynOS.app</code>). While this is all very exciting, you will have to wait a bit longer to run Photoshop or Xcode.</p>
+            </div>
+        </details>
+        
+        <details class="faq-item fade-in-up delay-1">
+            <summary class="faq-question">Is this... legally sketchy?</summary>
+            <div class="faq-answer">
+                <p>No. Consider projects like ReactOS, a from-scratch effort to create an OS compatible with Microsoft Windows, GNUstep, which provides an open implementation of Cocoa APIs and other things, or Darling, a compatibility layer for running Darwin (macOS) binaries on Linux. ravynOS is similar and stands on the shoulders of many such projects.</p>
+                <p>All code used is freely available under open source licenses. No proprietary elements like fonts, icons, trademarks, etc can be used. Original code must be written using "clean room" techniques - that is, from public documentation like developer guides by people who have never seen the proprietary code - and released under the FreeBSD license or the MIT license.</p>
+            </div>
+        </details>
+
+        <details class="faq-item fade-in-up delay-2">
+            <summary class="faq-question">What programming languages does ravynOS use?</summary>
+            <div class="faq-answer">
+                <p>The goal is to use a small core set of languages as much as possible: the "C" family (C, C++, Objective-C, and Objective-C++), Swift, Python, Java, and shell scripts. This should cover most needs.</p>
+            </div>
+        </details>
+
+        <details class="faq-item fade-in-up">
+            <summary class="faq-question">I can code in those! How can I help?</summary>
+            <div class="faq-answer">
+                <p>Great! Take a look at the issues list to find something that interests you, or contact mszoek.</p>
+            </div>
+        </details>
+        
+        <details class="faq-item fade-in-up delay-1">
+            <summary class="faq-question">I don't code but this looks awesome! Can I still help?</summary>
+            <div class="faq-answer">
+                <p>Absolutely! There will be art, documentation, testing, UX and UI work, release management, project management, legal advice, hosting, and many other ways to contribute. This project is huge and help is very welcome. Check out the issues for ideas on how to contribute, or contact mszoek.</p>
+            </div>
+        </details>
+
+        <details class="faq-item fade-in-up delay-2">
+            <summary class="faq-question">Can I support the project financially?</summary>
+            <div class="faq-answer">
+                <p>You sure can! I've signed up for GitHub Sponsors to make monthly sponsorship easy. You can also make a contribution via PayPal.</p>
+            </div>
+        </details>
+
+        <details class="faq-item fade-in-up">
+            <summary class="faq-question">This is a huge effort. Y'all must be crazy!</summary>
+            <div class="faq-answer">
+                <p>Yes. <em>Here's to the crazy ones... because the people who are crazy enough to think they can change the world are the ones that do.</em></p>
+                <p>In all seriousness, though, it's not my first rodeo. I have no illusions about the scale of building an OS or how long projects like Haiku, ReactOS or GNUStep took to get usable. This is just something I like doing in my Copious Spare Time™ and that I hope will be useful someday.</p>
+                <p>I've always liked Apple's design and elegance, but am not thrilled with the direction of recent macOS® or how closed the hardware has become. And I'm a big believer in open source. So ... let's build something that feels as elegant, without all the lock-in, and maybe (just maybe) I can get it to a point that reasonably useful Mac apps build & run on it. And if not, we'll build a lot of cool pieces along the way and learn a ton. I'm OK with that.</p>
+            </div>
+        </details>
+
+        <details class="faq-item fade-in-up delay-1">
+            <summary class="faq-question">What is ravynOS's mascot?</summary>
+            <div class="faq-answer">
+                <p>ravynOS’s mascot is a raven named Muninn. The name is a reference to one of Odin’s two ravens, Huginn and Muninn ("mind and will")</p>
+            </div>
+        </details>
+        
+        <h2 class="section-title" style="font-size: 28px; margin-top: 40px; margin-bottom: 30px;">Troubleshooting</h2>
+
+        <details class="faq-item fade-in-up">
+            <summary class="faq-question">ravynOS won't boot on my hardware. What can I do?</summary>
+            <div class="faq-answer">
+                <p>Make sure your hardware meets the minimum requirements. ravynOS requires a 64-bit x86 CPU with SSE4.2 support, at least 4GB of RAM, and a UEFI-capable system. If you're still having issues, try disabling Secure Boot in your BIOS settings.</p>
+                <p>Check the wiki for a list of known compatible hardware and troubleshooting tips.</p>
+            </div>
+        </details>
+
+        <details class="faq-item fade-in-up delay-1">
+            <summary class="faq-question">My graphics aren't working correctly. How do I fix this?</summary>
+            <div class="faq-answer">
+                <p>Graphics support is still being actively developed. If you experience issues, you can try using the safe mode boot option by pressing Enter at the boot menu and selecting "Boot ravynOS Safe Mode."</p>
+            </div>
+        </details>
+
+        <details class="faq-item fade-in-up delay-2">
+            <summary class="faq-question">How do I report a bug?</summary>
+            <div class="faq-answer">
+                <p>Please file issues on our GitHub Issues page. Include as much detail as possible: your hardware specifications, what you were doing when the issue occurred, and any error messages you saw.</p>
+            </div>
+        </details>
+    </section>
+
+    <footer class="global-footer">
+        <div class="footer-content">
+            <div class="footer-copy">
+                <strong>&copy; 2021 – 2026 RavynSoft</strong><br>
+                All Rights Reserved.<br>
+                <small>"ravynOS" and the raven logo are trademarks. The other trademarks or logos on this site are properties of their respective owners. <br>Logo designs & artwork by kevdoy & nayaabkhan.</small>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

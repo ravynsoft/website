@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Releases - ravynOS</title>
+    <meta name="description" content="All the releases and their details like features and bug-fixes, and link to discussions.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .page-header {
+            padding-top: calc(var(--nav-height) + 60px);
+            padding-bottom: 40px;
+            text-align: center;
+            background: linear-gradient(to bottom, #ffffff, #f9f9f9);
+        }
+        .releases-section {
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .releases-section p {
+            margin-bottom: 30px;
+            color: #555;
+            font-size: 18px;
+        }
+        .github-btn {
+            display: inline-block;
+            background-color: #333;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 400;
+            transition: background-color 0.2s;
+        }
+        .github-btn:hover {
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+    <nav class="global-nav">
+        <div class="nav-content">
+            <a href="index.html" class="nav-logo">
+                <img src="public/logo.svg" alt="ravynOS Logo" width="20" height="20">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Overview</a></li>
+                <li><a href="releases.html" style="color: #000; font-weight: 500;">Releases</a></li>
+                <li><a href="wiki.html">Wiki</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="https://github.com/ravynsoft/ravynos">GitHub</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <h1 class="hero-title" style="font-size: 48px;">Releases</h1>
+        <p class="hero-tagline" style="font-size: 18px;">All the releases and their details like features and bug-fixes.</p>
+    </header>
+
+    <section class="section releases-section">
+        <div class="fade-in-up">
+            <span class="material-symbols-outlined" style="font-size: 64px; color: #ccc; margin-bottom: 20px;">new_releases</span>
+            <h2 style="font-size: 28px; margin-bottom: 15px;">Latest Pre-Alpha Builds</h2>
+            <p>ravynOS is currently in active development. For the most up-to-date releases, ISO downloads, and patch notes, please visit our GitHub repository.</p>
+            <a href="https://github.com/ravynsoft/ravynos/releases" class="github-btn">View Releases on GitHub</a>
+        </div>
+    </section>
+
+    <footer class="global-footer" style="margin-top: 100px;">
+        <div class="footer-content">
+            <div class="footer-copy">
+                <strong>&copy; 2021 – 2026 RavynSoft</strong><br>
+                All Rights Reserved.<br>
+                <small>"ravynOS" and the raven logo are trademarks. The other trademarks or logos on this site are properties of their respective owners. <br>Logo designs & artwork by kevdoy & nayaabkhan.</small>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
