@@ -1,65 +1,56 @@
 # ravynOS Website
 
-The official website for **ravynOS** - an open-source operating system aiming to provide the finesse of macOS with the freedom of FreeBSD.
-Built with **Eleventy (11ty)**, PostCSS, and vanilla JavaScript.
+The official website for **ravynOS** - an open-source operating system aiming to provide the finesse of macOS with the freedom a user deserves.
 
-![](https://api.cirrus-ci.com/github/ravynsoft/ravynos.svg?branch=main) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
+This repository contains the completely redesigned website, built from the ground up to reflect a clean, modern, native 2015-Apple aesthetic.
 
-## Getting Started
+## Architecture
 
-### Prerequisites
-- Node.js (LTS recommended)
-- npm
+Unlike the previous iteration, this new website is entirely standalone and does not rely on any static site generators or node module dependencies. It is built purely with standard web technologies for maximum performance, simplicity, and ease of maintenance.
 
-### Installation
+- **HTML5:** Pure, semantic markup structured for performance and accessibility.
+- **Vanilla CSS:** Custom styling featuring a responsive flexbox/grid layout, smooth micro-animations, and glassmorphism elements, all without the overhead of heavy frameworks like Tailwind or Bootstrap.
+- **Vanilla JavaScript:** Lightweight scripts handling interactive elements like the collapsible wiki sidebar, hover-to-copy code snippets, and smooth scrolling.
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/ravynsoft/website.git
-   cd website
-   ```
+## Project Structure
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-### Development
-
-Start the local development server with hot-reload:
-
-```bash
-npm run dev
+```text
+.
+├── index.html        # The main landing page with project goals and chat links
+├── wiki.html         # The comprehensive project documentation
+├── faq.html          # Frequently asked questions
+├── releases.html     # Information about ravynOS releases
+├── css/
+│   └── style.css     # The master stylesheet for the entire site
+├── js/
+│   └── main.js       # The interactive scripts (sidebar toggles, copy buttons)
+└── public/           # Static assets (images, logos, screenshots)
 ```
 
-Open [http://localhost:8080](http://localhost:8080) to view the site.
+## Local Development
 
-### Build
+Because the site is pure static HTML/CSS/JS with no build steps, development is extremely straightforward.
 
-To build the static site for production (outputs to `dist/`):
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/jqackkk/ravynOS-website.git
+   cd ravynOS-website
+   ```
 
-```bash
-npm run build
-```
+2. **Serve the files:**
+   You can use any local web server to view the site. For example, using Python:
+   ```bash
+   python3 -m http.server 8000
+   ```
+   Then open `http://localhost:8000` in your web browser.
 
-## Key Features
+3. **Make changes:**
+   Simply edit the HTML, CSS, or JS files. Refresh your browser to see the changes instantly. No build step required!
 
-- **Theme System**: content-aware Dark/Light mode with system preference detection and persistence.
-- **Glassmorphism UI**: Heavy use of `backdrop-filter: blur()` on headers and cards for a modern, OS-like feel.
-- **Interactive Components**:
-  - **Releases**: Dynamic list fetched from GitHub API, rendered as an interactive accordion grid.
-  - **Features**: "Zig-Zag" storytelling layout with alternating text/image positioning.
-  - **FAQ**: Clean accordion-style questions and answers.
-- **Responsive Design**: Fully optimized for mobile, tablet, and desktop screens.
+## Contributing
 
-## 🛠 Technology Stack
+Contributions are welcome! Please feel free to identify issues, propose improvements, or submit Pull Requests. If you are modifying the Wiki, please ensure that the sidebar navigation correctly links to your new sections.
 
-- **Static Site Generator**: [Eleventy](https://www.11ty.dev/)
-- **Templating**: [Nunjucks](https://mozilla.github.io/nunjucks/)
-- **Styling**: PostCSS with CSS Nested, Custom Media, and Import plugins.
-- **Scripts**: Vanilla JS bundled with `esbuild`.
-- **Assets**: `@11ty/eleventy-img` for image optimization.
+##  License
 
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to identify issues, propose improvements, or submit PRs. By participating, you agree to abide by our [Code of Conduct](CODE_OF_CONDUCT.md).
+The code in this repository is open source. Please refer to the main ravynOS project for comprehensive licensing details regarding the operating system itself.
