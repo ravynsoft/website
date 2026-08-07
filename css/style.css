@@ -1,0 +1,572 @@
+:root {
+    --bg-color-white: #ffffff;
+    --bg-color-grey: #f5f5f7;
+    --text-primary: #333333;
+    --text-secondary: #888888;
+    --apple-blue: #007aff;
+    --nav-bg: rgba(250, 250, 250, 0.85);
+    --nav-border: #e3e3e3;
+    --nav-height: 44px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 300;
+    color: var(--text-primary);
+    background-color: var(--bg-color-white);
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 300;
+    letter-spacing: 0.01em;
+}
+
+strong {
+    font-weight: 500;
+}
+
+.global-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--nav-height);
+    background-color: var(--nav-bg);
+    border-bottom: 1px solid var(--nav-border);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-content {
+    width: 100%;
+    max-width: 980px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.nav-logo img {
+    display: block;
+    opacity: 0.8;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #666;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 400;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #000;
+}
+
+.section {
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.section-content {
+    width: 100%;
+    max-width: 980px;
+    text-align: center;
+}
+
+.grey-section {
+    background-color: var(--bg-color-grey);
+}
+
+.white-section {
+    background-color: var(--bg-color-white);
+}
+
+.section-title {
+    font-size: 42px;
+    margin-bottom: 10px;
+    color: #111;
+}
+
+.section-subtitle {
+    font-size: 24px;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+
+.section-description {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto 50px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.hero {
+    padding-top: calc(var(--nav-height) + 60px);
+    padding-bottom: 60px;
+    text-align: center;
+    background: linear-gradient(to bottom, #ffffff, #f0f0f5);
+}
+
+.hero-title {
+    font-size: 64px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    letter-spacing: -0.02em;
+}
+
+.hero-tagline {
+    font-size: 24px;
+    font-weight: 300;
+    color: #444;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    line-height: 1.4;
+}
+
+.hero-bubble {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.hero-bubble p {
+    font-size: 16px;
+    color: #555;
+}
+
+.hero-banner {
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 15px;
+    border-radius: 4px;
+    max-width: 700px;
+    margin: 0 auto 50px;
+    font-size: 14px;
+    border: 1px solid #ffeeba;
+}
+
+.hero-image-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.mac-mockup {
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(to bottom, #e2e2e2, #c8c8c8);
+    border-radius: 16px 16px 0 0;
+    padding: 20px 20px 0 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.mac-mockup::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: -5%;
+    width: 110%;
+    height: 15px;
+    background: linear-gradient(to bottom, #d4d4d4, #b0b0b0);
+    border-radius: 0 0 8px 8px;
+}
+
+.mac-screen {
+    width: 100%;
+    height: 100%;
+    background-color: #1a1a1a;
+    border-radius: 4px 4px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    border: 4px solid #000;
+    border-bottom: none;
+}
+
+.mac-logo {
+    width: 60px;
+    height: 60px;
+    filter: invert(1);
+    opacity: 0.9;
+}
+
+.feature-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.feature-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 30px;
+    width: calc(33.333% - 20px);
+    min-width: 280px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.feature-icon {
+    font-size: 32px;
+    color: var(--apple-blue);
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.feature-card h4 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: #333;
+    font-weight: 400;
+}
+
+.feature-card p {
+    font-size: 15px;
+    color: #777;
+}
+
+.contribute-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.contribute-card {
+    padding: 30px;
+    text-align: center;
+    width: calc(33.333% - 20px);
+    min-width: 250px;
+}
+
+.contribute-card .emoji {
+    font-size: 40px;
+    display: block;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+}
+
+.contribute-card h4 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.contribute-card p {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.contribute-card a, .chat-links a {
+    display: inline-block;
+    color: var(--apple-blue);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 400;
+    margin: 0 5px;
+}
+
+.contribute-card a:hover {
+    text-decoration: underline;
+}
+
+.global-footer {
+    background-color: #f0f0f0;
+    border-top: 1px solid #e0e0e0;
+    padding: 40px 20px;
+    font-size: 12px;
+    color: #888;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.footer-copy strong {
+    color: #555;
+    font-weight: 400;
+}
+
+.footer-copy small {
+    display: block;
+    margin-top: 10px;
+    color: #999;
+}
+
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.delay-1 { transition-delay: 0.15s; }
+.delay-2 { transition-delay: 0.3s; }
+
+@media (max-width: 768px) {
+    .hero-title { font-size: 48px; }
+    .hero-tagline { font-size: 20px; }
+    .nav-links { display: none; }
+    .feature-card, .contribute-card { width: 100%; }
+    .wiki-container { flex-direction: column; }
+    .wiki-sidebar { width: 100%; height: auto; position: static; border-right: none; border-bottom: 1px solid #eee; }
+    .wiki-content { margin-left: 0; padding: 20px; }
+}
+
+.wiki-container {
+    display: flex;
+    max-width: 1200px;
+    margin: var(--nav-height) auto 0;
+    min-height: calc(100vh - var(--nav-height));
+}
+
+.wiki-sidebar {
+    width: 250px;
+    background-color: #fbfbfd;
+    padding: 30px 20px;
+    border-right: 1px solid #e3e3e3;
+    position: fixed;
+    top: var(--nav-height);
+    bottom: 0;
+    overflow-y: auto;
+}
+
+.wiki-sidebar h3 {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #888;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.wiki-sidebar ul {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.wiki-sidebar .nav-tree > li {
+    margin-bottom: 12px;
+}
+
+.wiki-sidebar .sub-nav {
+    margin-top: 5px;
+    margin-left: 15px;
+    margin-bottom: 0;
+}
+
+.wiki-sidebar .sub-nav li {
+    margin-bottom: 4px;
+}
+
+.wiki-sidebar a {
+    color: #444;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s, background-color 0.2s;
+    display: block;
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+
+.wiki-sidebar .sub-nav a {
+    font-weight: 400;
+}
+
+.wiki-sidebar .parent-item {
+    position: relative;
+}
+
+.wiki-sidebar .parent-label { 
+    color: #222;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 10px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+.wiki-sidebar .parent-label:hover, .wiki-sidebar .parent-label.active { background-color: #e5e5ea; }
+
+.wiki-sidebar .sub-nav {
+    margin-top: 5px;
+    margin-left: 15px;
+    margin-bottom: 0;
+    display: none;
+}
+
+.wiki-sidebar .parent-item.expanded .sub-nav {
+    display: block;
+}
+
+.wiki-sidebar .toggle-icon {
+    font-size: 18px;
+    transition: transform 0.2s;
+}
+
+.wiki-sidebar .parent-item.expanded .toggle-icon {
+    transform: rotate(90deg);
+}
+
+.wiki-sidebar a:hover, .wiki-sidebar a.active {
+    background-color: #e5e5ea;
+    color: #000;
+}
+
+.wiki-content {
+    flex: 1;
+    margin-left: 250px;
+    padding: 50px 60px;
+    background-color: #ffffff;
+}
+
+.wiki-section {
+    display: none;
+}
+
+.wiki-section.active {
+    display: block;
+}
+
+.wiki-section h1.wiki-title { font-size: 40px; margin-bottom: 20px; font-weight: 300; }
+.wiki-section h2 { font-size: 28px; margin-top: 40px; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+.wiki-section h3 { font-size: 20px; margin-top: 25px; margin-bottom: 10px; }
+.wiki-section p { margin-bottom: 15px; line-height: 1.6; color: #444; }
+.wiki-section ul, .wiki-section ol { margin-left: 20px; margin-bottom: 15px; color: #444; }
+.wiki-section li { margin-bottom: 5px; }
+.wiki-section code { background: #f5f5f7; padding: 2px 6px; border-radius: 4px; font-family: monospace; font-size: 14px; color: #d63384; }
+.wiki-section pre { background: #1a1a1a; color: #f8f8f2; padding: 15px; border-radius: 8px; overflow-x: auto; margin-bottom: 20px; position: relative; }
+.wiki-section pre code { background: transparent; color: inherit; padding: 0; }
+.wiki-section a { color: var(--apple-blue); text-decoration: none; }
+.wiki-section a:hover { text-decoration: underline; }
+.wiki-section svg { max-width: 24px; max-height: 24px; display: inline-block; vertical-align: middle; margin-right: 8px; }
+.wiki-section img { max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin: 20px 0; border: 1px solid #eee; }
+
+.wiki-section .copy-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border-radius: 4px;
+    padding: 4px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s, background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wiki-section pre:hover .copy-btn {
+    opacity: 1;
+}
+.wiki-section .copy-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+.wiki-section .copy-btn .material-symbols-outlined {
+    font-size: 18px;
+}
+
+.wiki-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.wiki-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 25px;
+    flex: 1 1 calc(33.333% - 20px);
+    min-width: 220px;
+    text-align: center;
+    text-decoration: none !important;
+    color: #333 !important;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+.wiki-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.wiki-card .material-symbols-outlined {
+    font-size: 32px;
+    color: var(--apple-blue);
+    margin-bottom: 15px;
+    display: block;
+}
+
+.wiki-card h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.wiki-card p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 0;
+}
+.wiki-section blockquote { 
+    margin: 20px 0; 
+    padding: 10px 20px; 
+    background-color: #f5f5f7; 
+    border-left: 4px solid var(--apple-blue); 
+    color: #555; 
+    font-style: italic; 
+}
+.wiki-section blockquote p { margin-bottom: 0; }
+.wiki-section blockquote::before { content: none; }
