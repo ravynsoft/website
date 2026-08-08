@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wiki - ravynOS</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Source+Code+Pro:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -43,6 +43,17 @@
                 <li class="parent-item"><a href="#roadmap">Roadmap</a>
                 </li>
                 <li class="parent-item"><a href="#project-wish-list">Project Wish List</a>
+                </li>
+                
+                <li class="parent-item"><div class="parent-label"><a href="#design-guidelines" style="padding:0;display:inline;flex:1;">Design Guidelines</a><span class="material-symbols-outlined toggle-icon">chevron_right</span></div>
+                    <ul class="sub-nav">
+                        <li><a href="#colors-light">Color System: Light</a></li>
+                        <li><a href="#colors-dark">Color System: Dark</a></li>
+                        <li><a href="#typography">Typography</a></li>
+                        <li><a href="#grids-spacing">Grids & Spacing</a></li>
+                        <li><a href="#layout">Layout & Structure</a></li>
+                        <li><a href="#responsiveness">Responsiveness</a></li>
+                    </ul>
                 </li>
                 <li class="parent-item"><div class="parent-label"><span style="flex:1;">Download</span><span class="material-symbols-outlined toggle-icon">chevron_right</span></div>
                     <ul class="sub-nav">
@@ -388,6 +399,272 @@ Some Applications here are provided with ravynOS and others may be installed by 
 <p class="nx-mt-6 nx-leading-7 first:nx-mt-0">Developer Preview releases are available from our <a class="nx-text-primary-600 nx-underline nx-decoration-from-font [text-underline-position:from-font]" href="https://github.com/ravynsoft/ravynos/releases" rel="noreferrer" target="_blank">GitHub page</a> and sometimes from <a class="nx-text-primary-600 nx-underline nx-decoration-from-font [text-underline-position:from-font]" href="https://github.com/ravynsoft/ravynos/discussions/categories/show-and-tell" rel="noreferrer" target="_blank">Discussions</a> <a class="nx-text-primary-600 nx-underline nx-decoration-from-font [text-underline-position:from-font]" href="https://github.com/ravynsoft/ravynos/discussions/565" rel="noreferrer" target="_blank">threads</a>.</p>
 <p class="nx-mt-6 nx-leading-7 first:nx-mt-0">Please note these are unfinished, unstable work intended for developers of the system.</p></main></article>
             </div>
+        
+            <div id="design-guidelines" class="wiki-section">
+                
+<style>
+    .design-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 30px;
+    }
+    .design-table th, .design-table td {
+        padding: 12px 15px;
+        text-align: left;
+        border-bottom: 1px solid #eee;
+    }
+    .design-table th {
+        font-weight: 500;
+        color: #666;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    .color-swatch {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        border-radius: 4px;
+        margin-right: 10px;
+        vertical-align: middle;
+        border: 1px solid rgba(0,0,0,0.1);
+    }
+    .hex-code {
+        font-family: monospace;
+        font-size: 14px;
+        color: #444;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .use-case {
+        color: #444;
+    }
+</style>
+
+                <h1 class="wiki-title">Design Guidelines</h1>
+                <p>Consistent design is fundamental to the ravynOS user experience. Adhere to these guidelines to maintain visual clarity and a cohesive, familiar interface across your apps.</p>
+                <p>Please select a topic from the sidebar to view the specific guidelines.</p>
+            </div>
+
+            <div id="colors-light" class="wiki-section">
+                <h1 class="wiki-title">Color System: Light Mode</h1>
+                <p>Light Mode in ravynOS uses a carefully calibrated color palette. Colors are intentionally muted to provide a comfortable viewing experience, yet vibrant enough to ensure clear contrast and distinct visual hierarchy.</p>
+                
+                <h2>Core System & Accent Colors</h2>
+                <table class="design-table">
+                    <thead><tr><th>Name</th><th>Hex Code</th><th>Use Case</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>sys-blue</code></td><td><span class="color-swatch" style="background-color: #007AFF;"></span><span class="hex-code">#007AFF</span></td><td class="use-case">Links, active focus, accent</td></tr>
+                        <tr><td><code>sys-purple</code></td><td><span class="color-swatch" style="background-color: #AF52DE;"></span><span class="hex-code">#AF52DE</span></td><td class="use-case">Media controls</td></tr>
+                        <tr><td><code>sys-pink</code></td><td><span class="color-swatch" style="background-color: #FF2D55;"></span><span class="hex-code">#FF2D55</span></td><td class="use-case">Suggestions</td></tr>
+                        <tr><td><code>sys-red</code></td><td><span class="color-swatch" style="background-color: #FF3B30;"></span><span class="hex-code">#FF3B30</span></td><td class="use-case">Destructive actions</td></tr>
+                        <tr><td><code>sys-orange</code></td><td><span class="color-swatch" style="background-color: #FF9500;"></span><span class="hex-code">#FF9500</span></td><td class="use-case">Warnings, updates</td></tr>
+                        <tr><td><code>sys-yellow</code></td><td><span class="color-swatch" style="background-color: #FFCC00;"></span><span class="hex-code">#FFCC00</span></td><td class="use-case">Warnings, drive statuses</td></tr>
+                        <tr><td><code>sys-green</code></td><td><span class="color-swatch" style="background-color: #34C759;"></span><span class="hex-code">#34C759</span></td><td class="use-case">Success states, battery</td></tr>
+                        <tr><td><code>sys-gray</code></td><td><span class="color-swatch" style="background-color: #8E8E93;"></span><span class="hex-code">#8E8E93</span></td><td class="use-case">Neutral icons, inactive states</td></tr>
+                    </tbody>
+                </table>
+
+                <h2>Semantic Text & Typography</h2>
+                <table class="design-table">
+                    <thead><tr><th>Name</th><th>Hex Code</th><th>Use Case</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>text-primary</code></td><td><span class="color-swatch" style="background-color: #000000;"></span><span class="hex-code">#000000</span></td><td class="use-case">Regular text, headings, body</td></tr>
+                        <tr><td><code>text-secondary</code></td><td><span class="color-swatch" style="background-color: #3C3C43;"></span><span class="hex-code">#3C3C43</span></td><td class="use-case">Subtitles, secondary text</td></tr>
+                        <tr><td><code>text-tertiary</code></td><td><span class="color-swatch" style="background-color: #78787D;"></span><span class="hex-code">#78787D</span></td><td class="use-case">Disabled text, timestamps</td></tr>
+                        <tr><td><code>text-quaternary</code></td><td><span class="color-swatch" style="background-color: #B4B4B8;"></span><span class="hex-code">#B4B4B8</span></td><td class="use-case">Very subtle text, watermarks</td></tr>
+                        <tr><td><code>text-link</code></td><td><span class="color-swatch" style="background-color: #006B85;"></span><span class="hex-code">#006B85</span></td><td class="use-case">Hyperlinks, interactive text</td></tr>
+                        <tr><td><code>text-inverse</code></td><td><span class="color-swatch" style="background-color: #FFFFFF;"></span><span class="hex-code">#FFFFFF</span></td><td class="use-case">Text on top of sys-accent</td></tr>
+                    </tbody>
+                </table>
+                
+                <h2>Structural Backgrounds & Surfaces</h2>
+                <table class="design-table">
+                    <thead><tr><th>Name</th><th>Hex Code</th><th>Use Case</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>bg-window-base</code></td><td><span class="color-swatch" style="background-color: #ECECEC;"></span><span class="hex-code">#ECECEC</span></td><td class="use-case">Root window</td></tr>
+                        <tr><td><code>bg-content</code></td><td><span class="color-swatch" style="background-color: #FFFFFF;"></span><span class="hex-code">#FFFFFF</span></td><td class="use-case">Main context areas</td></tr>
+                        <tr><td><code>bg-sidebar</code></td><td><span class="color-swatch" style="background-color: #F2F2F7;"></span><span class="hex-code">#F2F2F7</span></td><td class="use-case">Sidebars, navigation panes</td></tr>
+                        <tr><td><code>bg-grouped-base</code></td><td><span class="color-swatch" style="background-color: #F2F2F7;"></span><span class="hex-code">#F2F2F7</span></td><td class="use-case">Groupings</td></tr>
+                        <tr><td><code>bg-grouped-item</code></td><td><span class="color-swatch" style="background-color: #FFFFFF;"></span><span class="hex-code">#FFFFFF</span></td><td class="use-case">Items within a grouping</td></tr>
+                        <tr><td><code>bg-toolbar-opaque</code></td><td><span class="color-swatch" style="background-color: #F6F6F6;"></span><span class="hex-code">#F6F6F6</span></td><td class="use-case">Fallback for window headers</td></tr>
+                        <tr><td><code>bg-menu-flyout</code></td><td><span class="color-swatch" style="background-color: #F5F5F5;"></span><span class="hex-code">#F5F5F5</span></td><td class="use-case">Right-click menus</td></tr>
+                    </tbody>
+                </table>
+                
+                <h2>Interactive Controls & UI Elements</h2>
+                <table class="design-table">
+                    <thead><tr><th>Name</th><th>Hex Code</th><th>Use Case</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>control-bg-default</code></td><td><span class="color-swatch" style="background-color: #FFFFFF;"></span><span class="hex-code">#FFFFFF</span></td><td class="use-case">Push buttons, dropdowns</td></tr>
+                        <tr><td><code>control-bg-hover</code></td><td><span class="color-swatch" style="background-color: #F0F0F0;"></span><span class="hex-code">#F0F0F0</span></td><td class="use-case">Hover state for controls</td></tr>
+                        <tr><td><code>control-bg-disabled</code></td><td><span class="color-swatch" style="background-color: #E5E5EA;"></span><span class="hex-code">#E5E5EA</span></td><td class="use-case">Unclickable/locked objects</td></tr>
+                        <tr><td><code>control-track</code></td><td><span class="color-swatch" style="background-color: #D1D1D6;"></span><span class="hex-code">#D1D1D6</span></td><td class="use-case">Slider/Scrollbar backgrounds</td></tr>
+                        <tr><td><code>control-thumb</code></td><td><span class="color-swatch" style="background-color: #8E8E93;"></span><span class="hex-code">#8E8E93</span></td><td class="use-case">Slider/Scrollbar Handles</td></tr>
+                        <tr><td><code>focus-ring</code></td><td><span class="color-swatch" style="background-color: #80BDFF;"></span><span class="hex-code">#80BDFF</span></td><td class="use-case">Navigation focus outlines</td></tr>
+                        <tr><td><code>border-window</code></td><td><span class="color-swatch" style="background-color: #C6C6C8;"></span><span class="hex-code">#C6C6C8</span></td><td class="use-case">Outer stroke of windows</td></tr>
+                        <tr><td><code>separator-standard</code></td><td><span class="color-swatch" style="background-color: #E5E5EA;"></span><span class="hex-code">#E5E5EA</span></td><td class="use-case">Dividers, toolbar borders</td></tr>
+                        <tr><td><code>separator-subtle</code></td><td><span class="color-swatch" style="background-color: #F2F2F7;"></span><span class="hex-code">#F2F2F7</span></td><td class="use-case">Soft item dividers</td></tr>
+                        <tr><td><code>border-control</code></td><td><span class="color-swatch" style="background-color: #D1D1D6;"></span><span class="hex-code">#D1D1D6</span></td><td class="use-case">Stroke for text inputs/buttons</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="colors-dark" class="wiki-section">
+                <h1 class="wiki-title">Color System: Dark Mode</h1>
+                <p>Dark Mode uses colors intentionally adapted to reduce eye strain in low-light environments, yet remain vibrant enough to ensure clear contrast.</p>
+                
+                <h2>Core System & Accent Colors</h2>
+                <table class="design-table">
+                    <thead><tr><th>Name</th><th>Hex Code</th><th>Use Case</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>sys-blue</code></td><td><span class="color-swatch" style="background-color: #0A84FF;"></span><span class="hex-code">#0A84FF</span></td><td class="use-case">Links, active focus, accent</td></tr>
+                        <tr><td><code>sys-purple</code></td><td><span class="color-swatch" style="background-color: #BF5AF2;"></span><span class="hex-code">#BF5AF2</span></td><td class="use-case">Media controls</td></tr>
+                        <tr><td><code>sys-pink</code></td><td><span class="color-swatch" style="background-color: #FF375F;"></span><span class="hex-code">#FF375F</span></td><td class="use-case">Suggestions</td></tr>
+                        <tr><td><code>sys-red</code></td><td><span class="color-swatch" style="background-color: #FF453A;"></span><span class="hex-code">#FF453A</span></td><td class="use-case">Destructive actions</td></tr>
+                        <tr><td><code>sys-orange</code></td><td><span class="color-swatch" style="background-color: #FF9F0A;"></span><span class="hex-code">#FF9F0A</span></td><td class="use-case">Warnings, updates</td></tr>
+                        <tr><td><code>sys-yellow</code></td><td><span class="color-swatch" style="background-color: #FFD60A;"></span><span class="hex-code">#FFD60A</span></td><td class="use-case">Warnings, drive statuses</td></tr>
+                        <tr><td><code>sys-green</code></td><td><span class="color-swatch" style="background-color: #30D158;"></span><span class="hex-code">#30D158</span></td><td class="use-case">Success states, battery</td></tr>
+                        <tr><td><code>sys-gray</code></td><td><span class="color-swatch" style="background-color: #98989D;"></span><span class="hex-code">#98989D</span></td><td class="use-case">Neutral icons, inactive states</td></tr>
+                    </tbody>
+                </table>
+
+                <h2>Semantic Text & Typography</h2>
+                <table class="design-table">
+                    <thead><tr><th>Name</th><th>Hex Code</th><th>Use Case</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>text-primary</code></td><td><span class="color-swatch" style="background-color: #FFFFFF;"></span><span class="hex-code">#FFFFFF</span></td><td class="use-case">Regular text, headings, body</td></tr>
+                        <tr><td><code>text-secondary</code></td><td><span class="color-swatch" style="background-color: #EBEBF5;"></span><span class="hex-code">#EBEBF5</span></td><td class="use-case">Subtitles, secondary text</td></tr>
+                        <tr><td><code>text-tertiary</code></td><td><span class="color-swatch" style="background-color: #EBEBF5;"></span><span class="hex-code">#EBEBF5</span></td><td class="use-case">Disabled text, timestamps</td></tr>
+                        <tr><td><code>text-quaternary</code></td><td><span class="color-swatch" style="background-color: #EBEBF5;"></span><span class="hex-code">#EBEBF5</span></td><td class="use-case">Very subtle text, watermarks</td></tr>
+                        <tr><td><code>text-link</code></td><td><span class="color-swatch" style="background-color: #419CFF;"></span><span class="hex-code">#419CFF</span></td><td class="use-case">Hyperlinks, interactive text</td></tr>
+                        <tr><td><code>text-accent</code></td><td><span class="color-swatch" style="background-color: #000000;"></span><span class="hex-code">#000000</span></td><td class="use-case">Text on top of sys-accent</td></tr>
+                    </tbody>
+                </table>
+                
+                <h2>Structural Backgrounds & Surfaces</h2>
+                <table class="design-table">
+                    <thead><tr><th>Name</th><th>Hex Code</th><th>Use Case</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>bg-window-base</code></td><td><span class="color-swatch" style="background-color: #1E1E1E;"></span><span class="hex-code">#1E1E1E</span></td><td class="use-case">Root window</td></tr>
+                        <tr><td><code>bg-content</code></td><td><span class="color-swatch" style="background-color: #121212;"></span><span class="hex-code">#121212</span></td><td class="use-case">Main context areas</td></tr>
+                        <tr><td><code>bg-sidebar</code></td><td><span class="color-swatch" style="background-color: #1C1C1E;"></span><span class="hex-code">#1C1C1E</span></td><td class="use-case">Sidebars, navigation panes</td></tr>
+                        <tr><td><code>bg-grouped-base</code></td><td><span class="color-swatch" style="background-color: #000000;"></span><span class="hex-code">#000000</span></td><td class="use-case">Groupings</td></tr>
+                        <tr><td><code>bg-grouped-item</code></td><td><span class="color-swatch" style="background-color: #1C1C1E;"></span><span class="hex-code">#1C1C1E</span></td><td class="use-case">Items within a grouping</td></tr>
+                        <tr><td><code>bg-toolbar-opaque</code></td><td><span class="color-swatch" style="background-color: #2D2D2D;"></span><span class="hex-code">#2D2D2D</span></td><td class="use-case">Fallback for window headers</td></tr>
+                        <tr><td><code>bg-menu-flyout</code></td><td><span class="color-swatch" style="background-color: #252525;"></span><span class="hex-code">#252525</span></td><td class="use-case">Right-click menus</td></tr>
+                    </tbody>
+                </table>
+                
+                <h2>Interactive Controls & UI Elements</h2>
+                <table class="design-table">
+                    <thead><tr><th>Name</th><th>Hex Code</th><th>Use Case</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>control-bg-default</code></td><td><span class="color-swatch" style="background-color: #3A3A3C;"></span><span class="hex-code">#3A3A3C</span></td><td class="use-case">Push buttons, dropdowns</td></tr>
+                        <tr><td><code>control-bg-hover</code></td><td><span class="color-swatch" style="background-color: #444446;"></span><span class="hex-code">#444446</span></td><td class="use-case">Hover state for controls</td></tr>
+                        <tr><td><code>control-bg-disabled</code></td><td><span class="color-swatch" style="background-color: #2C2C2E;"></span><span class="hex-code">#2C2C2E</span></td><td class="use-case">Unclickable/locked objects</td></tr>
+                        <tr><td><code>control-track</code></td><td><span class="color-swatch" style="background-color: #3A3A3C;"></span><span class="hex-code">#3A3A3C</span></td><td class="use-case">Slider/Scrollbar backgrounds</td></tr>
+                        <tr><td><code>control-thumb</code></td><td><span class="color-swatch" style="background-color: #636366;"></span><span class="hex-code">#636366</span></td><td class="use-case">Slider/Scrollbar Handles</td></tr>
+                        <tr><td><code>focus-ring</code></td><td><span class="color-swatch" style="background-color: #05448A;"></span><span class="hex-code">#05448A</span></td><td class="use-case">Navigation focus outlines</td></tr>
+                        <tr><td><code>border-window</code></td><td><span class="color-swatch" style="background-color: #000000;"></span><span class="hex-code">#000000</span></td><td class="use-case">Outer stroke of windows</td></tr>
+                        <tr><td><code>separator-standard</code></td><td><span class="color-swatch" style="background-color: #38383A;"></span><span class="hex-code">#38383A</span></td><td class="use-case">Dividers, toolbar borders</td></tr>
+                        <tr><td><code>separator-subtle</code></td><td><span class="color-swatch" style="background-color: #2C2C2E;"></span><span class="hex-code">#2C2C2E</span></td><td class="use-case">Soft item dividers</td></tr>
+                        <tr><td><code>border-control</code></td><td><span class="color-swatch" style="background-color: #545456;"></span><span class="hex-code">#545456</span></td><td class="use-case">Stroke for text inputs/buttons</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="typography" class="wiki-section">
+                <h1 class="wiki-title">Typography</h1>
+                <p>Typography in ravynOS is designed with a singular focus: absolute clarity. Readability and consistency are prioritized above all else.</p>
+                
+                <h2>Font Families</h2>
+                <table class="design-table">
+                    <thead><tr><th>Font Family</th><th>Use Case</th></tr></thead>
+                    <tbody>
+                        <tr><td><span style="font-family: 'Inter', sans-serif; font-size: 1.1em;">Inter</span></td><td class="use-case">Font for all system apps and services</td></tr>
+                        <tr><td><span style="font-family: 'URW Bookman', 'URW Bookman L', 'Bookman Old Style', 'Bookman', serif; font-size: 1.1em;">URW Bookman</span></td><td class="use-case">Font for documents and plain text</td></tr>
+                        <tr><td><span style="font-family: 'Source Code Pro', monospace; font-size: 1.1em;">Source Code Pro</span></td><td class="use-case">Font for the terminal and code</td></tr>
+                    </tbody>
+                </table>
+
+                <h2>Font Weights - System</h2>
+                <table class="design-table">
+                    <thead><tr><th>Weight</th><th>Use Case</th></tr></thead>
+                    <tbody>
+                        <tr><td><span style="font-weight: 200;">Extralight</span></td><td class="use-case">Subtext, descriptions</td></tr>
+                        <tr><td><span style="font-weight: 300;">Light</span></td><td class="use-case">Body text</td></tr>
+                        <tr><td><span style="font-weight: 500;">Medium</span></td><td class="use-case">Sections, subheadings</td></tr>
+                        <tr><td><span style="font-weight: 600;">Semibold</span></td><td class="use-case">Headings</td></tr>
+                        <tr><td><span style="font-weight: 700;">Bold</span></td><td class="use-case">Titles</td></tr>
+                    </tbody>
+                </table>
+
+                <h2>Font Weights - Document</h2>
+                <table class="design-table">
+                    <thead><tr><th>Weight</th><th>Use Case</th></tr></thead>
+                    <tbody>
+                        <tr style="font-family: 'URW Bookman', 'URW Bookman L', 'Bookman Old Style', 'Bookman', serif; font-size: 1.1em;"><td><span style="font-weight: 300;">Light</span></td><td class="use-case" style="font-family: 'Inter', sans-serif; font-size: 0.9em;">Default font for document text</td></tr>
+                        <tr style="font-family: 'URW Bookman', 'URW Bookman L', 'Bookman Old Style', 'Bookman', serif; font-size: 1.1em;"><td><span style="font-weight: 600;">Demi</span></td><td class="use-case" style="font-family: 'Inter', sans-serif; font-size: 0.9em;">Default font for headings and titles</td></tr>
+                        <tr style="font-family: 'URW Bookman', 'URW Bookman L', 'Bookman Old Style', 'Bookman', serif; font-size: 1.1em;"><td><span style="font-weight: 300; font-style: italic;">Light Italic</span></td><td class="use-case" style="font-family: 'Inter', sans-serif; font-size: 0.9em;">Default font for links and references</td></tr>
+                    </tbody>
+                </table>
+
+                <h2>Font Weights - Code</h2>
+                <table class="design-table">
+                    <thead><tr><th>Weight</th><th>Use Case</th></tr></thead>
+                    <tbody>
+                        <tr style="font-family: 'Source Code Pro', monospace; font-size: 1.1em;"><td><code style="font-weight: 200; font-family: inherit;">Extralight</code></td><td class="use-case" style="font-family: 'Inter', sans-serif; font-size: 0.9em;">Code descriptions</td></tr>
+                        <tr style="font-family: 'Source Code Pro', monospace; font-size: 1.1em;"><td><code style="font-weight: 300; font-family: inherit;">Light</code></td><td class="use-case" style="font-family: 'Inter', sans-serif; font-size: 0.9em;">Terminal output</td></tr>
+                        <tr style="font-family: 'Source Code Pro', monospace; font-size: 1.1em;"><td><code style="font-weight: 500; font-family: inherit;">Medium</code></td><td class="use-case" style="font-family: 'Inter', sans-serif; font-size: 0.9em;">Alternative terminal output</td></tr>
+                        <tr style="font-family: 'Source Code Pro', monospace; font-size: 1.1em;"><td><code style="font-weight: 600; font-family: inherit;">Semibold</code></td><td class="use-case" style="font-family: 'Inter', sans-serif; font-size: 0.9em;">Code snippet headings</td></tr>
+                        <tr style="font-family: 'Source Code Pro', monospace; font-size: 1.1em;"><td><code style="font-weight: 700; font-family: inherit;">Bold</code></td><td class="use-case" style="font-family: 'Inter', sans-serif; font-size: 0.9em;">Code snippet titles</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="grids-spacing" class="wiki-section">
+                <h1 class="wiki-title">Grids & Spacing</h1>
+                <p>Consistent spacing is fundamental to the ravynOS user experience.</p>
+                <table class="design-table">
+                    <thead><tr><th>Metric</th><th>Value</th></tr></thead>
+                    <tbody>
+                        <tr><td>Standard Margins</td><td class="use-case">20 Points</td></tr>
+                        <tr><td>Minimum Touch Target</td><td class="use-case">44x44 Points</td></tr>
+                        <tr><td>Grid Layouts</td><td class="use-case">3-5 Points</td></tr>
+                        <tr><td>Tight Spacing</td><td class="use-case">4 Points</td></tr>
+                        <tr><td>Standard Spacing</td><td class="use-case">8 Points</td></tr>
+                        <tr><td>Group Spacing</td><td class="use-case">12-16 Points</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="layout" class="wiki-section">
+                <h1 class="wiki-title">Layout & Structure: Window Anatomy</h1>
+                <p>A standard ravynOS window consists of a frame and a body area. The frame typically sits above the body and can include window controls and a toolbar.</p>
+                <ul>
+                    <li><strong>The Frame:</strong> Contains standard system controls like close and resize buttons, and often integrates a toolbar.</li>
+                    <li><strong>The Body:</strong> The core area where your app's unique content and navigation reside.</li>
+                    <li><strong>The Sidebar:</strong> Where all of your app-level navigation should be. Do not put more than 1 line of text here.</li>
+                </ul>
+
+                <h2>General Do's and Don'ts</h2>
+                <ul>
+                    <li><strong>Do</strong> keep your frame consistent, yet unique to your app. <strong>Do not</strong> rotate the close, maximize, and minimize buttons by 90º to make them vertical.</li>
+                    <li><strong>Do</strong> keep the body of your window a size that will not constrain the contents of your app.</li>
+                    <li><strong>Do</strong> ensure your sidebar is resizable and has sections and labels unique to your content. <strong>Do not</strong> make your sidebar the main function of your app or add images.</li>
+                </ul>
+            </div>
+
+            <div id="responsiveness" class="wiki-section">
+                <h1 class="wiki-title">Responsiveness</h1>
+                <ul>
+                    <li><strong>Points (PT) over Pixels (PX):</strong> Ensures your content scales well across standard (@1x), Retina (@2x), and Super Retina (@3x) displays.</li>
+                    <li><strong>Resizability:</strong> A general starting point for compatibility is 960x600, and it should be able to go up to 2560x1600.</li>
+                    <li><strong>Safe Areas:</strong> Ensure your app has safe areas (e.g. near the sidebar or window borders) so items don't overlap.</li>
+                </ul>
+            </div>
+
         </main>
     </div>
 
